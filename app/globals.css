@@ -1,26 +1,662 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   DEVBOOK — PAPER × ELEGANT DESIGN SYSTEM
+   Combines: Paper Design (tactile, print-inspired) + Elegant (refined, minimal)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Light: Premium Cream Paper ─────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paper surfaces */
+  --p-bg: #F5F0E8;
+  --p-surface: #FAF7F2;
+  --p-surface-2: #EDE8DE;
+  --p-surface-3: #E5DFD3;
+  --p-overlay: rgba(245, 240, 232, 0.93);
+
+  /* Ink */
+  --p-ink: #1C1917;
+  --p-ink-2: #44403C;
+  --p-ink-3: #78716C;
+  --p-ink-4: #A8A29E;
+
+  /* Lines — like ruled notebook paper */
+  --p-rule: #D6CFC4;
+  --p-rule-2: #E5DFD5;
+
+  /* Accents — muted, like dried ink or botanical press */
+  --p-green: #4A6741;
+  /* dried leaf */
+  --p-green-soft: rgba(74, 103, 65, 0.08);
+  --p-green-mid: rgba(74, 103, 65, 0.15);
+  --p-indigo: #3D4F8A;
+  /* deep indigo ink */
+  --p-indigo-soft: rgba(61, 79, 138, 0.08);
+  --p-rose: #9B6B72;
+  /* dried rose */
+
+  /* Code / mark */
+  --p-code-bg: #EDEAD4;
+  --p-mark: #EDE4B0;
+
+  /* Elevation shadows — like paper lifting off a surface */
+  --shadow-paper:
+    0 1px 2px rgba(28, 25, 23, 0.04),
+    0 2px 8px rgba(28, 25, 23, 0.04);
+  --shadow-lift:
+    0 4px 16px rgba(28, 25, 23, 0.07),
+    0 2px 6px rgba(28, 25, 23, 0.04),
+    0 0 0 1px rgba(28, 25, 23, 0.03);
+  --shadow-float:
+    0 8px 32px rgba(28, 25, 23, 0.10),
+    0 4px 12px rgba(28, 25, 23, 0.06),
+    0 0 0 1px rgba(28, 25, 23, 0.04);
+
+  /* Radius — slightly organic, not perfectly geometric */
+  --r-sm: 3px;
+  --r-md: 6px;
+  --r-lg: 10px;
+  --r-xl: 16px;
+  --r-pill: 999px;
+
+  /* Typography */
+  --font-ui: var(--font-jakarta), var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-serif-var), Georgia, 'Times New Roman', serif;
+  --font-bengali: var(--font-bengali-var), 'Noto Sans Bengali', sans-serif;
+  --font-mono: var(--font-pt-mono), 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Layout */
+  --content-w: 720px;
+  --wide-w: 960px;
+  --full-w: 1200px;
+  --col-gap: clamp(1.5rem, 4vw, 3rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dark: Inkwell Night ─────────────────────────────────────────────────── */
+.dark {
+  --p-bg: #111210;
+  --p-surface: #1A1916;
+  --p-surface-2: #222019;
+  --p-surface-3: #2C2922;
+  --p-overlay: rgba(17, 18, 16, 0.93);
+
+  --p-ink: #F0EBE3;
+  --p-ink-2: #C8BFB5;
+  --p-ink-3: #8A8279;
+  --p-ink-4: #5A5550;
+
+  --p-rule: #2E2B26;
+  --p-rule-2: #252320;
+
+  --p-green: #7FA876;
+  --p-green-soft: rgba(127, 168, 118, 0.10);
+  --p-green-mid: rgba(127, 168, 118, 0.18);
+  --p-indigo: #7B8FD4;
+  --p-indigo-soft: rgba(123, 143, 212, 0.10);
+  --p-rose: #C49098;
+
+  --p-code-bg: #1E1C17;
+  --p-mark: rgba(237, 228, 176, 0.12);
+
+  --shadow-paper:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lift:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-float:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Tailwind v4 Theme ───────────────────────────────────────────────────── */
+@theme {
+  --color-p-bg: var(--p-bg);
+  --color-p-surface: var(--p-surface);
+  --color-p-surface-2: var(--p-surface-2);
+  --color-p-surface-3: var(--p-surface-3);
+  --color-p-ink: var(--p-ink);
+  --color-p-ink-2: var(--p-ink-2);
+  --color-p-ink-3: var(--p-ink-3);
+  --color-p-ink-4: var(--p-ink-4);
+  --color-p-rule: var(--p-rule);
+  --color-p-rule-2: var(--p-rule-2);
+  --color-p-green: var(--p-green);
+  --color-p-indigo: var(--p-indigo);
+  --color-p-rose: var(--p-rose);
+  --color-p-code-bg: var(--p-code-bg);
+  --color-p-mark: var(--p-mark);
+
+  /* Backward compat */
+  --color-nb-bg: var(--p-bg);
+  --color-nb-surface: var(--p-surface);
+  --color-nb-surface-2: var(--p-surface-2);
+  --color-nb-text: var(--p-ink);
+  --color-nb-muted: var(--p-ink-3);
+  --color-nb-subtle: var(--p-ink-4);
+  --color-nb-border: var(--p-rule);
+  --color-nb-border-2: var(--p-rule-2);
+  --color-nb-accent: var(--p-green);
+  --color-nb-accent-fg: #FAF7F2;
+  --color-nb-accent-2: var(--p-indigo);
+  --color-nb-accent-3: var(--p-rose);
+  --color-nb-code-bg: var(--p-code-bg);
+  --color-nb-mark: var(--p-mark);
+  --color-background: var(--p-bg);
+  --color-foreground: var(--p-ink);
+  --color-border: var(--p-rule);
+
+  --font-ui: var(--font-ui);
+  --font-serif: var(--font-serif);
+  --font-bengali: var(--font-bengali);
+  --font-mono: var(--font-mono);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+  scroll-behavior: smooth;
+  view-transition-name: root;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--p-bg);
+  color: var(--p-ink);
+  font-family: var(--font-ui);
+  line-height: 1.6;
+  min-height: 100dvh;
+  /* Paper grain texture overlay */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.038'/%3E%3C/svg%3E");
+}
+
+.dark body {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* ── Selection ───────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--p-green);
+  color: #FAF7F2;
+}
+
+/* ── Focus ───────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--p-green);
+  outline-offset: 3px;
+  border-radius: var(--r-sm);
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--p-rule);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--p-ink-4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY — ELEGANT SCALE
+   14 / 16 / 18 / 24 / 32 / 40 / 52
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Bengali text */
+.font-bengali {
+  font-family: var(--font-bengali);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ── Article Prose ────────────────────────────────────────────────────────── */
+.p-prose {
+  font-family: var(--font-bengali);
+  font-size: 1.0625rem;
+  line-height: 1.875;
+  color: var(--p-ink-2);
+  max-width: var(--content-w);
+}
+
+.p-prose>*+* {
+  margin-top: 1.5em;
+}
+
+.p-prose h1,
+.p-prose h2,
+.p-prose h3,
+.p-prose h4 {
+  font-family: var(--font-serif);
+  color: var(--p-ink);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin-top: 2.25em;
+  margin-bottom: 0.75em;
+}
+
+.p-prose h1 {
+  font-size: 2rem;
+}
+
+.p-prose h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--p-rule);
+}
+
+.p-prose h3 {
+  font-size: 1.2rem;
+}
+
+.p-prose h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.p-prose p {
+  margin-bottom: 1.5em;
+}
+
+.p-prose a {
+  color: var(--p-indigo);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--p-indigo) 35%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.p-prose a:hover {
+  text-decoration-color: var(--p-indigo);
+}
+
+.p-prose blockquote {
+  border-left: 2px solid var(--p-green);
+  padding: 0.5em 0 0.5em 1.5em;
+  margin: 2em 0;
+  color: var(--p-ink-3);
+  font-style: italic;
+}
+
+.p-prose code:not(pre code) {
+  background: var(--p-code-bg);
+  border: 1px solid var(--p-rule);
+  border-radius: var(--r-sm);
+  padding: 0.15em 0.45em;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  color: var(--p-indigo);
+}
+
+.p-prose pre {
+  background: var(--p-code-bg);
+  border: 1px solid var(--p-rule);
+  border-radius: var(--r-lg);
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin: 1.75em 0;
+}
+
+.p-prose mark {
+  background: var(--p-mark);
+  padding: 0.12em 0.3em;
+  border-radius: 2px;
+}
+
+.p-prose ul {
+  list-style: none;
+  padding: 0;
+}
+
+.p-prose ul li {
+  padding-left: 1.5em;
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+.p-prose ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0.25em;
+  color: var(--p-green);
+  font-weight: 400;
+}
+
+.p-prose ol {
+  padding-left: 1.5em;
+}
+
+.p-prose ol li {
+  margin-bottom: 0.5em;
+}
+
+.p-prose hr {
+  border: none;
+  height: 1px;
+  background: var(--p-rule);
+  margin: 3em 0;
+}
+
+.p-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.p-prose th,
+.p-prose td {
+  border: 1px solid var(--p-rule);
+  padding: 0.625em 0.875em;
+  text-align: left;
+}
+
+.p-prose th {
+  background: var(--p-surface-2);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.p-container {
+  width: 100%;
+  max-width: var(--full-w);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+.p-content {
+  max-width: var(--content-w);
+  margin-inline: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PAPER AESTHETIC ELEMENTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Chapter rule — elegant horizontal divider with optional label */
+.p-chapter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--p-ink-4);
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.p-chapter::before,
+.p-chapter::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--p-rule) 20%, var(--p-rule) 80%, transparent);
+}
+
+/* Page margin note */
+.p-margin {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--p-ink-4);
+  border-left: 2px solid var(--p-rule-2);
+  padding-left: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Ink stamp / badge */
+.p-stamp {
+  display: inline-block;
+  border: 1.5px solid currentColor;
+  padding: 0.15em 0.5em;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  opacity: 0.5;
+  transform: rotate(-0.8deg);
+}
+
+/* Reading marker — thin green accent bar */
+.p-marker {
+  width: 28px;
+  height: 2px;
+  background: var(--p-green);
+  border-radius: 1px;
+  display: inline-block;
+}
+
+/* Paper callout box */
+.p-callout {
+  background: var(--p-surface);
+  border: 1px solid var(--p-rule);
+  border-left: 3px solid var(--p-green);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: 1rem 1.25rem;
+}
+
+/* Journal timestamp style */
+.p-ts {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--p-ink-4);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ELEGANT COMPONENT BASE CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Surface card */
+.p-card {
+  background: var(--p-surface);
+  border: 1px solid var(--p-rule);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-paper);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.p-card:hover {
+  border-color: color-mix(in srgb, var(--p-green) 30%, var(--p-rule));
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+/* Ghost card */
+.p-card-ghost {
+  background: transparent;
+  border: 1px solid var(--p-rule-2);
+  border-radius: var(--r-lg);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.p-card-ghost:hover {
+  background: var(--p-surface);
+  border-color: var(--p-rule);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VIEW TRANSITIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::view-transition-old(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: p-reveal 480ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  mix-blend-mode: normal;
+}
+
+@keyframes p-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GSAP ANIMATION HOOKS
+   All GSAP targets use data-* attributes — decoupled from styling
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Initial invisible state set by GSAP — prevent flash */
+[data-gsap="fade"],
+[data-gsap="up"],
+[data-gsap="left"],
+[data-gsap="right"],
+[data-gsap="scale"] {
+  visibility: hidden;
+  /* GSAP sets autoAlpha which controls both opacity + visibility */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.noBar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.noBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Backward compat aliases */
+.nb-container {
+  width: 100%;
+  max-width: var(--full-w);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+.nb-content {
+  max-width: var(--content-w);
+  margin-inline: auto;
+}
+
+.nb-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--p-ink-4);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nb-rule::before,
+.nb-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--p-rule) 20%, var(--p-rule) 80%, transparent);
+}
+
+.nb-reading-marker {
+  width: 28px;
+  height: 2px;
+  background: var(--p-green);
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.nb-callout {
+  background: var(--p-surface);
+  border: 1px solid var(--p-rule);
+  border-left: 3px solid var(--p-green);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: 1rem 1.25rem;
+}
+
+.nb-timestamp {
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--p-ink-4);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   404 PAGE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.error-404 {
+  font-family: var(--font-serif);
+  font-size: clamp(80px, 18vw, 260px);
+  letter-spacing: -0.06em;
+  color: color-mix(in srgb, var(--p-ink) 6%, transparent);
+  font-weight: 400;
+  user-select: none;
+  pointer-events: none;
 }
