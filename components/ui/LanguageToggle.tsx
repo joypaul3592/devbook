@@ -14,31 +14,36 @@ export function LanguageToggle({ className }: { className?: string }) {
     <button
       onClick={toggle}
       className={cn(
-        "h-7 flex items-center gap-px rounded-full overflow-hidden",
-        "border border-p-rule hover:border-p-ink-3",
+        "relative grid grid-cols-2 items-center h-8 p-0.5 rounded-xl overflow-hidden",
+        "border border-border hover:border-border",
         "transition-all duration-200",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-p-green",
-        className
+        className,
       )}
       aria-label={`Switch to ${locale === "bn" ? "English" : "Bangla"}`}
       title={t.lang.toggle}
     >
+      {/* Sliding active background */}
+      <span
+        aria-hidden
+        className={cn(
+          "absolute inset-y-0.5 left-0.5 w-[calc(50%-2px)] rounded-[10px] bg-primary",
+          "transition-transform duration-300 ease-out",
+          locale === "en" ? "translate-x-full" : "translate-x-0",
+        )}
+      />
       <span
         className={cn(
-          "px-2 py-0.5 text-[10px] font-medium transition-all duration-200",
-          locale === "bn"
-            ? "bg-p-ink text-(--p-bg)"
-            : "text-p-ink-3 hover:text-p-ink-2"
+          "relative z-10 text-center px-2 py-0.5 text-[10px] font-medium transition-colors duration-300 cursor-pointer",
+          locale === "bn" ? "text-white" : "text-foreground hover:text-reverse",
         )}
       >
         বাং
       </span>
       <span
         className={cn(
-          "px-2 py-0.5 text-[10px] font-medium transition-all duration-200",
-          locale === "en"
-            ? "bg-p-ink text-(--p-bg)"
-            : "text-p-ink-3 hover:text-p-ink-2"
+          "relative z-10 text-center px-2 py-0.5 text-[10px] font-medium transition-colors duration-300 cursor-pointer",
+          locale === "en" ? "text-white" : "text-foreground hover:text-reverse",
         )}
       >
         EN

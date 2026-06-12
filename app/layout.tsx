@@ -6,8 +6,17 @@ import {
   Instrument_Serif,
   Noto_Sans_Bengali,
   PT_Mono,
+  Hind_Siliguri,
 } from "next/font/google";
 import { ThemeProvider, LanguageProvider } from "@/components/providers";
+
+/* ── Primary site font — Hind Siliguri (Bengali + Latin) */
+const hindSiliguri = Hind_Siliguri({
+  subsets: ["bengali", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-hind",
+  display: "swap",
+});
 
 /* ── UI font — Elegant (closest to Google Sans) */
 const jakarta = Plus_Jakarta_Sans({
@@ -91,6 +100,7 @@ export default function RootLayout({
     <html
       lang="bn"
       className={[
+        hindSiliguri.variable,
         jakarta.variable,
         inter.variable,
         instrumentSerif.variable,

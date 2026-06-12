@@ -123,15 +123,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles: Record<Variant, string> = {
       default:
-        "bg-primary text-white border border-primary hover:bg-primary/90 hover:border-primary/90 dark:text-black",
+        "bg-primary text-white border border-primary hover:bg-primary/90 hover:border-primary/90",
 
-      secondary: "bg-secondary text-foreground border border-border hover:bg-secondary/80",
+      secondary:
+        "bg-secondary text-foreground border border-border hover:bg-secondary/80",
 
-      outline: "bg-background text-foreground border border-border hover:bg-muted",
+      outline:
+        "bg-background text-foreground border border-border hover:bg-muted",
 
       ghost: "bg-transparent text-foreground border-transparent hover:bg-muted",
 
-      destructive: "bg-destructive text-white border border-destructive hover:bg-destructive/90",
+      destructive:
+        "bg-destructive text-white border border-destructive hover:bg-destructive/90",
 
       success:
         "bg-green-600 text-white border border-green-600 hover:bg-green-700 hover:border-green-700",
@@ -276,7 +279,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {loading && (
           <>
             <LoaderIcon
-              className={cn("animate-spin shrink-0", size === "sm" ? "size-3.5" : "size-4")}
+              className={cn(
+                "animate-spin shrink-0",
+                size === "sm" ? "size-3.5" : "size-4",
+              )}
               aria-hidden="true"
             />
 
