@@ -1,48 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import { ArticleCard } from "@/components/blog/ArticleCard";
-import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/components/providers";
-import { articles, getLatestArticles } from "@/lib/data";
+import { getLatestArticles } from "@/lib/data";
 import Container from "@/components/layout/Container";
 
 export function LatestArticlesSection() {
   const { t } = useLanguage();
-  const latest = getLatestArticles(5).filter((a) => !a.featured);
+  const latest = getLatestArticles(8).filter((a) => !a.featured);
 
   return (
     <section className="pb-24" data-section>
       <Container>
-        {/* Section header */}
-        <div
-          data-section-label
-          className="flex items-center justify-between mb-8"
-        >
-          <div className="p-chapter flex-1">
-            <span>{t.home.latestLabel}</span>
-          </div>
-          <Link
-            href="/articles"
-            className="font-ui text-[0.75rem] text-p-ink-3 hover:text-p-green transition-colors duration-200 ml-5 shrink-0 flex items-center gap-1.5"
-          >
-            {t.home.seeAll}
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-              <path
-                d="M2 5h6M5.5 2L9 5l-3.5 3"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
-        </div>
-
         {/* Grid: 2 cards + sidebar */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {latest.slice(0, 4).map((article) => (
+        <div className=" gap-6">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {latest.slice(0, 6).map((article) => (
               <div key={article.slug} data-section-item>
                 <ArticleCard article={article} />
               </div>
@@ -50,7 +23,7 @@ export function LatestArticlesSection() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1">
+          {/* <div className="lg:col-span-1">
             <div
               className="sticky top-24 rounded-xl border border-p-rule bg-p-surface p-5"
               style={{ boxShadow: "var(--shadow-paper)" }}
@@ -75,7 +48,7 @@ export function LatestArticlesSection() {
                 </Button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </Container>
     </section>

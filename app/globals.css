@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   /* Fonts — Hind Siliguri site-wide (Bengali + Latin).

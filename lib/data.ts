@@ -5,7 +5,8 @@ export const categories: Category[] = [
     slug: "web-development",
     name: "ওয়েব ডেভেলপমেন্ট",
     nameEn: "Web Development",
-    description: "আধুনিক ওয়েব তৈরির কলাকৌশল, পারফরম্যান্স, এবং বেস্ট প্র্যাকটিস।",
+    description:
+      "আধুনিক ওয়েব তৈরির কলাকৌশল, পারফরম্যান্স, এবং বেস্ট প্র্যাকটিস।",
     count: 12,
     gradient: "from-emerald-500/20 to-teal-500/10",
   },
@@ -21,7 +22,8 @@ export const categories: Category[] = [
     slug: "nextjs",
     name: "Next.js",
     nameEn: "Next.js",
-    description: "App Router, Server Components, Streaming এবং আধুনিক Next.js প্যাটার্ন।",
+    description:
+      "App Router, Server Components, Streaming এবং আধুনিক Next.js প্যাটার্ন।",
     count: 7,
     gradient: "from-slate-500/20 to-gray-500/10",
   },
@@ -29,7 +31,8 @@ export const categories: Category[] = [
     slug: "typescript",
     name: "TypeScript",
     nameEn: "TypeScript",
-    description: "Type safety, advanced patterns, এবং টাইপস্ক্রিপ্টের সর্বোচ্চ ব্যবহার।",
+    description:
+      "Type safety, advanced patterns, এবং টাইপস্ক্রিপ্টের সর্বোচ্চ ব্যবহার।",
     count: 8,
     gradient: "from-blue-500/20 to-indigo-500/10",
   },
@@ -37,7 +40,8 @@ export const categories: Category[] = [
     slug: "open-source",
     name: "ওপেন সোর্স",
     nameEn: "Open Source",
-    description: "ওপেন সোর্সে অবদান, কমিউনিটি, এবং সফটওয়্যার শেয়ার করার অভিজ্ঞতা।",
+    description:
+      "ওপেন সোর্সে অবদান, কমিউনিটি, এবং সফটওয়্যার শেয়ার করার অভিজ্ঞতা।",
     count: 4,
     gradient: "from-purple-500/20 to-violet-500/10",
   },
@@ -45,7 +49,8 @@ export const categories: Category[] = [
     slug: "career",
     name: "ক্যারিয়ার",
     nameEn: "Career",
-    description: "ডেভেলপার হিসেবে বেড়ে ওঠা, লার্নিং প্যাথ, এবং প্রফেশনাল গ্রোথ।",
+    description:
+      "ডেভেলপার হিসেবে বেড়ে ওঠা, লার্নিং প্যাথ, এবং প্রফেশনাল গ্রোথ।",
     count: 6,
     gradient: "from-amber-500/20 to-orange-500/10",
   },
@@ -61,7 +66,8 @@ export const categories: Category[] = [
     slug: "ui-ux",
     name: "UI/UX",
     nameEn: "UI/UX",
-    description: "ডিজাইন সিস্টেম, ইউজার এক্সপেরিয়েন্স, এবং সুন্দর ইন্টারফেস তৈরি।",
+    description:
+      "ডিজাইন সিস্টেম, ইউজার এক্সপেরিয়েন্স, এবং সুন্দর ইন্টারফেস তৈরি।",
     count: 5,
     gradient: "from-fuchsia-500/20 to-pink-500/10",
   },
@@ -78,7 +84,8 @@ export const categories: Category[] = [
 export const articles: Article[] = [
   {
     slug: "nextjs-app-router-deep-dive",
-    title: "Next.js App Router-এর গভীরে: Server Components থেকে Streaming পর্যন্ত",
+    title:
+      "Next.js App Router-এর গভীরে: Server Components থেকে Streaming পর্যন্ত",
     titleEn: "Deep Dive into Next.js App Router",
     excerpt:
       "App Router শুধু একটা রাউটিং সিস্টেম নয়। এটা React-এর সার্ভার কম্পোনেন্ট আর্কিটেকচারের উপর নির্মিত একটা সম্পূর্ণ নতুন চিন্তার ধরন। আমি গত তিন মাস ধরে এটা নিয়ে কাজ করে যা শিখেছি তাই এখানে শেয়ার করছি।",
@@ -163,6 +170,20 @@ export const articles: Article[] = [
     coverGradient: "from-fuchsia-900 via-pink-800 to-rose-900",
     featured: false,
   },
+  {
+    slug: "developer-productivity-tools",
+    title: "২০২৬ সালে একজন Developer-এর Tool Stack: আমি কী ব্যবহার করি",
+    titleEn: "A Developer's Tool Stack in 2026: What I Use",
+    excerpt:
+      "VS Code extensions, terminal setup, এবং দৈনন্দিন workflow — একজন frontend developer হিসেবে আমার productivity বাড়াতে যে টুলগুলো সবচেয়ে বেশি কাজে লেগেছে তার সৎ পর্যালোচনা।",
+    category: "প্রোডাক্টিভিটি",
+    categorySlug: "productivity",
+    tags: ["Productivity", "VS Code", "Developer Tools", "Workflow"],
+    publishedAt: "2026-04-22",
+    readingTime: 6,
+    coverGradient: "from-lime-900 via-green-800 to-emerald-900",
+    featured: false,
+  },
 ];
 
 export const journalEntries: JournalEntry[] = [
@@ -218,12 +239,42 @@ export const series: Series[] = [
     gradient: "from-slate-800 to-slate-900",
     totalParts: 6,
     parts: [
-      { part: 1, title: "App Router পরিচিতি", slug: "nextjs-app-router-intro", published: true },
-      { part: 2, title: "Server vs Client Components", slug: "nextjs-server-client", published: true },
-      { part: 3, title: "Server Components থেকে Streaming পর্যন্ত", slug: "nextjs-app-router-deep-dive", published: true },
-      { part: 4, title: "Data Fetching Patterns", slug: "nextjs-data-fetching", published: false },
-      { part: 5, title: "Authentication & Authorization", slug: "nextjs-auth", published: false },
-      { part: 6, title: "Production Deployment", slug: "nextjs-production", published: false },
+      {
+        part: 1,
+        title: "App Router পরিচিতি",
+        slug: "nextjs-app-router-intro",
+        published: true,
+      },
+      {
+        part: 2,
+        title: "Server vs Client Components",
+        slug: "nextjs-server-client",
+        published: true,
+      },
+      {
+        part: 3,
+        title: "Server Components থেকে Streaming পর্যন্ত",
+        slug: "nextjs-app-router-deep-dive",
+        published: true,
+      },
+      {
+        part: 4,
+        title: "Data Fetching Patterns",
+        slug: "nextjs-data-fetching",
+        published: false,
+      },
+      {
+        part: 5,
+        title: "Authentication & Authorization",
+        slug: "nextjs-auth",
+        published: false,
+      },
+      {
+        part: 6,
+        title: "Production Deployment",
+        slug: "nextjs-production",
+        published: false,
+      },
     ],
   },
   {
@@ -235,11 +286,36 @@ export const series: Series[] = [
     gradient: "from-blue-800 to-indigo-900",
     totalParts: 5,
     parts: [
-      { part: 1, title: "Type System ভিত্তি", slug: "ts-foundations", published: true },
-      { part: 2, title: "Generics গভীরে", slug: "ts-generics", published: true },
-      { part: 3, title: "Utility Types অস্ত্রাগার", slug: "typescript-utility-types", published: true },
-      { part: 4, title: "Conditional Types", slug: "ts-conditional", published: false },
-      { part: 5, title: "Template Literal Types", slug: "ts-template-literals", published: false },
+      {
+        part: 1,
+        title: "Type System ভিত্তি",
+        slug: "ts-foundations",
+        published: true,
+      },
+      {
+        part: 2,
+        title: "Generics গভীরে",
+        slug: "ts-generics",
+        published: true,
+      },
+      {
+        part: 3,
+        title: "Utility Types অস্ত্রাগার",
+        slug: "typescript-utility-types",
+        published: true,
+      },
+      {
+        part: 4,
+        title: "Conditional Types",
+        slug: "ts-conditional",
+        published: false,
+      },
+      {
+        part: 5,
+        title: "Template Literal Types",
+        slug: "ts-template-literals",
+        published: false,
+      },
     ],
   },
 ];
@@ -248,7 +324,8 @@ export const projects: Project[] = [
   {
     slug: "devbook",
     name: "DevBook",
-    description: "এই ব্লগ সাইটটি নিজেই একটি প্রজেক্ট — Next.js, Tailwind CSS v4, এবং MDX দিয়ে তৈরি।",
+    description:
+      "এই ব্লগ সাইটটি নিজেই একটি প্রজেক্ট — Next.js, Tailwind CSS v4, এবং MDX দিয়ে তৈরি।",
     tech: ["Next.js", "TypeScript", "Tailwind CSS v4", "Framer Motion", "MDX"],
     github: "https://github.com",
     status: "active",
@@ -258,7 +335,8 @@ export const projects: Project[] = [
   {
     slug: "bangla-ui",
     name: "Bangla UI",
-    description: "বাংলা ভাষার জন্য অপ্টিমাইজড React component library — Bengali typography প্রথম।",
+    description:
+      "বাংলা ভাষার জন্য অপ্টিমাইজড React component library — Bengali typography প্রথম।",
     tech: ["React", "TypeScript", "Storybook", "Rollup"],
     github: "https://github.com",
     status: "wip",
@@ -268,7 +346,8 @@ export const projects: Project[] = [
   {
     slug: "type-safe-env",
     name: "type-safe-env",
-    description: "Environment variables-কে TypeScript দিয়ে validate এবং type-safe করার ছোট utility।",
+    description:
+      "Environment variables-কে TypeScript দিয়ে validate এবং type-safe করার ছোট utility।",
     tech: ["TypeScript", "Zod", "Node.js"],
     github: "https://github.com",
     status: "active",
@@ -291,7 +370,10 @@ export function getFeaturedArticle(): Article | undefined {
 
 export function getLatestArticles(count = 5): Article[] {
   return [...articles]
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
     .slice(0, count);
 }
 

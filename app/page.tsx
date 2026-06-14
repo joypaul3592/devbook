@@ -127,7 +127,6 @@ export default function HomePage() {
   return (
     <>
       <Header />
-
       <main ref={mainRef} id="main-content" className="flex-1">
         <HeroSection />
         <FeaturedSection />
@@ -137,7 +136,6 @@ export default function HomePage() {
         <SeriesSection />
         <NewsletterSection />
       </main>
-
       <Footer />
     </>
   );
