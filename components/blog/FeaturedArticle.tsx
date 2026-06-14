@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/Badge";
 import { formatDate } from "@/lib/data";
 import type { Article } from "@/lib/types";
 
@@ -13,59 +12,79 @@ export function FeaturedArticle({ article }: { article: Article }) {
     >
       <article
         className={cn(
-          "relative overflow-hidden rounded-2xl border border-p-rule",
-          "bg-p-surface transition-all duration-300",
-          "hover:border-p-green/35 hover:-translate-y-0.5"
+          "relative grid grid-cols-1 md:grid-cols-2 overflow-hidden",
+          "rounded-2xl border border-border bg-card",
+          "transition-all duration-300",
+          "hover:border-primary/40 hover:-translate-y-1 hover:shadow-lg",
         )}
-        style={{ boxShadow: "var(--shadow-paper)" }}
       >
-        {/* Cover gradient */}
+        {/* Cover */}
         <div
           className={cn(
-            "h-64 md:h-80 bg-linear-to-br relative",
-            article.coverGradient
+            "relative h-56 md:h-full min-h-[18rem] bg-linear-to-br",
+            article.coverGradient,
           )}
         >
-          <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent" />
+
+          {/* Featured stamp */}
+          <span className="absolute top-5 right-5 font-ui text-[10px] tracking-[0.14em] uppercase text-white/85 bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">
+            ফিচার্ড
+          </span>
 
           {article.series && (
-            <div className="absolute top-5 left-5">
-              <span className="font-ui text-xs text-white/90 bg-white/15 backdrop-blur-sm border border-white/20 px-3 py-1 rounded-full tracking-wide">
-                {article.series} · পর্ব {article.seriesPart}
-              </span>
-            </div>
+            <span className="absolute top-5 left-5 font-ui text-xs text-white/90 bg-white/15 backdrop-blur-sm border border-white/20 px-3 py-1 rounded-full tracking-wide">
+              {article.series} · পর্ব {article.seriesPart}
+            </span>
           )}
 
-          <div className="absolute top-5 right-5">
-            <span className="font-ui text-[10px] tracking-[0.14em] uppercase text-white/75 bg-black/25 backdrop-blur-sm px-2.5 py-1 rounded-full">
-              ফিচার্ড
-            </span>
-          </div>
-
           <div className="absolute bottom-5 left-5 flex items-center gap-3">
-            <Badge variant="accent" className="border-transparent bg-p-green/90 text-white">
+            <span className="font-ui text-xs text-white bg-primary px-2.5 py-1 rounded-full">
               {article.category}
-            </Badge>
-            <span className="font-ui text-[0.75rem] text-white/70">{article.readingTime} মিনিট পড়া</span>
+            </span>
+            <span className="font-ui text-xs text-white/80">
+              {article.readingTime} মিনিট পড়া
+            </span>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8">
-          <h2 className="font-serif text-[1.5rem] md:text-[1.75rem] text-p-ink leading-tight tracking-tight group-hover:text-p-green transition-colors duration-300 mb-3">
+        <div className="flex flex-col justify-center p-6 md:p-9">
+          <h2 className="font-serif text-2xl md:text-[1.875rem] font-medium text-foreground leading-tight tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
             {article.title}
           </h2>
 
-          <p className="font-bengali text-[0.9375rem] text-p-ink-3 leading-relaxed line-clamp-3 mb-5">
+          <p className="font-bengali text-[15px] text-muted-foreground leading-relaxed line-clamp-3 mb-6">
             {article.excerpt}
           </p>
 
-          <div className="flex items-center justify-between">
-            <span className="p-ts">{formatDate(article.publishedAt)}</span>
-            <span className="font-ui text-[0.75rem] text-p-green flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-200">
+          {article.tags?.length ? (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {article.tags.slice(0, 4).map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs text-foreground bg-muted border border-border px-2.5 py-0.5 rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : null}
+
+          <div className="flex items-center justify-between pt-5 border-t border-border">
+            <span className="font-ui text-xs text-muted-foreground tabular-nums">
+              {formatDate(article.publishedAt)}
+            </span>
+            <span className="font-ui text-[13px] font-medium text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-200">
               পড়ুন
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-                <path d="M1.5 5.5h8M6 2L9.5 5.5 6 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M1.5 5.5h8M6 2L9.5 5.5 6 9"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </span>
           </div>
