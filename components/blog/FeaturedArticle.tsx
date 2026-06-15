@@ -25,7 +25,7 @@ export function FeaturedArticle({ article }: { article: Article }) {
         {/* Cover */}
         <div
           className={cn(
-            "relative h-56 md:h-full min-h-72 col-span-3 p-1",
+            "relative h-58 md:h-full min-h-80 col-span-3 p-1",
             article.coverGradient,
           )}
         >
@@ -58,7 +58,7 @@ export function FeaturedArticle({ article }: { article: Article }) {
 
         {/* Content */}
         <div className="flex flex-col justify-center p-3 md:p-5 col-span-4">
-          <h2 className="font-serif text-xl md:text-2xl font-medium text-foreground leading-tight tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
+          <h2 className="font-serif text-xl md:text-3xl font-medium text-foreground leading-tight tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
             {article.title}
           </h2>
 

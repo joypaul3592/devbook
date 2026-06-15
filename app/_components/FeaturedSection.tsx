@@ -14,7 +14,7 @@ export function FeaturedSection() {
   return (
     <section className="py-20 md:py-10" data-section>
       <Container>
-        <div data-section-item className="px-20">
+        <div data-section-item className="">
           <FeaturedArticle article={featured} />
         </div>
       </Container>
