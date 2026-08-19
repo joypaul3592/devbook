@@ -124,6 +124,39 @@
 
   /* Utility */
   --color-reverse: var(--reverse);
+
+  /* ── Legacy `nb-*` palette ───────────────────────────────────────────────
+     Older markup styles itself with text-nb-text / bg-nb-accent / border-nb-border.
+     These map the old names onto the live theme so that markup keeps working
+     and follows dark mode. Prefer the plain tokens above in new code. */
+  --color-nb-text: var(--foreground);
+  --color-nb-muted: var(--muted-foreground);
+  --color-nb-subtle: color-mix(in srgb, var(--foreground) 45%, transparent);
+  --color-nb-border: var(--border);
+  --color-nb-border-2: color-mix(in srgb, var(--border) 60%, transparent);
+  --color-nb-surface: var(--card);
+  --color-nb-accent: var(--primary);
+  --color-nb-accent-2: var(--ring);
+}
+
+/* ── Legacy `--p-*` variables ──────────────────────────────────────────────
+   The old paper-theme tokens were never defined, so every rule using them was
+   silently dropped by the browser (that is why the 404 numerals rendered solid
+   black instead of a faint watermark). Aliased here onto the live theme. */
+:root {
+  --p-bg: var(--background);
+  --p-surface: var(--card);
+  --p-surface-2: var(--muted);
+  --p-ink: var(--foreground);
+  --p-ink-2: color-mix(in srgb, var(--foreground) 82%, transparent);
+  --p-ink-3: color-mix(in srgb, var(--foreground) 65%, transparent);
+  --p-ink-4: color-mix(in srgb, var(--foreground) 45%, transparent);
+  --p-rule: var(--border);
+  --p-rule-2: color-mix(in srgb, var(--border) 60%, transparent);
+  --p-green: var(--primary);
+  --p-indigo: var(--primary);
+  --p-code-bg: var(--muted);
+  --p-mark: color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 * {
@@ -710,4 +743,176 @@ a {
   font-weight: 400;
   user-select: none;
   pointer-events: none;
+}
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSITION HELPER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.ani2 {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DOC PROSE — long-form chapter content (uses the live theme tokens)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.doc-prose {
+  font-family: var(--font-bengali);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  color: color-mix(in srgb, var(--foreground) 82%, transparent);
+}
+
+.doc-prose > * + * {
+  margin-top: 1.4em;
+}
+
+.doc-prose h2,
+.doc-prose h3,
+.doc-prose h4 {
+  font-family: var(--font-serif);
+  color: var(--foreground);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  scroll-margin-top: 6rem;
+}
+
+.doc-prose h2 {
+  font-size: 1.65rem;
+  margin-top: 2.6em;
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+
+.doc-prose h3 {
+  font-size: 1.25rem;
+  margin-top: 2.2em;
+  margin-bottom: 0.1em;
+  font-weight: 600;
+}
+
+.doc-prose h4 {
+  font-size: 1.05rem;
+  margin-top: 1.8em;
+  font-weight: 600;
+}
+
+.doc-prose strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.doc-prose a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  transition: text-decoration-color 0.2s;
+}
+
+.doc-prose a:hover {
+  text-decoration-color: var(--primary);
+}
+
+.doc-prose ul,
+.doc-prose ol {
+  padding-left: 1.35rem;
+}
+
+.doc-prose ul {
+  list-style: disc;
+}
+
+.doc-prose ol {
+  list-style: decimal;
+}
+
+.doc-prose li {
+  margin-top: 0.4em;
+}
+
+.doc-prose li::marker {
+  color: color-mix(in srgb, var(--foreground) 40%, transparent);
+}
+
+.doc-prose blockquote {
+  border-left: 2px solid var(--primary);
+  padding: 0.25em 0 0.25em 1.35rem;
+  margin: 2em 0;
+  color: var(--muted-foreground);
+}
+
+.doc-prose code:not(pre code) {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.12em 0.42em;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.doc-prose pre {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  color: var(--foreground);
+  margin: 1.6em 0;
+  tab-size: 2;
+}
+
+.doc-prose pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  white-space: pre;
+}
+
+.doc-prose hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 3em 0;
+}
+
+/* Dialogue lines — "Joy:" / "Rony:" */
+.doc-line {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--muted) 60%, transparent);
+  border: 1px solid var(--border);
+}
+
+.doc-line-name {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Callout */
+.doc-note {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  background: color-mix(in srgb, var(--primary) 4%, transparent);
+  padding: 1rem 1.25rem;
+}
+
+.doc-note > * + * {
+  margin-top: 0.75em;
 }

@@ -60,8 +60,8 @@ export default function AboutPage() {
               </div>
 
               <div className="flex gap-3 mt-8">
-                <Button href="/articles" variant="primary">লেখা পড়ুন</Button>
-                <Button href="/contact" variant="secondary">যোগাযোগ</Button>
+                <Button href="/learn" variant="primary">শেখা শুরু করুন</Button>
+                <Button href="/" variant="secondary">হোম</Button>
               </div>
             </div>
           </FadeIn>

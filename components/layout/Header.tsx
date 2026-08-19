@@ -8,14 +8,10 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { useLanguage } from "@/components/providers";
 import Container from "./Container";
-import { SearchIcon } from "../icons/Icons";
 import { Button } from "../button/Button";
 
 const navHrefs = [
-  { href: "/articles", key: "articles" },
-  { href: "/journal", key: "journal" },
-  { href: "/series", key: "series" },
-  { href: "/projects", key: "projects" },
+  { href: "/learn", key: "learn" },
   { href: "/about", key: "about" },
 ] as const;
 
@@ -105,15 +101,6 @@ export function Header() {
             {/* Actions */}
             <div data-header-actions className="flex items-center gap-1.5">
               <LanguageToggle />
-              <Link href="/search" aria-label={t.nav.search}>
-                <Button
-                  variant="secondary"
-                  size="icon-sm"
-                  className="rounded-[11px]"
-                >
-                  <SearchIcon className="size-4" />
-                </Button>
-              </Link>
 
               <ThemeToggle />
 

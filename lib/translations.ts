@@ -4,6 +4,7 @@ export const translations = {
   bn: {
     // Navigation
     nav: {
+      learn:    "শেখা",
       articles: "লেখা",
       journal:  "জার্নাল",
       series:   "সিরিজ",
@@ -103,6 +104,28 @@ export const translations = {
       articles:    "টি লেখা",
       backToAll:   "← সব লেখা",
     },
+    // Learn / curriculum
+    learn: {
+      navLabel:     "শেখা",
+      eyebrow:      "প্রোডাকশন লেভেল",
+      title:        "Next.js-এর মানচিত্র",
+      desc:         "বাইশটি অধ্যায়ে production-level Next.js — architecture থেকে scale পর্যন্ত।",
+      chapters:     "অধ্যায়",
+      chapter:      "অধ্যায়",
+      topics:       "টপিক",
+      searchTopics: "টপিক খুঁজুন...",
+      noResults:    "কিছু পাওয়া যায়নি।",
+      soon:         "শীঘ্রই",
+      inThisChapter:"এই অধ্যায়ে যা আছে",
+      prev:         "আগের অধ্যায়",
+      next:         "পরের অধ্যায়",
+      onThisPage:   "এই পাতায়",
+      comingTitle:  "এই অধ্যায়টি এখনো লেখা হয়নি",
+      comingDesc:   "নিচের টপিকগুলো নিয়ে এই অধ্যায়টি শীঘ্রই আসছে।",
+      backToIndex:  "সব অধ্যায়",
+      menu:         "অধ্যায়সমূহ",
+      progress:     "প্রকাশিত",
+    },
     // Lang toggle
     lang: {
       toggle: "English",
@@ -117,6 +140,7 @@ export const translations = {
 
   en: {
     nav: {
+      learn:    "Learn",
       articles: "Articles",
       journal:  "Journal",
       series:   "Series",
@@ -209,6 +233,27 @@ export const translations = {
       soon:        "Coming soon",
       articles:    "articles",
       backToAll:   "← All articles",
+    },
+    learn: {
+      navLabel:     "Learn",
+      eyebrow:      "PRODUCTION LEVEL",
+      title:        "The Next.js Atlas",
+      desc:         "Production-level Next.js in twenty-two chapters — from architecture to scale.",
+      chapters:     "Chapters",
+      chapter:      "Chapter",
+      topics:       "topics",
+      searchTopics: "Search topics...",
+      noResults:    "Nothing found.",
+      soon:         "Soon",
+      inThisChapter:"In this chapter",
+      prev:         "Previous",
+      next:         "Next",
+      onThisPage:   "On this page",
+      comingTitle:  "This chapter is not written yet",
+      comingDesc:   "It is coming soon, and will cover the topics below.",
+      backToIndex:  "All chapters",
+      menu:         "Chapters",
+      progress:     "published",
     },
     lang: {
       toggle: "বাংলা",

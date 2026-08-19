@@ -3,17 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger, ease } from "@/lib/gsap";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import {
-  HeroSection,
-  FeaturedSection,
-  LatestArticlesSection,
-  CategoriesSection,
-  JournalSection,
-  SeriesSection,
-  NewsletterSection,
-} from "./_components";
+import { HeroSection } from "./_components";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -126,17 +116,9 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
       <main ref={mainRef} id="main-content" className="flex-1">
         <HeroSection />
-        <FeaturedSection />
-        <LatestArticlesSection />
-        <CategoriesSection />
-        <JournalSection />
-        <SeriesSection />
-        <NewsletterSection />
       </main>
-      <Footer />
     </>
   );
 }

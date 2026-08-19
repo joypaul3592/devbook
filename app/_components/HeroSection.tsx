@@ -2,12 +2,13 @@
 
 import { Button } from "@/components/button/Button";
 import { useLanguage } from "@/components/providers";
+import Link from "next/link";
 
 export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-12 md:py-24 max-w-6xl mx-auto text-center relative">
+    <section className="min-h-screen flex flex-col items-center justify-center py-12 md:py-24 max-w-6xl mx-auto text-center relative">
       {/* Eyebrow */}
       <div
         data-hero-eyebrow
@@ -52,9 +53,9 @@ export function HeroSection() {
       </div>
 
       {/* CTAs */}
-      <div data-hero-cta className="center z-10 relative  ">
+      <Link href="/learn" data-hero-cta className="center z-10 relative  ">
         <Button className="rounded-full">{t.home.readArticles}</Button>
-      </div>
+      </Link>
 
       <div
         className="

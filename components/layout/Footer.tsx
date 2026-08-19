@@ -22,29 +22,11 @@ export function Footer() {
   const columns = [
     {
       title: t.footer.sectionContent,
-      links: [
-        { href: "/articles", label: t.footer.articles },
-        { href: "/journal", label: t.footer.journal },
-        { href: "/series", label: t.footer.series },
-        { href: "/projects", label: t.footer.projects },
-      ],
+      links: [{ href: "/learn", label: t.nav.learn }],
     },
     {
       title: t.footer.sectionMore,
-      links: [
-        { href: "/about", label: t.footer.about },
-        { href: "/uses", label: t.footer.uses },
-        { href: "/projects", label: t.footer.projects },
-      ],
-    },
-    {
-      title: t.footer.sectionConnect,
-      links: [
-        { href: "/contact", label: t.footer.contactUs },
-        { href: "/privacy", label: t.footer.privacy },
-        { href: "/terms", label: t.footer.terms },
-        { href: "/sitemap", label: t.footer.sitemap },
-      ],
+      links: [{ href: "/about", label: t.footer.about }],
     },
   ];
 

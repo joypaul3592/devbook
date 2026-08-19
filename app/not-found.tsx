@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
@@ -11,7 +10,7 @@ export default function NotFound() {
       <main className="flex-1 flex flex-col items-center justify-center py-24 relative overflow-hidden min-h-[60vh]">
         {/* Giant Bengali 404 — purely decorative */}
         <div
-          className="error-404 absolute inset-0 flex items-center justify-center"
+          className="error-404 absolute inset-0 z-0 flex items-center justify-center"
           aria-hidden="true"
         >
           <span>৪</span>
@@ -32,7 +31,7 @@ export default function NotFound() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button href="/" variant="primary">হোমে ফিরুন</Button>
-            <Button href="/articles" variant="secondary">লেখা দেখুন</Button>
+            <Button href="/learn" variant="secondary">শেখা দেখুন</Button>
           </div>
         </div>
       </main>

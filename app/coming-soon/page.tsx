@@ -26,12 +26,12 @@ export default function ComingSoon() {
           >
             Back to home
           </Link>
-          <a
-            href="/contact"
+          <Link
+            href="/learn"
             className="rounded-full border px-4 py-2 text-xs font-semibold transition hover:-translate-y-0.5 text-reverse border-reverse/30 hover:border-reverse/60"
           >
-            Contact us
-          </a>
+            Start learning
+          </Link>
         </div>
 
         <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.35em] opacity-40 mt-5">
