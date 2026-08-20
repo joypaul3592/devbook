@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers";
 import { LearnSidebar } from "./LearnSidebar";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function LearnShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -32,6 +33,12 @@ export function LearnShell({ children }: { children: ReactNode }) {
 
       {/* ── Content ────────────────────────────────────────────────────── */}
       <div className="min-w-0 flex-1">{children}</div>
+
+      {/* ── Theme switch — pinned to the right edge of the viewport, above
+             the "on this page" rail, so it stays reachable while reading. */}
+      <div className="fixed top-4 right-4 xl:right-6 z-40">
+        <ThemeToggle />
+      </div>
 
       {/* ── Mobile trigger ─────────────────────────────────────────────── */}
       <button

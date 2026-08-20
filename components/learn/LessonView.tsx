@@ -183,7 +183,7 @@ export function LessonView({
       {/* ── On this page ─────────────────────────────────────────────── */}
       {headings.length > 0 && (
         <aside className="hidden xl:block w-76 shrink-0 border-l border-border">
-          <div className="sticky top-[var(--learn-top,0px)] max-h-[calc(100dvh-var(--learn-top,0px))] overflow-y-auto noBar px-7 py-10">
+          <div className="sticky top-[var(--learn-top,0px)] max-h-[calc(100dvh-var(--learn-top,0px))] overflow-y-auto noBar px-7 pt-16 pb-10">
             <LineNav
               title={t.learn.onThisPage}
               icon={null}

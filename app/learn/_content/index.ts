@@ -42,6 +42,66 @@ import FontScriptOptimization, {
 import ClientMemoryLeaks, {
   headings as memoryLeakHeadings,
 } from "./client-memory-leaks-edge-cases-in-spa-navigation";
+import CachingHierarchy, {
+  headings as cachingHierarchyHeadings,
+} from "./next-js-caching-hierarchy-request-flow";
+import UncachedByDefault, {
+  headings as uncachedByDefaultHeadings,
+} from "./next-js-16-uncached-by-default-shift-explicit-caching-with-use-cache";
+import RequestMemoization, {
+  headings as requestMemoizationHeadings,
+} from "./request-memoization-mechanics-deduplication-scope";
+import RevalidationRaceConditions, {
+  headings as revalidationRaceHeadings,
+} from "./time-based-vs-on-demand-revalidation-race-conditions";
+import TagBasedInvalidation, {
+  headings as tagBasedInvalidationHeadings,
+} from "./tag-based-cache-invalidation-architecture-revalidatetag-cachetag";
+import DynamicEscalation, {
+  headings as dynamicEscalationHeadings,
+} from "./dynamic-functions-escalation-cache-opt-out-bottlenecks";
+import SwrBehavior, {
+  headings as swrBehaviorHeadings,
+} from "./stale-while-revalidate-behavior-at-the-node-edge-server-layer";
+import RouterCacheStaleness, {
+  headings as routerCacheStalenessHeadings,
+} from "./router-cache-invalidation-client-side-navigation-stale-data";
+import ParallelDataFetching, {
+  headings as parallelDataFetchingHeadings,
+} from "./server-component-parallel-data-fetching-promise-all-bottlenecks";
+import CachePoisoning, {
+  headings as cachePoisoningHeadings,
+} from "./data-security-authorization-leak-in-cached-data-cache-poisoning";
+import UseServerBoundary, {
+  headings as useServerBoundaryHeadings,
+} from "./use-server-directives-boundary-closure-trap";
+import ServerActionSecurity, {
+  headings as serverActionSecurityHeadings,
+} from "./server-action-security-vectors-csrf-input-sanitization-unprotected-endpoints";
+import ZodUseActionState, {
+  headings as zodUseActionStateHeadings,
+} from "./form-validation-patterns-using-zod-useactionstate";
+import OptimisticUi, {
+  headings as optimisticUiHeadings,
+} from "./optimistic-ui-updates-with-useoptimistic-fallback-recovery";
+import ProgressiveEnhancement, {
+  headings as progressiveEnhancementHeadings,
+} from "./progressive-enhancement-form-submissions-without-javascript";
+import ProgrammaticActions, {
+  headings as programmaticActionsHeadings,
+} from "./programmatic-action-execution-calling-actions-outside-forms";
+import RevalidationDynamics, {
+  headings as revalidationDynamicsHeadings,
+} from "./cache-invalidation-revalidation-dynamics-revalidatepath-vs-revalidatetag";
+import TypedActionResults, {
+  headings as typedActionResultsHeadings,
+} from "./error-handling-typed-action-results-discriminated-unions-pattern";
+import FileUploadStreaming, {
+  headings as fileUploadStreamingHeadings,
+} from "./file-uploads-stream-handling-via-server-actions";
+import ServerActionSecurityPractices, {
+  headings as serverActionSecurityPracticesHeadings,
+} from "./security-best-practices-in-server-actions-csrf-rate-limiting-auth";
 
 export interface ChapterHeading {
   id: string;
@@ -188,5 +248,104 @@ export const lessonContent: Record<string, LessonContent> = {
           en: "Client Memory Leaks & Edge Cases in SPA Navigation",
         },
       },
+    },
+
+  // ── Chapter 02 — Data Fetching Architecture ──────────────────────────
+  // cover: ছবি পরে যোগ হবে, তাই এখন শুধু body আর headings।
+  "data-fetching-architecture/next-js-caching-hierarchy-request-flow": {
+    Body: CachingHierarchy,
+    headings: cachingHierarchyHeadings,
+  },
+  "data-fetching-architecture/next-js-16-uncached-by-default-shift-explicit-caching-with-use-cache":
+    {
+      Body: UncachedByDefault,
+      headings: uncachedByDefaultHeadings,
+    },
+  "data-fetching-architecture/request-memoization-mechanics-deduplication-scope":
+    {
+      Body: RequestMemoization,
+      headings: requestMemoizationHeadings,
+    },
+  "data-fetching-architecture/time-based-vs-on-demand-revalidation-race-conditions":
+    {
+      Body: RevalidationRaceConditions,
+      headings: revalidationRaceHeadings,
+    },
+  "data-fetching-architecture/tag-based-cache-invalidation-architecture-revalidatetag-cachetag":
+    {
+      Body: TagBasedInvalidation,
+      headings: tagBasedInvalidationHeadings,
+    },
+  "data-fetching-architecture/dynamic-functions-escalation-cache-opt-out-bottlenecks":
+    {
+      Body: DynamicEscalation,
+      headings: dynamicEscalationHeadings,
+    },
+  "data-fetching-architecture/stale-while-revalidate-behavior-at-the-node-edge-server-layer":
+    {
+      Body: SwrBehavior,
+      headings: swrBehaviorHeadings,
+    },
+  "data-fetching-architecture/router-cache-invalidation-client-side-navigation-stale-data":
+    {
+      Body: RouterCacheStaleness,
+      headings: routerCacheStalenessHeadings,
+    },
+  "data-fetching-architecture/server-component-parallel-data-fetching-promise-all-bottlenecks":
+    {
+      Body: ParallelDataFetching,
+      headings: parallelDataFetchingHeadings,
+    },
+  "data-fetching-architecture/data-security-authorization-leak-in-cached-data-cache-poisoning":
+    {
+      Body: CachePoisoning,
+      headings: cachePoisoningHeadings,
+    },
+
+  // ── Chapter 03 — Server Actions ──────────────────────────────────────
+  "server-actions/use-server-directives-boundary-closure-trap": {
+    Body: UseServerBoundary,
+    headings: useServerBoundaryHeadings,
+  },
+  "server-actions/server-action-security-vectors-csrf-input-sanitization-unprotected-endpoints":
+    {
+      Body: ServerActionSecurity,
+      headings: serverActionSecurityHeadings,
+    },
+  "server-actions/form-validation-patterns-using-zod-useactionstate": {
+    Body: ZodUseActionState,
+    headings: zodUseActionStateHeadings,
+  },
+  "server-actions/optimistic-ui-updates-with-useoptimistic-fallback-recovery": {
+    Body: OptimisticUi,
+    headings: optimisticUiHeadings,
+  },
+  "server-actions/progressive-enhancement-form-submissions-without-javascript":
+    {
+      Body: ProgressiveEnhancement,
+      headings: progressiveEnhancementHeadings,
+    },
+  "server-actions/programmatic-action-execution-calling-actions-outside-forms": {
+    Body: ProgrammaticActions,
+    headings: programmaticActionsHeadings,
+  },
+  "server-actions/cache-invalidation-revalidation-dynamics-revalidatepath-vs-revalidatetag":
+    {
+      Body: RevalidationDynamics,
+      headings: revalidationDynamicsHeadings,
+    },
+  "server-actions/error-handling-typed-action-results-discriminated-unions-pattern":
+    {
+      Body: TypedActionResults,
+      headings: typedActionResultsHeadings,
+    },
+  "server-actions/file-uploads-stream-handling-via-server-actions": {
+    Body: FileUploadStreaming,
+    headings: fileUploadStreamingHeadings,
+  },
+  "server-actions/security-best-practices-in-server-actions-csrf-rate-limiting-auth":
+    {
+      Body: ServerActionSecurityPractices,
+      headings: serverActionSecurityPracticesHeadings,
     },
 };

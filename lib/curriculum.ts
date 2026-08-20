@@ -54,6 +54,26 @@ const WRITTEN = new Set<string>([
   "nextjs-architecture-rendering/parallel-intercepting-routes-for-production-modal-architecture",
   "nextjs-architecture-rendering/next-js-font-script-optimization-next-font-next-script-strategy",
   "nextjs-architecture-rendering/client-memory-leaks-edge-cases-in-spa-navigation",
+  "data-fetching-architecture/next-js-caching-hierarchy-request-flow",
+  "data-fetching-architecture/next-js-16-uncached-by-default-shift-explicit-caching-with-use-cache",
+  "data-fetching-architecture/request-memoization-mechanics-deduplication-scope",
+  "data-fetching-architecture/time-based-vs-on-demand-revalidation-race-conditions",
+  "data-fetching-architecture/tag-based-cache-invalidation-architecture-revalidatetag-cachetag",
+  "data-fetching-architecture/dynamic-functions-escalation-cache-opt-out-bottlenecks",
+  "data-fetching-architecture/stale-while-revalidate-behavior-at-the-node-edge-server-layer",
+  "data-fetching-architecture/router-cache-invalidation-client-side-navigation-stale-data",
+  "data-fetching-architecture/server-component-parallel-data-fetching-promise-all-bottlenecks",
+  "data-fetching-architecture/data-security-authorization-leak-in-cached-data-cache-poisoning",
+  "server-actions/use-server-directives-boundary-closure-trap",
+  "server-actions/server-action-security-vectors-csrf-input-sanitization-unprotected-endpoints",
+  "server-actions/form-validation-patterns-using-zod-useactionstate",
+  "server-actions/optimistic-ui-updates-with-useoptimistic-fallback-recovery",
+  "server-actions/progressive-enhancement-form-submissions-without-javascript",
+  "server-actions/programmatic-action-execution-calling-actions-outside-forms",
+  "server-actions/cache-invalidation-revalidation-dynamics-revalidatepath-vs-revalidatetag",
+  "server-actions/error-handling-typed-action-results-discriminated-unions-pattern",
+  "server-actions/file-uploads-stream-handling-via-server-actions",
+  "server-actions/security-best-practices-in-server-actions-csrf-rate-limiting-auth",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -127,24 +147,50 @@ const raw: RawChapter[] = [
       en: "Data Fetching Architecture",
     },
     summary: {
-      bn: "এই API data কতক্ষণ cache থাকবে আর কখন invalidate হবে — উত্তর দিতে পারা।",
-      en: "Answering: how long is this data cached, and when does it invalidate?",
+      bn: "চার লেয়ারের cache, Next.js 16-এর uncached-by-default, আর কখন কীভাবে invalidate হয়।",
+      en: "Four cache layers, Next.js 16's uncached-by-default shift, and when invalidation actually fires.",
     },
     topics: [
-      { bn: "Server-side data fetching", en: "Server-side data fetching" },
-      { bn: "Client-side data fetching", en: "Client-side data fetching" },
-      { bn: "Server Component-এ fetch()", en: "fetch() in Server Components" },
-      { bn: "Request memoization", en: "Request memoization" },
-      { bn: "Data Cache", en: "Data Cache" },
-      { bn: "Full Route Cache", en: "Full Route Cache" },
-      { bn: "Router Cache", en: "Router Cache" },
-      { bn: "Cache hierarchy", en: "Cache hierarchy" },
-      { bn: "Time-based revalidation", en: "Time-based revalidation" },
-      { bn: "On-demand revalidation", en: "On-demand revalidation" },
-      { bn: "revalidatePath() / revalidateTag()", en: "revalidatePath() / revalidateTag()" },
-      { bn: "Cache tags ও invalidation", en: "Cache tags & invalidation" },
-      { bn: "Dynamic functions — cookies(), headers()", en: "Dynamic functions — cookies(), headers()" },
-      { bn: "Dynamic rendering-এর সাথে cache interaction", en: "Cache interaction with dynamic rendering" },
+      {
+        bn: "Next.js ক্যাশ হায়ারার্কি ও রিকোয়েস্ট ফ্লো",
+        en: "Next.js Caching Hierarchy & Request Flow",
+      },
+      {
+        bn: "Next.js 16-এর Uncached-by-Default শিফট ও 'use cache' দিয়ে এক্সপ্লিসিট ক্যাশিং",
+        en: "Next.js 16 Uncached-by-Default Shift & Explicit Caching with 'use cache'",
+      },
+      {
+        bn: "Request Memoization মেকানিক্স ও ডিডুপ্লিকেশন স্কোপ",
+        en: "Request Memoization Mechanics & Deduplication Scope",
+      },
+      {
+        bn: "Time-based বনাম On-demand রিভ্যালিডেশন ও রেস কন্ডিশন",
+        en: "Time-based vs On-demand Revalidation Race Conditions",
+      },
+      {
+        bn: "Tag-based ক্যাশ ইনভ্যালিডেশন আর্কিটেকচার (revalidateTag ও cacheTag)",
+        en: "Tag-based Cache Invalidation Architecture (revalidateTag & cacheTag)",
+      },
+      {
+        bn: "Dynamic Function এসকেলেশন ও ক্যাশ Opt-out বটলনেক",
+        en: "Dynamic Functions Escalation & Cache Opt-out Bottlenecks",
+      },
+      {
+        bn: "Node/Edge সার্ভার লেয়ারে Stale-While-Revalidate বিহেভিয়ার",
+        en: "Stale-While-Revalidate Behavior at the Node/Edge Server Layer",
+      },
+      {
+        bn: "Router Cache ইনভ্যালিডেশন ও ক্লায়েন্ট নেভিগেশনে স্টেল ডেটা",
+        en: "Router Cache Invalidation & Client-Side Navigation Stale Data",
+      },
+      {
+        bn: "Server Component-এ Parallel ডেটা ফেচিং ও Promise.all বটলনেক",
+        en: "Server Component Parallel Data Fetching & Promise.all Bottlenecks",
+      },
+      {
+        bn: "ক্যাশড ডেটায় সিকিউরিটি ও অথরাইজেশন লিক (Cache Poisoning)",
+        en: "Data Security & Authorization Leak in Cached Data (Cache Poisoning)",
+      },
     ],
   },
   {
@@ -156,18 +202,46 @@ const raw: RawChapter[] = [
       en: "The full path from form to database — and back to the UI.",
     },
     topics: [
-      { bn: "Server Actions ও \"use server\"", en: 'Server Actions & "use server"' },
-      { bn: "Form Actions", en: "Form Actions" },
-      { bn: "Server-side mutation", en: "Server-side mutation" },
-      { bn: "Form validation", en: "Form validation" },
-      { bn: "Progressive enhancement", en: "Progressive enhancement" },
-      { bn: "useActionState", en: "useActionState" },
-      { bn: "useFormStatus", en: "useFormStatus" },
-      { bn: "Error handling", en: "Error handling" },
-      { bn: "Server Action-এ authentication", en: "Authentication inside Server Actions" },
-      { bn: "Authorization ও security", en: "Authorization & security" },
-      { bn: "Mutation-এর পরে revalidation", en: "Revalidation after mutation" },
-      { bn: "Optimistic UI", en: "Optimistic UI" },
+      {
+        bn: "\"use server\" ডিরেক্টিভ বাউন্ডারি ও Closure ট্র্যাপ",
+        en: '"use server" Directives Boundary & Closure Trap',
+      },
+      {
+        bn: "Server Action সিকিউরিটি ভেক্টর: CSRF, ইনপুট স্যানিটাইজেশন ও আনপ্রোটেক্টেড এন্ডপয়েন্ট",
+        en: "Server Action Security Vectors: CSRF, Input Sanitization & Unprotected Endpoints",
+      },
+      {
+        bn: "Zod ও useActionState দিয়ে ফর্ম ভ্যালিডেশন প্যাটার্ন",
+        en: "Form Validation Patterns using Zod & useActionState",
+      },
+      {
+        bn: "useOptimistic দিয়ে Optimistic UI ও Fallback Recovery",
+        en: "Optimistic UI Updates with useOptimistic & Fallback Recovery",
+      },
+      {
+        bn: "Progressive Enhancement: JavaScript ছাড়া ফর্ম সাবমিশন",
+        en: "Progressive Enhancement: Form Submissions Without JavaScript",
+      },
+      {
+        bn: "Programmatic Action এক্সিকিউশন: ফর্মের বাইরে অ্যাকশন কল",
+        en: "Programmatic Action Execution: Calling Actions Outside Forms",
+      },
+      {
+        bn: "ক্যাশ ইনভ্যালিডেশন ও রিভ্যালিডেশন ডায়নামিক্স (revalidatePath বনাম revalidateTag)",
+        en: "Cache Invalidation & Revalidation Dynamics (revalidatePath vs revalidateTag)",
+      },
+      {
+        bn: "এরর হ্যান্ডলিং ও টাইপড Action Result (Discriminated Unions প্যাটার্ন)",
+        en: "Error Handling & Typed Action Results (Discriminated Unions Pattern)",
+      },
+      {
+        bn: "Server Action দিয়ে ফাইল আপলোড ও Stream হ্যান্ডলিং",
+        en: "File Uploads & Stream Handling via Server Actions",
+      },
+      {
+        bn: "Server Action-এ সিকিউরিটি বেস্ট প্র্যাকটিস (CSRF, Rate Limiting ও Auth)",
+        en: "Security Best Practices in Server Actions (CSRF, Rate Limiting & Auth)",
+      },
     ],
   },
   {

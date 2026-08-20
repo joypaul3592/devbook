@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger, ease } from "@/lib/gsap";
 import { HeroSection } from "./_components";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -116,6 +117,12 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Theme switch — the home page carries no header, so the control
+          sits on its own in the top-right corner, matching /learn. */}
+      <div className="fixed top-4 right-4 sm:right-6 z-40">
+        <ThemeToggle />
+      </div>
+
       <main ref={mainRef} id="main-content" className="flex-1">
         <HeroSection />
       </main>

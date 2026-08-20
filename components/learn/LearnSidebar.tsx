@@ -253,6 +253,7 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
           })}
         </ul>
       </nav>
+
     </div>
   );
 }
