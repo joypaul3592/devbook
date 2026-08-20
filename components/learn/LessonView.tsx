@@ -1,49 +1,40 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers";
 import { bi, getLesson, getLessonNeighbours } from "@/lib/curriculum";
-import type { ChapterHeading } from "@/app/learn/_content";
+import type { ChapterHeading, LessonCover } from "@/app/learn/_content";
+import { LineNav } from "@/components/ui/LineNav";
+import {
+  lessonId,
+  useLearnProgress,
+  useVisitLesson,
+} from "@/lib/learn-progress";
 
 export function LessonView({
   chapterSlug,
   topicSlug,
   headings,
+  cover,
   children,
 }: {
   chapterSlug: string;
   topicSlug: string;
   headings: ChapterHeading[];
+  cover?: LessonCover;
   children: ReactNode;
 }) {
   const { t, locale } = useLanguage();
   const lesson = getLesson(chapterSlug, topicSlug);
   const { prev, next } = getLessonNeighbours(chapterSlug, topicSlug);
-  const [activeId, setActiveId] = useState<string>(headings[0]?.id ?? "");
+  const id = lessonId(chapterSlug, topicSlug);
+  const { ready, isDone, toggleDone } = useLearnProgress();
+  const read = ready && isDone(id);
 
-  /* Highlight the heading currently near the top of the viewport */
-  useEffect(() => {
-    if (headings.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) setActiveId(visible[0].target.id);
-      },
-      { rootMargin: "-80px 0px -70% 0px", threshold: 0 },
-    );
-
-    headings.forEach((h) => {
-      const el = document.getElementById(h.id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [headings]);
+  useVisitLesson(id);
 
   if (!lesson) return null;
 
@@ -74,10 +65,63 @@ export function LessonView({
             )}
           </header>
 
+          {/* Cover image, when the lesson ships one */}
+          {cover && (
+            <figure className="-mt-3 mb-9 overflow-hidden rounded-2xl border border-border bg-muted">
+              <Image
+                src={cover.src}
+                alt={bi(cover.alt, locale)}
+                width={cover.width}
+                height={cover.height}
+                priority
+                sizes="(min-width: 1024px) 48rem, 100vw"
+                className="w-full h-auto"
+              />
+            </figure>
+          )}
+
           {children}
 
+          {/* Mark the lesson finished — this is what drives the atlas progress */}
+          <div className="mt-14 flex justify-center">
+            <button
+              type="button"
+              onClick={() => toggleDone(id)}
+              aria-pressed={read}
+              className={cn(
+                "group inline-flex items-center gap-2.5 h-11 pl-3.5 pr-5 rounded-full border text-[13.5px] font-medium ani2",
+                read
+                  ? "border-primary/45 bg-primary/8 text-primary"
+                  : "border-border text-muted-foreground hover:border-primary/45 hover:text-foreground",
+              )}
+            >
+              <span
+                className={cn(
+                  "size-5 center rounded-full border ani2",
+                  read
+                    ? "bg-primary border-primary text-primary-foreground"
+                    : "border-muted-foreground/45 group-hover:border-primary",
+                )}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={cn("size-3 ani2", read ? "opacity-100" : "opacity-25")}
+                  aria-hidden
+                >
+                  <path d="m5 13 4 4L19 7" />
+                </svg>
+              </span>
+              {read ? t.learn.markUndone : t.learn.markDone}
+            </button>
+          </div>
+
           {/* Prev / next lesson */}
-          <nav className="mt-16 pt-8 border-t border-border grid gap-3 sm:grid-cols-2">
+          <nav className="mt-10 pt-8 border-t border-border grid gap-3 sm:grid-cols-2">
             {prev ? (
               <Link
                 href={`/learn/${prev.chapter.slug}/${prev.topic.slug}`}
@@ -113,28 +157,18 @@ export function LessonView({
 
       {/* ── On this page ─────────────────────────────────────────────── */}
       {headings.length > 0 && (
-        <aside className="hidden xl:block w-64 shrink-0 border-l border-border">
-          <div className="sticky top-[var(--learn-top,0px)] max-h-[calc(100dvh-var(--learn-top,0px))] overflow-y-auto noBar px-5 py-10">
-            <p className="font-ui text-[10px] tracking-[0.18em] uppercase text-muted-foreground mb-3">
-              {t.learn.onThisPage}
-            </p>
-            <ul className="space-y-1 border-l border-border">
-              {headings.map((h) => (
-                <li key={h.id}>
-                  <a
-                    href={`#${h.id}`}
-                    className={cn(
-                      "block -ml-px pl-3 border-l text-[12.5px] leading-5 py-1 ani2",
-                      activeId === h.id
-                        ? "border-primary text-primary"
-                        : "border-transparent text-muted-foreground hover:text-foreground",
-                    )}
-                  >
-                    {bi(h.label, locale)}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <aside className="hidden xl:block w-76 shrink-0 border-l border-border">
+          <div className="sticky top-[var(--learn-top,0px)] max-h-[calc(100dvh-var(--learn-top,0px))] overflow-y-auto noBar px-7 py-10">
+            <LineNav
+              title={t.learn.onThisPage}
+              icon={null}
+              indicator="segment"
+              rowHeight={44}
+              items={headings.map((h) => ({
+                id: h.id,
+                label: bi(h.label, locale),
+              }))}
+            />
           </div>
         </aside>
       )}

@@ -60,8 +60,8 @@ const raw: RawChapter[] = [
     no: "01",
     slug: "nextjs-architecture-rendering",
     title: {
-      bn: "Next.js আর্কিটেকচার ও রেন্ডারিং ফাউন্ডেশন",
-      en: "Next.js Architecture & Rendering Fundamentals",
+      bn: "আর্কিটেকচার ও রেন্ডারিং",
+      en: "Architecture & Rendering",
     },
     summary: {
       bn: "কোন component কোথায় render হবে সেটা architecture level-এ decide করা।",
@@ -162,7 +162,7 @@ const raw: RawChapter[] = [
   {
     no: "05",
     slug: "middleware-proxy",
-    title: { bn: "মিডলওয়্যার ও প্রক্সি আর্কিটেকচার", en: "Middleware / Proxy Architecture" },
+    title: { bn: "মিডলওয়্যার ও প্রক্সি", en: "Middleware & Proxy" },
     summary: {
       bn: "Next.js-এর request lifecycle বোঝা।",
       en: "Understanding the Next.js request lifecycle.",
@@ -450,7 +450,7 @@ const raw: RawChapter[] = [
   {
     no: "19",
     slug: "code-organization",
-    title: { bn: "আর্কিটেকচার ও কোড অর্গানাইজেশন", en: "Architecture & Code Organization" },
+    title: { bn: "কোড অর্গানাইজেশন", en: "Code Organization" },
     summary: {
       bn: "Feature-based structure, boundaries আর monorepo।",
       en: "Feature-based structure, boundaries, and monorepos.",
@@ -473,7 +473,7 @@ const raw: RawChapter[] = [
   {
     no: "20",
     slug: "advanced-react",
-    title: { bn: "অ্যাডভান্সড রিঅ্যাক্ট", en: "Advanced React Topics" },
+    title: { bn: "অ্যাডভান্সড রিঅ্যাক্ট", en: "Advanced React" },
     summary: {
       bn: "Next.js-এর নিচে যে React টা চলছে।",
       en: "The React that runs underneath Next.js.",

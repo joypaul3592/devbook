@@ -9,9 +9,18 @@ export interface ChapterHeading {
   label: Bi;
 }
 
+export interface LessonCover {
+  src: string;
+  alt: Bi;
+  width: number;
+  height: number;
+}
+
 export interface LessonContent {
   Body: ComponentType;
   headings: ChapterHeading[];
+  /** Optional image shown between the lesson header and its first paragraph. */
+  cover?: LessonCover;
 }
 
 /**
@@ -23,5 +32,14 @@ export const lessonContent: Record<string, LessonContent> = {
   "nextjs-architecture-rendering/app-router-architecture": {
     Body: AppRouterArchitecture,
     headings: appRouterHeadings,
+    cover: {
+      src: "/blogs-images/topic1.png",
+      alt: {
+        bn: "App Router আর্কিটেকচার",
+        en: "App Router architecture",
+      },
+      width: 1693,
+      height: 929,
+    },
   },
 };

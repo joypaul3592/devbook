@@ -38,6 +38,7 @@ export default async function LessonPage({ params }: { params: Params }) {
       chapterSlug={chapter}
       topicSlug={topic}
       headings={entry?.headings ?? []}
+      cover={entry?.cover}
     >
       {entry ? (
         <entry.Body />

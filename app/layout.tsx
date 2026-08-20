@@ -4,7 +4,7 @@ import {
   Inter,
   Plus_Jakarta_Sans,
   Instrument_Serif,
-  Noto_Sans_Bengali,
+  Noto_Serif_Bengali,
   PT_Mono,
   Hind_Siliguri,
 } from "next/font/google";
@@ -42,11 +42,11 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-/* ── Bengali — Noto Sans Bengali */
-const notoSansBengali = Noto_Sans_Bengali({
+/* ── Bengali serif — the Bengali half of the heading pair */
+const notoSerifBengali = Noto_Serif_Bengali({
   subsets: ["bengali"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-bengali-var",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bengali-serif",
   display: "swap",
 });
 
@@ -104,7 +104,7 @@ export default function RootLayout({
         jakarta.variable,
         inter.variable,
         instrumentSerif.variable,
-        notoSansBengali.variable,
+        notoSerifBengali.variable,
         ptMono.variable,
       ].join(" ")}
       suppressHydrationWarning
