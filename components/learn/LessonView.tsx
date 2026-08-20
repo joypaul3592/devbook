@@ -88,11 +88,12 @@ export function LessonView({
           {/* Cover image, when the lesson ships one */}
           {cover && (
             <figure className="-mt-3 mb-9 overflow-hidden rounded-2xl border border-border bg-muted">
+              {/* Statically imported, so width, height and the blur
+                  placeholder all come from the file itself */}
               <Image
                 src={cover.src}
                 alt={bi(cover.alt, locale)}
-                width={cover.width}
-                height={cover.height}
+                placeholder="blur"
                 priority
                 sizes="(min-width: 1024px) 48rem, 100vw"
                 className="w-full h-auto"
