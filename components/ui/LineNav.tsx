@@ -33,6 +33,10 @@ interface LineNavProps {
 }
 
 const ROW_HEIGHT = 32;
+/** px of scroll between two sections that both clamp to the end of the page. */
+const TAIL_GAP = 48;
+/** Slack for the fractional scrollY browsers report on scaled displays. */
+const SCROLL_EPSILON = 2;
 const DOT_X = [4, 16] as const; // px, indexed by depth
 const TEXT_INDENT = 14; // px gap from a row's dot to its label
 const INDICATOR_SPRING = {
@@ -70,30 +74,58 @@ function useScrollSpy(ids: string[], offset: number) {
   const key = ids.join("|");
 
   useEffect(() => {
-    const elements = ids
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => el !== null);
+    // Keep each element paired with its index in `ids`. Dropping the misses and
+    // renumbering would shift every item after a missing heading by one, so the
+    // wrong label lights up and the last one never can.
+    const found = ids
+      .map((id, index) => ({ index, el: document.getElementById(id) }))
+      .filter((e): e is { index: number; el: HTMLElement } => e.el !== null);
 
-    if (elements.length === 0) return;
+    if (found.length === 0) return;
+
+    if (process.env.NODE_ENV !== "production" && found.length !== ids.length) {
+      const missing = ids.filter((id) => !document.getElementById(id));
+      console.warn(
+        `LineNav: no element on the page for ${missing
+          .map((id) => `#${id}`)
+          .join(", ")} — the section is listed but never rendered.`,
+      );
+    }
 
     let ticking = false;
 
     const recalc = () => {
       ticking = false;
       const scrollY = window.scrollY;
-      const tops = elements.map((el) => el.getBoundingClientRect().top + scrollY - offset);
+      const maxScroll = Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight,
+      );
 
-      // The last section whose top we've scrolled past.
-      let index = 0;
-      for (let i = 0; i < tops.length; i++) {
-        if (scrollY >= tops[i]) index = i;
+      // Each section activates once its top passes the offset line.
+      const tops = found.map(
+        ({ el }) => el.getBoundingClientRect().top + scrollY - offset,
+      );
+
+      // Trailing sections usually sit too close to the end of the page for their
+      // top to ever reach that line, so the final item would never light up and
+      // whichever section came before it would stay stuck as "active". Walking
+      // backwards caps each one at what the page can actually scroll to, keeping
+      // a gap between them so they still activate in order rather than all at
+      // once on the last pixel. The cap starts one gap short of the very end so
+      // reaching the final item does not depend on hitting that pixel exactly.
+      for (let i = tops.length - 1, cap = maxScroll - TAIL_GAP; i >= 0; i--) {
+        if (tops[i] > cap) tops[i] = cap;
+        cap = tops[i] - TAIL_GAP;
       }
 
-      // Short last sections can end well before the viewport bottom — snap to it
-      // once there's no more page left to scroll, instead of leaving an earlier
-      // item stuck as "active".
-      const atBottom = scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
-      if (atBottom) index = tops.length - 1;
+      // The last section whose top we've scrolled past. Compared with a little
+      // slack because scrollY is fractional on scaled displays and can settle a
+      // hair below the arithmetic maximum, which would strand the final item.
+      let index = 0;
+      for (let i = 0; i < tops.length; i++) {
+        if (scrollY + SCROLL_EPSILON >= tops[i]) index = i;
+      }
 
       let progress = 0;
       if (index < tops.length - 1) {
@@ -101,10 +133,13 @@ function useScrollSpy(ids: string[], offset: number) {
         progress = span > 0 ? Math.min(1, Math.max(0, (scrollY - tops[index]) / span)) : 0;
       }
 
+      // Back to an index into `ids`, which is what the rendered rows use.
+      const activeIndex = found[index].index;
+
       setState((prev) =>
-        prev.activeIndex === index && prev.progress === progress
+        prev.activeIndex === activeIndex && prev.progress === progress
           ? prev
-          : { activeIndex: index, progress },
+          : { activeIndex, progress },
       );
     };
 
@@ -219,14 +254,17 @@ export function LineNav({
       ? currentLength + (nextLength - currentLength) * progress
       : currentLength;
 
-  // Center a one-row window on the active position, clamped so it never runs
-  // past either end of the line. `dashStart` is where the highlight begins, in
-  // path-length units — so its center (`dashStart + segmentLength/2`) lands on
-  // the active row's dot, keeping the segment aligned with the bolded label.
-  const dashStart = Math.max(
-    0,
-    Math.min(targetLength - segmentLength / 2, totalLength - segmentLength),
-  );
+  // Center a one-row window on the active position. `dashStart` is where the
+  // highlight begins, in path-length units, so its center lands on the active
+  // row's dot and stays aligned with the bolded label.
+  //
+  // Deliberately NOT clamped to the line's ends. The path runs from the first
+  // row's dot to the last row's, so clamping the window inside it would leave
+  // the first and last rows permanently half a row short — the final item could
+  // never be highlighted at all. Letting the window overhang is safe: SVG
+  // simply stops painting where the path ends, which reads as a half-length
+  // segment sitting correctly on the end row.
+  const dashStart = targetLength - segmentLength / 2;
 
   // The dash pattern must be longer than the whole path so exactly ONE dash is
   // ever drawn. With gap = totalLength the pattern's period is only a hair

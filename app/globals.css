@@ -3,23 +3,26 @@
 
 
 :root {
-  /* Fonts — each stack pairs a Latin face with a Bengali one.
-     CSS resolves font-family per character, so Latin glyphs come from the
-     first font and Bengali codepoints (which it does not carry) fall through
-     to the second. Order matters: Latin first, Bengali second.
+  /* Fonts — one Latin face and one Bengali face, for the whole site.
+
+     Google Sans Flex has no Bengali coverage, so CSS resolves font-family per
+     character: Latin comes from Google Sans Flex, Bengali codepoints fall
+     through to Anek Bangla. Anek is loaded with size-adjust and ascent/descent
+     overrides (see app/layout.tsx) so the two scripts share one visual size and
+     one line box. Order matters: Latin first, Bengali second.
      The --font-* variables are injected on <html> by next/font. */
 
-  /* UI chrome — Plus Jakarta Sans + Hind Siliguri */
-  --font-ui: var(--font-jakarta), var(--font-hind), "Hind Siliguri", sans-serif;
+  /* UI chrome */
+  --font-ui: var(--font-gsans), var(--font-anek), "Anek Bangla", sans-serif;
 
-  /* Body / prose — Inter + Hind Siliguri */
-  --font-bengali: var(--font-inter), var(--font-hind), "Hind Siliguri", sans-serif;
+  /* Body / prose */
+  --font-bengali: var(--font-gsans), var(--font-anek), "Anek Bangla", sans-serif;
 
-  /* Editorial headings — Instrument Serif + Noto Serif Bengali */
-  --font-serif: var(--font-serif-var), var(--font-bengali-serif), "Hind Siliguri", serif;
+  /* Headings — the same pair, differentiated by weight rather than by family */
+  --font-serif: var(--font-gsans), var(--font-anek), "Anek Bangla", sans-serif;
 
-  /* Code — PT Mono, with Hind Siliguri for any Bengali inside a code block */
-  --font-mono: var(--font-pt-mono), var(--font-hind), ui-monospace, monospace;
+  /* Code — PT Mono, with Anek Bangla for any Bengali inside a code block */
+  --font-mono: var(--font-pt-mono), var(--font-anek), ui-monospace, monospace;
 
   /* Base */
   --background: #ffffff;
@@ -335,7 +338,6 @@ a {
 
 .font-serif {
   font-family: var(--font-serif);
-  font-synthesis-weight: none;
 }
 
 .font-ui {
@@ -364,9 +366,8 @@ a {
 .p-prose h3,
 .p-prose h4 {
   font-family: var(--font-serif);
-  font-synthesis-weight: none;
   color: var(--p-ink);
-  line-height: 1.25;
+  line-height: 1.4;
   letter-spacing: -0.025em;
   margin-top: 2.25em;
   margin-bottom: 0.75em;
@@ -750,7 +751,6 @@ a {
 
 .error-404 {
   font-family: var(--font-serif);
-  font-synthesis-weight: none;
   font-size: clamp(80px, 18vw, 260px);
   letter-spacing: -0.06em;
   color: color-mix(in srgb, var(--p-ink) 6%, transparent);
@@ -787,31 +787,31 @@ a {
 .doc-prose h3,
 .doc-prose h4 {
   font-family: var(--font-serif);
-  font-synthesis-weight: none;
   color: var(--foreground);
-  line-height: 1.35;
+  /* Bengali ascenders + descenders span ~1.87em, so headings need the room */
+  line-height: 1.5;
   letter-spacing: -0.02em;
   scroll-margin-top: 6rem;
 }
 
 .doc-prose h2 {
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   margin-top: 2.6em;
-  margin-bottom: 0.2em;
-  font-weight: 600;
+  margin-bottom: 0.35em;
+  font-weight: 700;
 }
 
 .doc-prose h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-top: 2.2em;
-  margin-bottom: 0.1em;
-  font-weight: 600;
+  margin-bottom: 0.25em;
+  font-weight: 700;
 }
 
 .doc-prose h4 {
   font-size: 1.05rem;
   margin-top: 1.8em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .doc-prose strong {
@@ -833,11 +833,11 @@ a {
 
 .doc-prose ul,
 .doc-prose ol {
-  padding-left: 1.35rem;
+  padding-left: 1.7rem;
 }
 
 .doc-prose ul {
-  list-style: disc;
+  list-style: circle;
 }
 
 .doc-prose ol {
@@ -845,7 +845,8 @@ a {
 }
 
 .doc-prose li {
-  margin-top: 0.4em;
+  margin-top: 0.75em;
+  padding-left: 0.35rem;
 }
 
 .doc-prose li::marker {
@@ -860,17 +861,20 @@ a {
 }
 
 .doc-prose code:not(pre code) {
-  background: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.12em 0.42em;
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.16em 0.42em;
+  margin: 0 0.08em;
   font-family: var(--font-mono);
-  font-size: 0.85em;
-  color: var(--primary);
+  font-size: 0.82em;
+  color: color-mix(in srgb, var(--foreground) 92%, transparent);
   white-space: nowrap;
 }
 
-.doc-prose pre {
+/* Bare <pre> written straight into prose. Code samples use .code-block
+   instead, so they are excluded here rather than fighting specificity. */
+.doc-prose pre:not(.code-pre) {
   background: var(--muted);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -884,7 +888,7 @@ a {
   tab-size: 2;
 }
 
-.doc-prose pre code {
+.doc-prose pre:not(.code-pre) code {
   background: none;
   border: 0;
   padding: 0;
@@ -893,34 +897,46 @@ a {
   white-space: pre;
 }
 
+/* A heading that exists only as a scroll anchor — visually gone, but still in
+   the document so the table of contents can measure it and assistive tech can
+   still announce the section. Kept in flow (absolute with no offsets resolves
+   to its static position) so its measured top is the real one. */
+.doc-prose h2.doc-anchor-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* It occupies no space, so whatever follows should not be spaced off it */
+.doc-prose h2.doc-anchor-only + * {
+  margin-top: 0;
+}
+
 .doc-prose hr {
   border: 0;
   border-top: 1px solid var(--border);
   margin: 3em 0;
 }
 
-/* Dialogue lines — "Joy:" / "Rony:" — plain text, no box */
+/* Dialogue lines — the speaker's name runs inline, in bold, then the line */
 .doc-line {
-  display: flex;
-  gap: 0.7rem;
-  align-items: baseline;
   padding-left: 0.1rem;
 }
 
-/* A back-and-forth exchange sits closer together than normal paragraphs */
-.doc-prose .doc-line + .doc-line {
-  margin-top: 0.5em;
+.doc-line-name {
+  font-weight: 700;
+  color: var(--foreground);
 }
 
-.doc-line-name {
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--primary);
-  flex-shrink: 0;
-  min-width: 2.6rem;
+.doc-line-name::after {
+  content: ":";
+  margin-right: 0.3em;
 }
 
 /* Callout */
@@ -934,4 +950,199 @@ a {
 
 .doc-note > * + * {
   margin-top: 0.75em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CODE BLOCK — an outer chrome panel wrapping an inner code surface
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Outer panel — carries the label and the actions */
+  --code-shell: #f4f5f7;
+  --code-shell-edge: #e6e8ec;
+  /* Inner surface — carries the code itself */
+  --code-bg: #ffffff;
+  --code-edge: #e6e8ec;
+  --code-fg: #1f2328;
+  --code-label: #4b5563;
+  --code-action: #8b919d;
+
+  --tk-comment: #7d8590;
+  --tk-string: #0a6b47;
+  --tk-keyword: #b8256f;
+  --tk-literal: #0550ae;
+  --tk-number: #0550ae;
+  --tk-func: #7c3aed;
+  --tk-tag: #146c43;
+  --tk-attr: #9a5b00;
+  --tk-type: #b45309;
+  --tk-prop: #1f2328;
+  --tk-punct: #6b7280;
+}
+
+.dark {
+  --code-shell: #17181c;
+  --code-shell-edge: #24262c;
+  --code-bg: #0d0e12;
+  --code-edge: #24262c;
+  --code-fg: #e6e8ee;
+  --code-label: #a6adb9;
+  --code-action: #767d89;
+
+  --tk-comment: #8b929e;
+  --tk-string: #8fe3bd;
+  --tk-keyword: #ff87b8;
+  --tk-literal: #8ecbff;
+  --tk-number: #8ecbff;
+  --tk-func: #cbb2ff;
+  --tk-tag: #7ddba7;
+  --tk-attr: #ffc98a;
+  --tk-type: #ffb787;
+  --tk-prop: #e6e8ee;
+  --tk-punct: #98a0ad;
+}
+
+/* One padding value drives the whole panel, so every gap stays equal */
+.code-block {
+  --code-pad: 0.75rem;
+
+  margin: 2.2em 0;
+  padding: var(--code-pad);
+  border: 1px solid var(--code-shell-edge);
+  border-radius: 16px;
+  background: var(--code-shell);
+}
+
+/* ── Bar: language label + actions ─────────────────────────────────────── */
+
+.code-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  /* Optically centred against the inner surface below it */
+  padding: 0.15rem 0.35rem 0.7rem 0.65rem;
+}
+
+.code-label {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--code-label);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.code-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
+  margin: -0.35rem 0;
+}
+
+.code-action {
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--code-action);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.code-action svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.code-action:hover {
+  color: var(--code-fg);
+  background: var(--code-bg);
+}
+
+.code-action[data-copied] {
+  color: var(--success);
+}
+
+/* ── Inner surface: the code itself ────────────────────────────────────── */
+
+.code-scroll {
+  overflow-x: auto;
+  padding: 1.05rem 1.25rem;
+  border: 1px solid var(--code-edge);
+  border-radius: 11px;
+  background: var(--code-bg);
+}
+
+.doc-prose .code-pre {
+  display: block;
+  margin: 0;
+  padding: 0;
+  min-width: max-content;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 2;
+  color: var(--code-fg);
+  tab-size: 2;
+}
+
+.doc-prose .code-pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  white-space: pre;
+}
+
+/* A diagram has no bar, so the shell collapses to a single surface */
+.code-block--diagram {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.code-block--diagram .code-scroll {
+  padding: 1.35rem 1.5rem;
+  border-radius: 16px;
+  border-color: var(--code-shell-edge);
+  background: var(--code-shell);
+}
+
+.code-block--diagram .code-pre {
+  color: color-mix(in srgb, var(--code-fg) 82%, transparent);
+  line-height: 1.85;
+}
+
+/* ── Tokens ────────────────────────────────────────────────────────────── */
+
+.tk-comment { color: var(--tk-comment); font-style: italic; }
+.tk-string  { color: var(--tk-string); }
+.tk-keyword { color: var(--tk-keyword); }
+.tk-literal { color: var(--tk-literal); }
+.tk-number  { color: var(--tk-number); }
+.tk-func    { color: var(--tk-func); }
+.tk-tag     { color: var(--tk-tag); }
+.tk-attr    { color: var(--tk-attr); }
+.tk-type    { color: var(--tk-type); }
+.tk-prop    { color: var(--tk-prop); }
+.tk-punct   { color: var(--tk-punct); }
+
+@media (max-width: 640px) {
+  .code-block { --code-pad: 0.5rem; border-radius: 14px; }
+  .code-bar { padding: 0.1rem 0.2rem 0.6rem 0.5rem; }
+  .code-scroll { padding: 0.9rem 1rem; }
+  .doc-prose .code-pre { font-size: 0.75rem; }
 }

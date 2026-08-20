@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { CodeBlock, Diagram } from "./CodeBlock";
 
-/** A spoken line — "Joy: ..." / "Rony: ..." */
+export { CodeBlock, Diagram };
+
+/** A spoken line — the name renders inline in bold, followed by the dialogue. */
 export function Line({
   name,
   children,
@@ -10,21 +13,15 @@ export function Line({
   children: ReactNode;
 }) {
   return (
-    <div className="doc-line">
-      <span className="doc-line-name">{name}</span>
-      <span className="min-w-0">{children}</span>
-    </div>
+    <p className="doc-line">
+      <strong className="doc-line-name">{name}</strong>
+      {children}
+    </p>
   );
 }
 
-/** A monospace diagram / tree / code block. */
-export function Code({ children }: { children: string }) {
-  return (
-    <pre>
-      <code>{children}</code>
-    </pre>
-  );
-}
+/** A code sample in its own panel. Kept as `Code` so older bodies keep working. */
+export const Code = CodeBlock;
 
 /** A highlighted takeaway box. */
 export function Note({
@@ -37,7 +34,34 @@ export function Note({
   return <div className={cn("doc-note", className)}>{children}</div>;
 }
 
-/** Section heading with an emoji marker, used as an anchor target. */
-export function H2({ id, children }: { id: string; children: ReactNode }) {
-  return <h2 id={id}>{children}</h2>;
+/**
+ * Sub-heading inside a section. Not an anchor — the "on this page" rail only
+ * lists H2s, so use this for the steps or cases within one section.
+ */
+export function H3({ children }: { children: ReactNode }) {
+  return <h3>{children}</h3>;
+}
+
+/**
+ * Section heading, and the anchor the "on this page" rail scrolls to.
+ *
+ * `anchorOnly` hides it visually while leaving it in the document. Use it for a
+ * lesson's opening section, whose heading would only repeat the page title —
+ * deleting the heading instead would take its anchor with it, and the rail
+ * would have nothing to measure or scroll to.
+ */
+export function H2({
+  id,
+  children,
+  anchorOnly = false,
+}: {
+  id: string;
+  children: ReactNode;
+  anchorOnly?: boolean;
+}) {
+  return (
+    <h2 id={id} className={anchorOnly ? "doc-anchor-only" : undefined}>
+      {children}
+    </h2>
+  );
 }

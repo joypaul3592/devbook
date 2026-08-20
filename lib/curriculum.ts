@@ -44,7 +44,16 @@ interface RawChapter {
  * components into the client bundle.
  */
 const WRITTEN = new Set<string>([
-  "nextjs-architecture-rendering/app-router-architecture",
+  "nextjs-architecture-rendering/rsc-payload-mechanics-network-overhead",
+  "nextjs-architecture-rendering/server-to-client-boundary-leakage-server-only-enforcement",
+  "nextjs-architecture-rendering/hydration-bottlenecks-mismatch-debugging-ssr-mechanics",
+  "nextjs-architecture-rendering/bundle-size-bloat-tree-shaking-pitfalls",
+  "nextjs-architecture-rendering/image-asset-optimization-mechanics-next-image-internals",
+  "nextjs-architecture-rendering/nested-layouts-vs-templates-client-state-retention",
+  "nextjs-architecture-rendering/streaming-ssr-with-suspense-architecture",
+  "nextjs-architecture-rendering/parallel-intercepting-routes-for-production-modal-architecture",
+  "nextjs-architecture-rendering/next-js-font-script-optimization-next-font-next-script-strategy",
+  "nextjs-architecture-rendering/client-memory-leaks-edge-cases-in-spa-navigation",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -60,29 +69,54 @@ const raw: RawChapter[] = [
     no: "01",
     slug: "nextjs-architecture-rendering",
     title: {
-      bn: "আর্কিটেকচার ও রেন্ডারিং",
-      en: "Architecture & Rendering",
+      bn: "Next.js ফ্রন্টএন্ড আর্কিটেকচার",
+      en: "Next.js Frontend Architecture",
     },
     summary: {
-      bn: "কোন component কোথায় render হবে সেটা architecture level-এ decide করা।",
-      en: "Deciding where every component renders — at the architecture level.",
+      bn: "RSC payload, boundary, hydration আর bundle — production frontend-এর ভেতরের মেকানিক্স।",
+      en: "RSC payload, boundaries, hydration, and bundles — the mechanics behind a production frontend.",
     },
     topics: [
-      { bn: "App Router আর্কিটেকচার", en: "App Router architecture" },
-      { bn: "React Server Components (RSC)", en: "React Server Components (RSC)" },
-      { bn: "Client Components", en: "Client Components" },
-      { bn: "Server vs Client Components", en: "Server vs Client Components" },
-      { bn: '"use client" — কখন ও কেন', en: '"use client" — when and why' },
-      { bn: "Server → Client boundary", en: "Server → Client boundary" },
-      { bn: "Client → Server communication", en: "Client → Server communication" },
-      { bn: "RSC Payload", en: "RSC Payload" },
-      { bn: "Server rendering lifecycle", en: "Server rendering lifecycle" },
-      { bn: "Static Rendering", en: "Static Rendering" },
-      { bn: "Dynamic Rendering", en: "Dynamic Rendering" },
-      { bn: "Streaming SSR", en: "Streaming SSR" },
-      { bn: "Partial Prerendering (PPR)", en: "Partial Prerendering (PPR)" },
-      { bn: "Hydration ও hydration mismatch", en: "Hydration & hydration mismatch" },
-      { bn: "Server-only / Client-only code", en: "Server-only / Client-only code" },
+      {
+        bn: "RSC Payload মেকানিক্স ও নেটওয়ার্ক ওভারহেড",
+        en: "RSC Payload Mechanics & Network Overhead",
+      },
+      {
+        bn: "Server-to-Client বাউন্ডারি লিকেজ ও server-only এনফোর্সমেন্ট",
+        en: "Server-to-Client Boundary Leakage & server-only Enforcement",
+      },
+      {
+        bn: "Hydration বটলনেক, Mismatch ডিবাগিং ও SSR মেকানিক্স",
+        en: "Hydration Bottlenecks, Mismatch Debugging & SSR Mechanics",
+      },
+      {
+        bn: "Bundle Size ব্লোট ও Tree-Shaking পিটফল",
+        en: "Bundle Size Bloat & Tree-Shaking Pitfalls",
+      },
+      {
+        bn: "Image ও Asset অপটিমাইজেশন মেকানিক্স (next/image ইন্টার্নাল)",
+        en: "Image & Asset Optimization Mechanics (next/image Internals)",
+      },
+      {
+        bn: "Nested Layouts বনাম Templates ও ক্লায়েন্ট স্টেট রিটেনশন",
+        en: "Nested Layouts vs Templates & Client State Retention",
+      },
+      {
+        bn: "Suspense আর্কিটেকচার দিয়ে Streaming SSR",
+        en: "Streaming SSR with Suspense Architecture",
+      },
+      {
+        bn: "প্রোডাকশন Modal আর্কিটেকচারে Parallel ও Intercepting Routes",
+        en: "Parallel & Intercepting Routes for Production Modal Architecture",
+      },
+      {
+        bn: "Next.js Font ও Script অপটিমাইজেশন (next/font ও next/script স্ট্র্যাটেজি)",
+        en: "Next.js Font & Script Optimization (next/font & next/script Strategy)",
+      },
+      {
+        bn: "ক্লায়েন্ট মেমরি লিক ও SPA নেভিগেশনের এজ কেস",
+        en: "Client Memory Leaks & Edge Cases in SPA Navigation",
+      },
     ],
   },
   {

@@ -14,6 +14,21 @@ import {
   useVisitLesson,
 } from "@/lib/learn-progress";
 
+/**
+ * One horizontal band of the article column.
+ *
+ * The gutter lives here rather than on the column so that a rule drawn on the
+ * column runs edge to edge, while the text it separates stays centred at
+ * reading width.
+ */
+function Band({ children }: { children: ReactNode }) {
+  return (
+    <div className="px-5 sm:px-10 xl:px-14">
+      <div className="max-w-3xl mx-auto">{children}</div>
+    </div>
+  );
+}
+
 export function LessonView({
   chapterSlug,
   topicSlug,
@@ -43,28 +58,33 @@ export function LessonView({
   return (
     <div className="flex">
       {/* ── Article column ───────────────────────────────────────────── */}
-      <div className="min-w-0 flex-1 px-5 sm:px-10 xl:px-14 py-10 pb-28 lg:pb-20">
-        <div className="max-w-3xl">
-          <header className="pb-7 mb-9 border-b border-border">
-            {/* Which chapter this lesson sits in */}
-            <p className="flex items-center gap-2 text-[12.5px] text-muted-foreground">
-              <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-muted tabular-nums">
-                {chapter.no}
-              </span>
-              {bi(chapter.title, locale)}
-            </p>
+      <div className="min-w-0 flex-1 pt-10 pb-16 lg:pb-10">
+        {/* The rule spans the whole column; only the content inside is centred */}
+        <div className="pb-7 mb-9 border-b border-border">
+          <Band>
+            <header>
+              {/* Which chapter this lesson sits in */}
+              <p className="flex items-center gap-2 text-[12.5px] text-muted-foreground">
+                <span className="font-mono text-[11px] px-1.5 py-0.5 rounded bg-muted tabular-nums">
+                  {chapter.no}
+                </span>
+                {bi(chapter.title, locale)}
+              </p>
 
-            <h1 className="mt-3 font-serif text-3xl md:text-[2.5rem] leading-[1.15] text-foreground font-medium">
-              {bi(topic.title, locale)}
-            </h1>
+              <h1 className="mt-3 font-serif text-3xl md:text-[2.5rem] leading-[1.15] text-foreground font-medium">
+                {bi(topic.title, locale)}
+              </h1>
 
-            {!topic.published && (
-              <span className="mt-4 inline-block text-[11px] px-2 py-0.5 rounded-full border border-border text-muted-foreground">
-                {t.learn.soon}
-              </span>
-            )}
-          </header>
+              {!topic.published && (
+                <span className="mt-4 inline-block text-[11px] px-2 py-0.5 rounded-full border border-border text-muted-foreground">
+                  {t.learn.soon}
+                </span>
+              )}
+            </header>
+          </Band>
+        </div>
 
+        <Band>
           {/* Cover image, when the lesson ships one */}
           {cover && (
             <figure className="-mt-3 mb-9 overflow-hidden rounded-2xl border border-border bg-muted">
@@ -119,39 +139,43 @@ export function LessonView({
               {read ? t.learn.markUndone : t.learn.markDone}
             </button>
           </div>
+        </Band>
 
-          {/* Prev / next lesson */}
-          <nav className="mt-10 pt-8 border-t border-border grid gap-3 sm:grid-cols-2">
-            {prev ? (
-              <Link
-                href={`/learn/${prev.chapter.slug}/${prev.topic.slug}`}
-                className="group rounded-xl border border-border p-4 hover:border-primary/40 hover:bg-muted/40 ani2"
-              >
-                <span className="block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  ← {t.learn.prev}
-                </span>
-                <span className="mt-1.5 block text-sm text-foreground group-hover:text-primary ani2">
-                  {bi(prev.topic.title, locale)}
-                </span>
-              </Link>
-            ) : (
-              <span />
-            )}
+        {/* Prev / next lesson — same full-width rule as the header */}
+        <div className="mt-10 pt-8 border-t border-border">
+          <Band>
+            <nav className="grid gap-3 sm:grid-cols-2">
+              {prev ? (
+                <Link
+                  href={`/learn/${prev.chapter.slug}/${prev.topic.slug}`}
+                  className="group rounded-xl border border-border p-4 hover:border-primary/40 hover:bg-muted/40 ani2"
+                >
+                  <span className="block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    ← {t.learn.prev}
+                  </span>
+                  <span className="mt-1.5 block text-sm text-foreground group-hover:text-primary ani2">
+                    {bi(prev.topic.title, locale)}
+                  </span>
+                </Link>
+              ) : (
+                <span />
+              )}
 
-            {next && (
-              <Link
-                href={`/learn/${next.chapter.slug}/${next.topic.slug}`}
-                className="group rounded-xl border border-border p-4 text-right hover:border-primary/40 hover:bg-muted/40 ani2 sm:col-start-2"
-              >
-                <span className="block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  {t.learn.next} →
-                </span>
-                <span className="mt-1.5 block text-sm text-foreground group-hover:text-primary ani2">
-                  {bi(next.topic.title, locale)}
-                </span>
-              </Link>
-            )}
-          </nav>
+              {next && (
+                <Link
+                  href={`/learn/${next.chapter.slug}/${next.topic.slug}`}
+                  className="group rounded-xl border border-border p-4 text-right hover:border-primary/40 hover:bg-muted/40 ani2 sm:col-start-2"
+                >
+                  <span className="block font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    {t.learn.next} →
+                  </span>
+                  <span className="mt-1.5 block text-sm text-foreground group-hover:text-primary ani2">
+                    {bi(next.topic.title, locale)}
+                  </span>
+                </Link>
+              )}
+            </nav>
+          </Band>
         </div>
       </div>
 
