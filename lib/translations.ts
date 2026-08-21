@@ -109,7 +109,7 @@ export const translations = {
       navLabel:     "শেখা",
       eyebrow:      "প্রোডাকশন লেভেল",
       title:        "Next.js-এর মানচিত্র",
-      desc:         "বাইশটি অধ্যায়ে production-level Next.js — architecture থেকে scale পর্যন্ত।",
+      desc:         "তেইশটি অধ্যায়ে production-level Next.js — architecture থেকে scale পর্যন্ত।",
       chapters:     "অধ্যায়",
       chapter:      "অধ্যায়",
       topics:       "টপিক",
@@ -138,6 +138,8 @@ export const translations = {
       markDone:     "সম্পন্ন হিসেবে চিহ্নিত করো",
       markUndone:   "সম্পন্ন চিহ্ন সরাও",
       resetProgress:"অগ্রগতি মুছে ফেলো",
+      chapterMap:   "অধ্যায় মানচিত্র",
+      recentlyAdded:"সদ্য লেখা হয়েছে",
     },
     // Lang toggle
     lang: {
@@ -251,7 +253,7 @@ export const translations = {
       navLabel:     "Learn",
       eyebrow:      "PRODUCTION LEVEL",
       title:        "The Next.js Atlas",
-      desc:         "Production-level Next.js in twenty-two chapters — from architecture to scale.",
+      desc:         "Production-level Next.js in twenty-three chapters — from architecture to scale.",
       chapters:     "Chapters",
       chapter:      "Chapter",
       topics:       "topics",
@@ -280,6 +282,8 @@ export const translations = {
       markDone:     "Mark as done",
       markUndone:   "Mark as unread",
       resetProgress:"Reset progress",
+      chapterMap:   "Chapter map",
+      recentlyAdded:"Recently written",
     },
     lang: {
       toggle: "বাংলা",

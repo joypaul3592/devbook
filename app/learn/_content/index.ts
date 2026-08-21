@@ -12,6 +12,66 @@ import parallelInterceptingRoutesCover from "@/public/blogs-images/parallel-inte
 import nextJsFontCover from "@/public/blogs-images/next-js-font-script-optimization-next-font-next-script-strategy.png";
 import clientMemoryLeaksCover from "@/public/blogs-images/client-memory-leaks-edge-cases-in-spa-navigation.png";
 import type { Bi } from "@/lib/curriculum";
+import FourTierCaching, {
+  headings as fourTierCachingHeadings,
+} from "./the-4-tier-caching-architecture-revalidation-lifecycles";
+import RequestMemoizationReactCache, {
+  headings as requestMemoizationReactCacheHeadings,
+} from "./request-memoization-react-cache-function";
+import DataCacheFetchStrategies, {
+  headings as dataCacheFetchStrategiesHeadings,
+} from "./data-cache-fetch-strategies-force-cache-vs-no-store-unstable-cache";
+import FullRouteCacheVsDynamic, {
+  headings as fullRouteCacheVsDynamicHeadings,
+} from "./full-route-cache-vs-dynamic-rendering-static-vs-dynamic-routes";
+import ClientRouterCache, {
+  headings as clientRouterCacheHeadings,
+} from "./client-side-router-cache-mechanism-in-memory-prefetching-invalidation";
+import RevalidationStrategies, {
+  headings as revalidationStrategiesHeadings,
+} from "./revalidation-strategies-time-based-isr-vs-on-demand-revalidatepath-revalidatetag";
+import CoreWebVitalsAssets, {
+  headings as coreWebVitalsAssetsHeadings,
+} from "./core-web-vitals-asset-optimization-next-image-next-font-next-script";
+import DynamicImportsCodeSplitting, {
+  headings as dynamicImportsCodeSplittingHeadings,
+} from "./dynamic-imports-code-splitting-next-dynamic-vs-react-lazy-suspense";
+import BundleAnalysisAuditing, {
+  headings as bundleAnalysisAuditingHeadings,
+} from "./bundle-analysis-performance-auditing-next-bundle-analyzer-lighthouse-core-web-vitals";
+import PartialPrerendering, {
+  headings as partialPrerenderingHeadings,
+} from "./partial-prerendering-ppr-hybrid-rendering-architecture";
+import RouteGroups, {
+  headings as routeGroupsHeadings,
+} from "./route-groups-folder-layout-isolation";
+import DynamicAndCatchAllRoutes, {
+  headings as dynamicAndCatchAllRoutesHeadings,
+} from "./dynamic-routes-catch-all-optional-catch-all-segments";
+import ParallelRoutes, {
+  headings as parallelRoutesHeadings,
+} from "./parallel-routes-slot-conditional-rendering";
+import InterceptingRoutes, {
+  headings as interceptingRoutesHeadings,
+} from "./intercepting-routes";
+import PhotoModalPattern, {
+  headings as photoModalPatternHeadings,
+} from "./parallel-intercepting-routes-the-photo-modal-pattern";
+import ServerActionsAndMutations, {
+  headings as serverActionsAndMutationsHeadings,
+} from "./server-actions-mutations-useactionstate-useformstatus-optimistic-updates";
+import ServerActionSecurityLayers, {
+  headings as serverActionSecurityLayersHeadings,
+} from "./security-input-validation-error-handling-cache-revalidation-in-server-actions";
+import FileUploadSecurity, {
+  headings as fileUploadSecurityHeadings,
+} from "./file-upload-security-magic-byte-inspection-in-server-actions";
+import RateLimiting, {
+  headings as rateLimitingHeadings,
+} from "./rate-limiting-ddos-protection-with-upstash-redis";
+import MiddlewareSecurityGuards, {
+  headings as middlewareSecurityGuardsHeadings,
+} from "./advanced-middleware-security-guards-security-headers-bot-detection-custom-shielding";
 import RscPayloadMechanics, {
   headings as rscPayloadHeadings,
 } from "./rsc-payload-mechanics-network-overhead";
@@ -347,5 +407,101 @@ export const lessonContent: Record<string, LessonContent> = {
     {
       Body: ServerActionSecurityPractices,
       headings: serverActionSecurityPracticesHeadings,
+    },
+
+  // ── Chapter 04 — Caching & Performance ───────────────────────────────
+  "caching-performance/the-4-tier-caching-architecture-revalidation-lifecycles":
+    {
+      Body: FourTierCaching,
+      headings: fourTierCachingHeadings,
+    },
+  "caching-performance/request-memoization-react-cache-function": {
+    Body: RequestMemoizationReactCache,
+    headings: requestMemoizationReactCacheHeadings,
+  },
+  "caching-performance/data-cache-fetch-strategies-force-cache-vs-no-store-unstable-cache":
+    {
+      Body: DataCacheFetchStrategies,
+      headings: dataCacheFetchStrategiesHeadings,
+    },
+  "caching-performance/full-route-cache-vs-dynamic-rendering-static-vs-dynamic-routes":
+    {
+      Body: FullRouteCacheVsDynamic,
+      headings: fullRouteCacheVsDynamicHeadings,
+    },
+  "caching-performance/client-side-router-cache-mechanism-in-memory-prefetching-invalidation":
+    {
+      Body: ClientRouterCache,
+      headings: clientRouterCacheHeadings,
+    },
+  "caching-performance/revalidation-strategies-time-based-isr-vs-on-demand-revalidatepath-revalidatetag":
+    {
+      Body: RevalidationStrategies,
+      headings: revalidationStrategiesHeadings,
+    },
+  "caching-performance/core-web-vitals-asset-optimization-next-image-next-font-next-script":
+    {
+      Body: CoreWebVitalsAssets,
+      headings: coreWebVitalsAssetsHeadings,
+    },
+  "caching-performance/dynamic-imports-code-splitting-next-dynamic-vs-react-lazy-suspense":
+    {
+      Body: DynamicImportsCodeSplitting,
+      headings: dynamicImportsCodeSplittingHeadings,
+    },
+  "caching-performance/bundle-analysis-performance-auditing-next-bundle-analyzer-lighthouse-core-web-vitals":
+    {
+      Body: BundleAnalysisAuditing,
+      headings: bundleAnalysisAuditingHeadings,
+    },
+  "caching-performance/partial-prerendering-ppr-hybrid-rendering-architecture": {
+    Body: PartialPrerendering,
+    headings: partialPrerenderingHeadings,
+  },
+
+  // ── Chapter 05 — Advanced Routing & Server Actions ───────────────────
+  "routing-architecture/route-groups-folder-layout-isolation": {
+    Body: RouteGroups,
+    headings: routeGroupsHeadings,
+  },
+  "routing-architecture/dynamic-routes-catch-all-optional-catch-all-segments": {
+    Body: DynamicAndCatchAllRoutes,
+    headings: dynamicAndCatchAllRoutesHeadings,
+  },
+  "routing-architecture/parallel-routes-slot-conditional-rendering": {
+    Body: ParallelRoutes,
+    headings: parallelRoutesHeadings,
+  },
+  "routing-architecture/intercepting-routes": {
+    Body: InterceptingRoutes,
+    headings: interceptingRoutesHeadings,
+  },
+  "routing-architecture/parallel-intercepting-routes-the-photo-modal-pattern": {
+    Body: PhotoModalPattern,
+    headings: photoModalPatternHeadings,
+  },
+  "routing-architecture/server-actions-mutations-useactionstate-useformstatus-optimistic-updates":
+    {
+      Body: ServerActionsAndMutations,
+      headings: serverActionsAndMutationsHeadings,
+    },
+  "routing-architecture/security-input-validation-error-handling-cache-revalidation-in-server-actions":
+    {
+      Body: ServerActionSecurityLayers,
+      headings: serverActionSecurityLayersHeadings,
+    },
+  "routing-architecture/file-upload-security-magic-byte-inspection-in-server-actions":
+    {
+      Body: FileUploadSecurity,
+      headings: fileUploadSecurityHeadings,
+    },
+  "routing-architecture/rate-limiting-ddos-protection-with-upstash-redis": {
+    Body: RateLimiting,
+    headings: rateLimitingHeadings,
+  },
+  "routing-architecture/advanced-middleware-security-guards-security-headers-bot-detection-custom-shielding":
+    {
+      Body: MiddlewareSecurityGuards,
+      headings: middlewareSecurityGuardsHeadings,
     },
 };

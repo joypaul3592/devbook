@@ -65,3 +65,39 @@ export function H2({
     </h2>
   );
 }
+
+/**
+ * A comparison matrix — the shape a few lessons need when four cache layers or
+ * three fetch strategies have to be read against each other. Rows are cells,
+ * not markup, so a lesson body stays readable next to its prose.
+ */
+export function Table({
+  head,
+  rows,
+}: {
+  head: ReactNode[];
+  rows: ReactNode[][];
+}) {
+  return (
+    <figure className="doc-table">
+      <table>
+        <thead>
+          <tr>
+            {head.map((cell, i) => (
+              <th key={i}>{cell}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i}>
+              {row.map((cell, j) => (
+                <td key={j}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
+  );
+}

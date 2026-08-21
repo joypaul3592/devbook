@@ -74,6 +74,26 @@ const WRITTEN = new Set<string>([
   "server-actions/error-handling-typed-action-results-discriminated-unions-pattern",
   "server-actions/file-uploads-stream-handling-via-server-actions",
   "server-actions/security-best-practices-in-server-actions-csrf-rate-limiting-auth",
+  "caching-performance/the-4-tier-caching-architecture-revalidation-lifecycles",
+  "caching-performance/request-memoization-react-cache-function",
+  "caching-performance/data-cache-fetch-strategies-force-cache-vs-no-store-unstable-cache",
+  "caching-performance/full-route-cache-vs-dynamic-rendering-static-vs-dynamic-routes",
+  "caching-performance/client-side-router-cache-mechanism-in-memory-prefetching-invalidation",
+  "caching-performance/revalidation-strategies-time-based-isr-vs-on-demand-revalidatepath-revalidatetag",
+  "caching-performance/core-web-vitals-asset-optimization-next-image-next-font-next-script",
+  "caching-performance/dynamic-imports-code-splitting-next-dynamic-vs-react-lazy-suspense",
+  "caching-performance/bundle-analysis-performance-auditing-next-bundle-analyzer-lighthouse-core-web-vitals",
+  "caching-performance/partial-prerendering-ppr-hybrid-rendering-architecture",
+  "routing-architecture/route-groups-folder-layout-isolation",
+  "routing-architecture/dynamic-routes-catch-all-optional-catch-all-segments",
+  "routing-architecture/parallel-routes-slot-conditional-rendering",
+  "routing-architecture/intercepting-routes",
+  "routing-architecture/parallel-intercepting-routes-the-photo-modal-pattern",
+  "routing-architecture/server-actions-mutations-useactionstate-useformstatus-optimistic-updates",
+  "routing-architecture/security-input-validation-error-handling-cache-revalidation-in-server-actions",
+  "routing-architecture/file-upload-security-magic-byte-inspection-in-server-actions",
+  "routing-architecture/rate-limiting-ddos-protection-with-upstash-redis",
+  "routing-architecture/advanced-middleware-security-guards-security-headers-bot-detection-custom-shielding",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -246,29 +266,114 @@ const raw: RawChapter[] = [
   },
   {
     no: "04",
-    slug: "routing-architecture",
-    title: { bn: "রাউটিং আর্কিটেকচার", en: "Routing Architecture" },
+    slug: "caching-performance",
+    title: {
+      bn: "ক্যাশিং ও পারফরম্যান্স ডিপ ডাইভ",
+      en: "Caching & Performance Optimization Deep Dive",
+    },
     summary: {
-      bn: "শুধু routing না — complex routing architecture।",
-      en: "Not just routing — complex routing architecture.",
+      bn: "চারটি ক্যাশ লেয়ার হাতে-কলমে — memoization থেকে router cache পর্যন্ত।",
+      en: "The four cache layers hands-on — from memoization to the router cache.",
     },
     topics: [
-      { bn: "Nested Routes", en: "Nested Routes" },
-      { bn: "Dynamic Routes", en: "Dynamic Routes" },
-      { bn: "Catch-all ও Optional Catch-all", en: "Catch-all & Optional Catch-all" },
-      { bn: "Route Groups", en: "Route Groups" },
-      { bn: "Parallel Routes", en: "Parallel Routes" },
-      { bn: "Intercepting Routes", en: "Intercepting Routes" },
-      { bn: "Layout hierarchy ও Template", en: "Layout hierarchy & Template" },
-      { bn: "Loading UI", en: "Loading UI" },
-      { bn: "Error UI", en: "Error UI" },
-      { bn: "Not Found ও notFound()", en: "Not Found & notFound()" },
-      { bn: "redirect() / permanentRedirect()", en: "redirect() / permanentRedirect()" },
-      { bn: "Modal Routing", en: "Modal Routing" },
+      {
+        bn: "৪-স্তরের ক্যাশিং আর্কিটেকচার ও রিভ্যালিডেশন লাইফসাইকেল",
+        en: "The 4-Tier Caching Architecture & Revalidation Lifecycles",
+      },
+      {
+        bn: "Request Memoization ও React cache() ফাংশন",
+        en: "Request Memoization & React cache() Function",
+      },
+      {
+        bn: "Data Cache ও Fetch Strategy (force-cache বনাম no-store, unstable_cache)",
+        en: "Data Cache & Fetch Strategies (force-cache vs no-store, unstable_cache)",
+      },
+      {
+        bn: "Full Route Cache বনাম Dynamic Rendering (Static বনাম Dynamic Routes)",
+        en: "Full Route Cache vs Dynamic Rendering (Static vs Dynamic Routes)",
+      },
+      {
+        bn: "Client-Side Router Cache মেকানিজম (In-Memory Prefetching ও ইনভ্যালিডেশন)",
+        en: "Client-Side Router Cache Mechanism (In-Memory Prefetching & Invalidation)",
+      },
+      {
+        bn: "রিভ্যালিডেশন স্ট্র্যাটেজি (Time-based ISR বনাম On-demand revalidatePath ও revalidateTag)",
+        en: "Revalidation Strategies (Time-based ISR vs On-demand revalidatePath & revalidateTag)",
+      },
+      {
+        bn: "Core Web Vitals ও Asset অপটিমাইজেশন (next/image, next/font, next/script)",
+        en: "Core Web Vitals & Asset Optimization (next/image, next/font, next/script)",
+      },
+      {
+        bn: "Dynamic Imports ও Code Splitting (next/dynamic বনাম React.lazy / Suspense)",
+        en: "Dynamic Imports & Code Splitting (next/dynamic vs React.lazy / Suspense)",
+      },
+      {
+        bn: "Bundle Analysis ও পারফরম্যান্স অডিটিং (bundle-analyzer, Lighthouse ও Core Web Vitals)",
+        en: "Bundle Analysis & Performance Auditing (@next/bundle-analyzer, Lighthouse & Core Web Vitals)",
+      },
+      {
+        bn: "Partial Prerendering (PPR) ও হাইব্রিড রেন্ডারিং আর্কিটেকচার",
+        en: "Partial Prerendering (PPR) & Hybrid Rendering Architecture",
+      },
     ],
   },
   {
     no: "05",
+    slug: "routing-architecture",
+    title: {
+      bn: "অ্যাডভান্সড রাউটিং ও সার্ভার অ্যাকশন",
+      en: "Advanced Routing, Parallel & Intercepting Routes, and Server Actions",
+    },
+    summary: {
+      bn: "Route Group থেকে Photo Modal প্যাটার্ন — App Router-এর পুরো রাউটিং আর্সেনাল।",
+      en: "From route groups to the photo-modal pattern — the App Router's full routing arsenal.",
+    },
+    topics: [
+      {
+        bn: "Route Groups ও লেআউট আইসোলেশন",
+        en: "Route Groups (folder) & Layout Isolation",
+      },
+      {
+        bn: "Dynamic Routes ও Catch-All / Optional Catch-All সেগমেন্ট",
+        en: "Dynamic Routes & Catch-All / Optional Catch-All Segments",
+      },
+      {
+        bn: "Parallel Routes (@slot) ও কন্ডিশনাল রেন্ডারিং",
+        en: "Parallel Routes (@slot) & Conditional Rendering",
+      },
+      {
+        bn: "Intercepting Routes — (.), (..) ও (...)",
+        en: "Intercepting Routes",
+      },
+      {
+        bn: "Parallel ও Intercepting একসাথে — Photo Modal প্যাটার্ন",
+        en: "Parallel + Intercepting Routes: The Photo Modal Pattern",
+      },
+      {
+        bn: "Server Actions ও Mutations (useActionState, useFormStatus, useOptimistic)",
+        en: "Server Actions & Mutations (useActionState, useFormStatus, Optimistic Updates)",
+      },
+      {
+        bn: "Server Action-এ সিকিউরিটি, ইনপুট ভ্যালিডেশন, এরর হ্যান্ডলিং ও ক্যাশ রিভ্যালিডেশন",
+        en: "Security, Input Validation, Error Handling & Cache Revalidation in Server Actions",
+      },
+      {
+        bn: "ফাইল আপলোড সিকিউরিটি ও Magic Byte ইন্সপেকশন",
+        en: "File Upload Security & Magic Byte Inspection in Server Actions",
+      },
+      {
+        bn: "Upstash Redis দিয়ে Rate Limiting ও DDoS প্রোটেকশন",
+        en: "Rate Limiting & DDoS Protection with Upstash Redis",
+      },
+      {
+        bn: "অ্যাডভান্সড Middleware সিকিউরিটি গার্ড — হেডার, Bot ডিটেকশন ও Shielding",
+        en: "Advanced Middleware Security Guards: Security Headers, Bot Detection & Custom Shielding",
+      },
+    ],
+  },
+  {
+    no: "06",
     slug: "middleware-proxy",
     title: { bn: "মিডলওয়্যার ও প্রক্সি", en: "Middleware & Proxy" },
     summary: {
@@ -288,7 +393,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "06",
+    no: "07",
     slug: "auth",
     title: { bn: "অথেনটিকেশন ও অথরাইজেশন", en: "Authentication & Authorization" },
     summary: {
@@ -310,7 +415,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "07",
+    no: "08",
     slug: "database-architecture",
     title: { bn: "ডাটাবেস আর্কিটেকচার", en: "Database Architecture" },
     summary: {
@@ -331,7 +436,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "08",
+    no: "09",
     slug: "api-architecture",
     title: { bn: "এপিআই আর্কিটেকচার", en: "API Architecture" },
     summary: {
@@ -354,7 +459,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "09",
+    no: "10",
     slug: "performance-engineering",
     title: { bn: "পারফরম্যান্স ইঞ্জিনিয়ারিং", en: "Performance Engineering" },
     summary: {
@@ -376,7 +481,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "10",
+    no: "11",
     slug: "bundle-optimization",
     title: { bn: "বান্ডল অপটিমাইজেশন", en: "Bundle Optimization" },
     summary: {
@@ -397,7 +502,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "11",
+    no: "12",
     slug: "css-architecture",
     title: { bn: "সিএসএস আর্কিটেকচার", en: "CSS Architecture" },
     summary: {
@@ -417,7 +522,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "12",
+    no: "13",
     slug: "seo",
     title: { bn: "এসইও", en: "SEO" },
     summary: {
@@ -436,7 +541,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "13",
+    no: "14",
     slug: "internationalization",
     title: { bn: "ইন্টারন্যাশনালাইজেশন", en: "Internationalization" },
     summary: {
@@ -454,7 +559,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "14",
+    no: "15",
     slug: "error-handling",
     title: { bn: "এরর হ্যান্ডলিং", en: "Error Handling" },
     summary: {
@@ -474,7 +579,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "15",
+    no: "16",
     slug: "security",
     title: { bn: "সিকিউরিটি", en: "Security" },
     summary: {
@@ -498,7 +603,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "16",
+    no: "17",
     slug: "environment-deployment",
     title: { bn: "এনভায়রনমেন্ট ও ডেপ্লয়মেন্ট", en: "Environment & Deployment" },
     summary: {
@@ -519,7 +624,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "17",
+    no: "18",
     slug: "observability",
     title: { bn: "অবজারভেবিলিটি", en: "Observability" },
     summary: {
@@ -537,7 +642,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "18",
+    no: "19",
     slug: "testing",
     title: { bn: "টেস্টিং", en: "Testing" },
     summary: {
@@ -556,7 +661,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "19",
+    no: "20",
     slug: "code-organization",
     title: { bn: "কোড অর্গানাইজেশন", en: "Code Organization" },
     summary: {
@@ -579,7 +684,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "20",
+    no: "21",
     slug: "advanced-react",
     title: { bn: "অ্যাডভান্সড রিঅ্যাক্ট", en: "Advanced React" },
     summary: {
@@ -601,7 +706,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "21",
+    no: "22",
     slug: "advanced-caching",
     title: { bn: "অ্যাডভান্সড ক্যাশিং", en: "Advanced Caching" },
     summary: {
@@ -621,7 +726,7 @@ const raw: RawChapter[] = [
     ],
   },
   {
-    no: "22",
+    no: "23",
     slug: "large-scale-nextjs",
     title: { bn: "লার্জ-স্কেল Next.js", en: "Large-Scale Next.js" },
     summary: {

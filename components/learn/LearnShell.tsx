@@ -18,7 +18,7 @@ export function LearnShell({ children }: { children: ReactNode }) {
   }, [open]);
 
   return (
-    <div className="mx-auto max-w-400 w-full flex-1 flex">
+    <div className="relative mx-auto max-w-400 w-full flex-1 flex">
       {/* ── Desktop sidebar ────────────────────────────────────────────── */}
       <aside
         className={cn(
@@ -26,7 +26,7 @@ export function LearnShell({ children }: { children: ReactNode }) {
           "border-r border-border",
         )}
       >
-        <div className="sticky top-[var(--learn-top,0px)] h-[calc(100dvh-var(--learn-top,0px))] noBar overflow-y-auto">
+        <div className="sticky top-(--learn-top,0px) h-[calc(100dvh-var(--learn-top,0))] noBar overflow-y-auto">
           <LearnSidebar />
         </div>
       </aside>
@@ -34,9 +34,7 @@ export function LearnShell({ children }: { children: ReactNode }) {
       {/* ── Content ────────────────────────────────────────────────────── */}
       <div className="min-w-0 flex-1">{children}</div>
 
-      {/* ── Theme switch — pinned to the right edge of the viewport, above
-             the "on this page" rail, so it stays reachable while reading. */}
-      <div className="fixed top-4 right-4 xl:right-6 z-40">
+      <div className="absolute top-4 right-4 xl:right-6 z-40">
         <ThemeToggle />
       </div>
 
@@ -45,7 +43,7 @@ export function LearnShell({ children }: { children: ReactNode }) {
         type="button"
         onClick={() => setOpen(true)}
         className={cn(
-          "lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40",
+          "lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40",
           "flex items-center gap-2 h-11 px-5 rounded-full",
           "bg-foreground text-background shadow-lg ani2",
           "text-sm font-medium",

@@ -60,7 +60,7 @@ export function LessonView({
       {/* ── Article column ───────────────────────────────────────────── */}
       <div className="min-w-0 flex-1 pt-10 pb-16 lg:pb-10">
         {/* The rule spans the whole column; only the content inside is centred */}
-        <div className="pb-7 mb-9 border-b border-border">
+        <div className="pb-7 mb-7 border-b border-border">
           <Band>
             <header>
               {/* Which chapter this lesson sits in */}
@@ -88,8 +88,6 @@ export function LessonView({
           {/* Cover image, when the lesson ships one */}
           {cover && (
             <figure className="-mt-3 mb-9 overflow-hidden rounded-2xl border border-border bg-muted">
-              {/* Statically imported, so width, height and the blur
-                  placeholder all come from the file itself */}
               <Image
                 src={cover.src}
                 alt={bi(cover.alt, locale)}
@@ -110,7 +108,7 @@ export function LessonView({
               onClick={() => toggleDone(id)}
               aria-pressed={read}
               className={cn(
-                "group inline-flex items-center gap-2.5 h-11 pl-3.5 pr-5 rounded-full border text-[13.5px] font-medium ani2",
+                "group inline-flex items-center gap-2.5 h-11 pl-3.5 pr-5 rounded-full border text-[13.5px] font-medium ani2 cursor-pointer",
                 read
                   ? "border-primary/45 bg-primary/8 text-primary"
                   : "border-border text-muted-foreground hover:border-primary/45 hover:text-foreground",
@@ -131,7 +129,10 @@ export function LessonView({
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={cn("size-3 ani2", read ? "opacity-100" : "opacity-25")}
+                  className={cn(
+                    "size-3 ani2",
+                    read ? "opacity-100" : "opacity-25",
+                  )}
                   aria-hidden
                 >
                   <path d="m5 13 4 4L19 7" />
@@ -183,7 +184,7 @@ export function LessonView({
       {/* ── On this page ─────────────────────────────────────────────── */}
       {headings.length > 0 && (
         <aside className="hidden xl:block w-76 shrink-0 border-l border-border">
-          <div className="sticky top-[var(--learn-top,0px)] max-h-[calc(100dvh-var(--learn-top,0px))] overflow-y-auto noBar px-7 pt-16 pb-10">
+          <div className="sticky top-[var(--learn-top,0px)] max-h-[calc(100dvh-var(--learn-top,0px))] overflow-y-auto noBar px-7 py-7">
             <LineNav
               title={t.learn.onThisPage}
               icon={null}
@@ -213,9 +214,7 @@ export function LessonComingSoon({
   const lesson = getLesson(chapterSlug, topicSlug);
   if (!lesson) return null;
 
-  const siblings = lesson.chapter.topics.filter(
-    (tp) => tp.slug !== topicSlug,
-  );
+  const siblings = lesson.chapter.topics.filter((tp) => tp.slug !== topicSlug);
 
   return (
     <div className="doc-prose">

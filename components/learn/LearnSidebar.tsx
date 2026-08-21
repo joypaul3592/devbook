@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers";
-import { bi, curriculum, lessonCounts } from "@/lib/curriculum";
+import { bi, curriculum } from "@/lib/curriculum";
 import { SearchIcon } from "@/components/icons/Icons";
 import { lessonId, useLearnProgress } from "@/lib/learn-progress";
 
@@ -49,8 +49,7 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
   const [query, setQuery] = useState("");
   /** Chapters the user has explicitly toggled — overrides the default open state. */
   const [toggled, setToggled] = useState<Record<string, boolean>>({});
-  const { done, isDone } = useLearnProgress();
-  const doneCount = done.length;
+  const { isDone } = useLearnProgress();
 
   const [, , activeChapter = "", activeTopic = ""] = pathname.split("/");
   const searching = query.trim().length > 0;
@@ -87,20 +86,6 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
             {t.learn.title}
           </h2>
         </Link>
-
-        <div className="mt-2.5 flex items-center gap-2">
-          <div className="h-[3px] flex-1 rounded-full bg-muted overflow-hidden">
-            <div
-              className="h-full rounded-full bg-primary"
-              style={{
-                width: `${(doneCount / lessonCounts.total) * 100}%`,
-              }}
-            />
-          </div>
-          <span className="font-mono text-[11px] text-muted-foreground shrink-0 tabular-nums">
-            {doneCount}/{lessonCounts.total}
-          </span>
-        </div>
       </div>
 
       {/* ── Search ─────────────────────────────────────────────────────── */}
@@ -137,8 +122,6 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
         <ul>
           {chapters.map((c) => {
             const isCurrent = c.slug === activeChapter;
-            // Default: the chapter holding the open lesson is expanded.
-            // While searching everything expands so matches are visible.
             const open = toggled[c.slug] ?? (searching || isCurrent);
             const finished = c.topics.filter((tp) =>
               isDone(lessonId(c.slug, tp.slug)),
@@ -155,7 +138,7 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
                   }
                   aria-expanded={open}
                   className={cn(
-                    "group relative w-full flex items-start gap-2.5 rounded-lg py-2 pl-2.5 pr-1.5 text-left ani2",
+                    "group relative w-full flex items-start gap-2.5 rounded-lg py-2 pl-2.5 pr-1.5 text-left ani2 cursor-pointer",
                     isCurrent
                       ? "text-foreground bg-muted/70"
                       : "text-foreground hover:bg-muted",
@@ -170,25 +153,25 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
 
                   <span
                     className={cn(
-                      "font-mono text-[11.5px] leading-[19px] shrink-0 tabular-nums",
+                      "font-mono text-[11.5px] leading-4.75 shrink-0 tabular-nums",
                       isCurrent ? "text-primary" : "text-muted-foreground",
                     )}
                   >
                     {c.no}
                   </span>
 
-                  <span className="min-w-0 flex-1 text-[13.5px] leading-[19px] font-medium text-pretty">
+                  <span className="min-w-0 flex-1 text-[13.5px] leading-4.75 font-medium text-pretty">
                     {bi(c.title, locale)}
                   </span>
 
                   {/* How much of this chapter the reader has finished */}
                   {chapterDone ? (
-                    <span className="mt-[3px] shrink-0 size-3.5 center rounded-full bg-primary text-primary-foreground">
+                    <span className="mt-0.75 shrink-0 size-3.5 center rounded-full bg-primary text-primary-foreground">
                       <CheckIcon className="size-2" />
                     </span>
                   ) : (
                     finished > 0 && (
-                      <span className="mt-[2px] shrink-0 font-mono text-[10px] leading-4 text-muted-foreground tabular-nums">
+                      <span className="mt-0.5 shrink-0 font-mono text-[10px] leading-4 text-muted-foreground tabular-nums">
                         {finished}/{c.topics.length}
                       </span>
                     )
@@ -196,7 +179,7 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
 
                   <ChevronIcon
                     className={cn(
-                      "size-3.5 mt-[3px] shrink-0 text-muted-foreground/60 transition-transform duration-300 ease-out",
+                      "size-3.5 mt-0.75 shrink-0 text-muted-foreground/60 transition-transform duration-300 ease-out",
                       open && "rotate-90",
                     )}
                   />
@@ -212,7 +195,7 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <ul className="ml-[22px] my-1 border-l border-border">
+                    <ul className="ml-5.5 my-1 border-l border-border">
                       {c.topics.map((tp) => {
                         const isOpenLesson =
                           isCurrent && tp.slug === activeTopic;
@@ -224,8 +207,8 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
                               onClick={onNavigate}
                               aria-current={isOpenLesson ? "page" : undefined}
                               className={cn(
-                                "relative block -ml-px pl-3 pr-2 py-[6px] border-l",
-                                "text-[12.5px] leading-[18px] ani2",
+                                "relative block -ml-px pl-3 pr-2 py-1.5 border-l",
+                                "text-[12.5px] leading-4.5 ani2",
                                 isOpenLesson
                                   ? "border-primary text-primary font-medium bg-primary/6 rounded-r-md"
                                   : "border-transparent text-muted-foreground hover:border-border hover:text-foreground",
@@ -253,7 +236,6 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
           })}
         </ul>
       </nav>
-
     </div>
   );
 }

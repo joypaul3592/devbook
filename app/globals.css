@@ -952,6 +952,40 @@ a {
   margin-top: 0.75em;
 }
 
+/* Comparison matrix — scrolls inside its own frame so a wide table never
+   widens the article column */
+.doc-table {
+  margin: 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.doc-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.doc-table th,
+.doc-table td {
+  padding: 0.7em 0.95em;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.doc-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.doc-table th {
+  background: var(--muted);
+  font-weight: 600;
+  color: var(--foreground);
+  white-space: nowrap;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    CODE BLOCK — an outer chrome panel wrapping an inner code surface
    ═══════════════════════════════════════════════════════════════════════════ */
