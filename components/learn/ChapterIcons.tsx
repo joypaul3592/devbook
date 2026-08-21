@@ -42,10 +42,14 @@ const icons: Record<string, (p: IconProps) => React.ReactElement> = {
     </Svg>
   ),
 
-  /* Bolt — a mutation firing */
-  "server-actions": (p) => (
+  /* A split panel — the server half and the client half */
+  "react-server-components": (p) => (
     <Svg {...p}>
-      <path d="M13 3 5 13.5h6l-1 7.5 8-10.5h-6L13 3Z" />
+      <rect x="3" y="4.5" width="18" height="15" rx="2" />
+      <path d="M12 4.5v15" strokeDasharray="2.5 2.5" />
+      <path d="M6 9h3" />
+      <path d="M6 12.5h3" />
+      <circle cx="16.5" cy="12" r="2" />
     </Svg>
   ),
 
@@ -60,41 +64,35 @@ const icons: Record<string, (p: IconProps) => React.ReactElement> = {
     </Svg>
   ),
 
-  /* Funnel — requests filtered on the way through */
-  "middleware-proxy": (p) => (
+  /* Chain link — the URL as state */
+  "navigation-url-architecture": (p) => (
     <Svg {...p}>
-      <path d="M3 4h18l-7 8.5V20l-4 1.5v-9L3 4Z" />
+      <path d="M10 14a4 4 0 0 0 5.7 0l2.8-2.8a4 4 0 0 0-5.7-5.7L11.5 6.9" />
+      <path d="M14 10a4 4 0 0 0-5.7 0l-2.8 2.8a4 4 0 0 0 5.7 5.7l1.3-1.3" />
     </Svg>
   ),
 
-  /* Shield with a keyhole */
-  auth: (p) => (
+  /* Stacked slabs — static, dynamic, streamed */
+  "rendering-strategies": (p) => (
     <Svg {...p}>
-      <path d="M12 3 5 5.8v5.7c0 4 2.9 7.4 7 9.2 4.1-1.8 7-5.2 7-9.2V5.8L12 3Z" />
-      <circle cx="12" cy="11" r="1.6" />
-      <path d="M12 12.8V15" />
+      <rect x="3" y="4" width="18" height="4.5" rx="1.2" />
+      <rect x="3" y="10" width="18" height="4.5" rx="1.2" strokeDasharray="3 2" />
+      <path d="M3 18h11" />
+      <path d="M17 18h4" />
     </Svg>
   ),
 
-  /* Database cylinder */
-  "database-architecture": (p) => (
+  /* Flowing stream */
+  "suspense-streaming": (p) => (
     <Svg {...p}>
-      <ellipse cx="12" cy="6" rx="7.5" ry="3" />
-      <path d="M4.5 6v12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6" />
-      <path d="M19.5 12c0 1.7-3.4 3-7.5 3s-7.5-1.3-7.5-3" />
-    </Svg>
-  ),
-
-  /* Braces — an endpoint contract */
-  "api-architecture": (p) => (
-    <Svg {...p}>
-      <path d="M8.5 3.5c-2 0-2.8 1-2.8 2.7v2.6c0 1.5-.9 2.4-1.9 3.2 1 .8 1.9 1.7 1.9 3.2v2.6c0 1.7.8 2.7 2.8 2.7" />
-      <path d="M15.5 3.5c2 0 2.8 1 2.8 2.7v2.6c0 1.5.9 2.4 1.9 3.2-1 .8-1.9 1.7-1.9 3.2v2.6c0 1.7-.8 2.7-2.8 2.7" />
+      <path d="M3 7.5c3-2 6-2 9 0s6 2 9 0" />
+      <path d="M3 12c3-2 6-2 9 0s6 2 9 0" />
+      <path d="M3 16.5c3-2 6-2 9 0s6 2 9 0" />
     </Svg>
   ),
 
   /* Gauge */
-  "performance-engineering": (p) => (
+  "react-rendering-performance": (p) => (
     <Svg {...p}>
       <path d="M3.5 18a8.5 8.5 0 1 1 17 0" />
       <path d="m12 18 4-5.5" />
@@ -108,6 +106,24 @@ const icons: Record<string, (p: IconProps) => React.ReactElement> = {
       <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" />
       <path d="m4 7.5 8 4.5 8-4.5" />
       <path d="M12 12v9" />
+    </Svg>
+  ),
+
+  /* A box splitting into two — chunks */
+  "code-splitting-loading": (p) => (
+    <Svg {...p}>
+      <rect x="3" y="4" width="8" height="7" rx="1.5" />
+      <rect x="13" y="13" width="8" height="7" rx="1.5" />
+      <path d="M7 11v4.5a1.5 1.5 0 0 0 1.5 1.5H13" strokeDasharray="3 2" />
+    </Svg>
+  ),
+
+  /* Picture frame — images, fonts, scripts */
+  "asset-performance": (p) => (
+    <Svg {...p}>
+      <rect x="3" y="4.5" width="18" height="15" rx="2" />
+      <circle cx="8.5" cy="9.5" r="1.6" />
+      <path d="m4 17 5-5 4.5 4.5L16.5 14l3.5 3" />
     </Svg>
   ),
 
@@ -180,7 +196,7 @@ const icons: Record<string, (p: IconProps) => React.ReactElement> = {
   ),
 
   /* Folder tree */
-  "code-organization": (p) => (
+  "scalable-architecture": (p) => (
     <Svg {...p}>
       <path d="M3 4h5.5l1.5 2h4v5H3V4Z" />
       <path d="M7 11v7h4" />
@@ -196,15 +212,6 @@ const icons: Record<string, (p: IconProps) => React.ReactElement> = {
       <ellipse cx="12" cy="12" rx="10" ry="4.5" />
       <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)" />
       <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)" />
-    </Svg>
-  ),
-
-  /* Clock with an arrow — revalidation */
-  "advanced-caching": (p) => (
-    <Svg {...p}>
-      <path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1" />
-      <path d="M3.5 4v4h4" />
-      <path d="M12 8v4.3l3 1.7" />
     </Svg>
   ),
 

@@ -57,21 +57,6 @@ import InterceptingRoutes, {
 import PhotoModalPattern, {
   headings as photoModalPatternHeadings,
 } from "./parallel-intercepting-routes-the-photo-modal-pattern";
-import ServerActionsAndMutations, {
-  headings as serverActionsAndMutationsHeadings,
-} from "./server-actions-mutations-useactionstate-useformstatus-optimistic-updates";
-import ServerActionSecurityLayers, {
-  headings as serverActionSecurityLayersHeadings,
-} from "./security-input-validation-error-handling-cache-revalidation-in-server-actions";
-import FileUploadSecurity, {
-  headings as fileUploadSecurityHeadings,
-} from "./file-upload-security-magic-byte-inspection-in-server-actions";
-import RateLimiting, {
-  headings as rateLimitingHeadings,
-} from "./rate-limiting-ddos-protection-with-upstash-redis";
-import MiddlewareSecurityGuards, {
-  headings as middlewareSecurityGuardsHeadings,
-} from "./advanced-middleware-security-guards-security-headers-bot-detection-custom-shielding";
 import RscPayloadMechanics, {
   headings as rscPayloadHeadings,
 } from "./rsc-payload-mechanics-network-overhead";
@@ -132,36 +117,6 @@ import ParallelDataFetching, {
 import CachePoisoning, {
   headings as cachePoisoningHeadings,
 } from "./data-security-authorization-leak-in-cached-data-cache-poisoning";
-import UseServerBoundary, {
-  headings as useServerBoundaryHeadings,
-} from "./use-server-directives-boundary-closure-trap";
-import ServerActionSecurity, {
-  headings as serverActionSecurityHeadings,
-} from "./server-action-security-vectors-csrf-input-sanitization-unprotected-endpoints";
-import ZodUseActionState, {
-  headings as zodUseActionStateHeadings,
-} from "./form-validation-patterns-using-zod-useactionstate";
-import OptimisticUi, {
-  headings as optimisticUiHeadings,
-} from "./optimistic-ui-updates-with-useoptimistic-fallback-recovery";
-import ProgressiveEnhancement, {
-  headings as progressiveEnhancementHeadings,
-} from "./progressive-enhancement-form-submissions-without-javascript";
-import ProgrammaticActions, {
-  headings as programmaticActionsHeadings,
-} from "./programmatic-action-execution-calling-actions-outside-forms";
-import RevalidationDynamics, {
-  headings as revalidationDynamicsHeadings,
-} from "./cache-invalidation-revalidation-dynamics-revalidatepath-vs-revalidatetag";
-import TypedActionResults, {
-  headings as typedActionResultsHeadings,
-} from "./error-handling-typed-action-results-discriminated-unions-pattern";
-import FileUploadStreaming, {
-  headings as fileUploadStreamingHeadings,
-} from "./file-uploads-stream-handling-via-server-actions";
-import ServerActionSecurityPractices, {
-  headings as serverActionSecurityPracticesHeadings,
-} from "./security-best-practices-in-server-actions-csrf-rate-limiting-auth";
 
 export interface ChapterHeading {
   id: string;
@@ -362,52 +317,6 @@ export const lessonContent: Record<string, LessonContent> = {
       headings: cachePoisoningHeadings,
     },
 
-  // ── Chapter 03 — Server Actions ──────────────────────────────────────
-  "server-actions/use-server-directives-boundary-closure-trap": {
-    Body: UseServerBoundary,
-    headings: useServerBoundaryHeadings,
-  },
-  "server-actions/server-action-security-vectors-csrf-input-sanitization-unprotected-endpoints":
-    {
-      Body: ServerActionSecurity,
-      headings: serverActionSecurityHeadings,
-    },
-  "server-actions/form-validation-patterns-using-zod-useactionstate": {
-    Body: ZodUseActionState,
-    headings: zodUseActionStateHeadings,
-  },
-  "server-actions/optimistic-ui-updates-with-useoptimistic-fallback-recovery": {
-    Body: OptimisticUi,
-    headings: optimisticUiHeadings,
-  },
-  "server-actions/progressive-enhancement-form-submissions-without-javascript":
-    {
-      Body: ProgressiveEnhancement,
-      headings: progressiveEnhancementHeadings,
-    },
-  "server-actions/programmatic-action-execution-calling-actions-outside-forms": {
-    Body: ProgrammaticActions,
-    headings: programmaticActionsHeadings,
-  },
-  "server-actions/cache-invalidation-revalidation-dynamics-revalidatepath-vs-revalidatetag":
-    {
-      Body: RevalidationDynamics,
-      headings: revalidationDynamicsHeadings,
-    },
-  "server-actions/error-handling-typed-action-results-discriminated-unions-pattern":
-    {
-      Body: TypedActionResults,
-      headings: typedActionResultsHeadings,
-    },
-  "server-actions/file-uploads-stream-handling-via-server-actions": {
-    Body: FileUploadStreaming,
-    headings: fileUploadStreamingHeadings,
-  },
-  "server-actions/security-best-practices-in-server-actions-csrf-rate-limiting-auth":
-    {
-      Body: ServerActionSecurityPractices,
-      headings: serverActionSecurityPracticesHeadings,
-    },
 
   // ── Chapter 04 — Caching & Performance ───────────────────────────────
   "caching-performance/the-4-tier-caching-architecture-revalidation-lifecycles":
@@ -459,7 +368,7 @@ export const lessonContent: Record<string, LessonContent> = {
     headings: partialPrerenderingHeadings,
   },
 
-  // ── Chapter 05 — Advanced Routing & Server Actions ───────────────────
+  // ── Chapter 05 — Advanced App Router Architecture ───────────────────
   "routing-architecture/route-groups-folder-layout-isolation": {
     Body: RouteGroups,
     headings: routeGroupsHeadings,
@@ -480,28 +389,4 @@ export const lessonContent: Record<string, LessonContent> = {
     Body: PhotoModalPattern,
     headings: photoModalPatternHeadings,
   },
-  "routing-architecture/server-actions-mutations-useactionstate-useformstatus-optimistic-updates":
-    {
-      Body: ServerActionsAndMutations,
-      headings: serverActionsAndMutationsHeadings,
-    },
-  "routing-architecture/security-input-validation-error-handling-cache-revalidation-in-server-actions":
-    {
-      Body: ServerActionSecurityLayers,
-      headings: serverActionSecurityLayersHeadings,
-    },
-  "routing-architecture/file-upload-security-magic-byte-inspection-in-server-actions":
-    {
-      Body: FileUploadSecurity,
-      headings: fileUploadSecurityHeadings,
-    },
-  "routing-architecture/rate-limiting-ddos-protection-with-upstash-redis": {
-    Body: RateLimiting,
-    headings: rateLimitingHeadings,
-  },
-  "routing-architecture/advanced-middleware-security-guards-security-headers-bot-detection-custom-shielding":
-    {
-      Body: MiddlewareSecurityGuards,
-      headings: middlewareSecurityGuardsHeadings,
-    },
 };
