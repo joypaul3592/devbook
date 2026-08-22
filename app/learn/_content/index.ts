@@ -1,16 +1,41 @@
 import type { ComponentType } from "react";
 import type { StaticImageData } from "next/image";
 
-import rscPayloadMechanicsCover from "@/public/blogs-images/rsc-payload-mechanics-network-overhead.png";
-import serverToClientCover from "@/public/blogs-images/server-to-client-boundary-leakage-server-only-enforcement.png";
-import hydrationBottlenecksMismatchCover from "@/public/blogs-images/hydration-bottlenecks-mismatch-debugging-ssr-mechanics.png";
-import bundleSizeBloatCover from "@/public/blogs-images/bundle-size-bloat-tree-shaking-pitfalls.png";
-import imageAssetOptimizationCover from "@/public/blogs-images/image-asset-optimization-mechanics-next-image-internals.png";
-import nestedLayoutsVsCover from "@/public/blogs-images/nested-layouts-vs-templates-client-state-retention.png";
-import streamingSsrWithCover from "@/public/blogs-images/streaming-ssr-with-suspense-architecture.png";
-import parallelInterceptingRoutesCover from "@/public/blogs-images/parallel-intercepting-routes-for-production-modal-architecture.png";
-import nextJsFontCover from "@/public/blogs-images/next-js-font-script-optimization-next-font-next-script-strategy.png";
-import clientMemoryLeaksCover from "@/public/blogs-images/client-memory-leaks-edge-cases-in-spa-navigation.png";
+import rscPayloadMechanicsCover from "@/public/blogs-images/chapter-1/rsc-payload-mechanics-network-overhead.png";
+import serverToClientCover from "@/public/blogs-images/chapter-1/server-to-client-boundary-leakage-server-only-enforcement.png";
+import hydrationBottlenecksMismatchCover from "@/public/blogs-images/chapter-1/hydration-bottlenecks-mismatch-debugging-ssr-mechanics.png";
+import bundleSizeBloatCover from "@/public/blogs-images/chapter-1/bundle-size-bloat-tree-shaking-pitfalls.png";
+import imageAssetOptimizationCover from "@/public/blogs-images/chapter-1/image-asset-optimization-mechanics-next-image-internals.png";
+import nestedLayoutsVsCover from "@/public/blogs-images/chapter-1/nested-layouts-vs-templates-client-state-retention.png";
+import streamingSsrWithCover from "@/public/blogs-images/chapter-1/streaming-ssr-with-suspense-architecture.png";
+import parallelInterceptingRoutesCover from "@/public/blogs-images/chapter-1/parallel-intercepting-routes-for-production-modal-architecture.png";
+import nextJsFontCover from "@/public/blogs-images/chapter-1/next-js-font-script-optimization-next-font-next-script-strategy.png";
+import clientMemoryLeaksCover from "@/public/blogs-images/chapter-1/client-memory-leaks-edge-cases-in-spa-navigation.png";
+import ch2Topic1Cover from "@/public/blogs-images/chapter-2/topic-1.png";
+import ch2Topic2Cover from "@/public/blogs-images/chapter-2/topic-2.png";
+import ch2Topic3Cover from "@/public/blogs-images/chapter-2/topic-3.png";
+import ch2Topic4Cover from "@/public/blogs-images/chapter-2/topic-4.png";
+import ch2Topic5Cover from "@/public/blogs-images/chapter-2/topic-5.png";
+import ch2Topic6Cover from "@/public/blogs-images/chapter-2/topic-6.png";
+import ch2Topic7Cover from "@/public/blogs-images/chapter-2/topic-7.png";
+import ch2Topic8Cover from "@/public/blogs-images/chapter-2/topic-8.png";
+import ch2Topic9Cover from "@/public/blogs-images/chapter-2/topic-9.png";
+import ch2Topic10Cover from "@/public/blogs-images/chapter-2/topic-10.png";
+import ch4Topic1Cover from "@/public/blogs-images/chapter-4/topic-1.png";
+import ch4Topic2Cover from "@/public/blogs-images/chapter-4/topic-2.png";
+import ch4Topic3Cover from "@/public/blogs-images/chapter-4/topic-3.png";
+import ch4Topic4Cover from "@/public/blogs-images/chapter-4/topic-4.png";
+import ch4Topic5Cover from "@/public/blogs-images/chapter-4/topic-5.png";
+import ch4Topic6Cover from "@/public/blogs-images/chapter-4/topic-6.png";
+import ch4Topic7Cover from "@/public/blogs-images/chapter-4/topic-7.png";
+import ch4Topic8Cover from "@/public/blogs-images/chapter-4/topic-8.png";
+import ch4Topic9Cover from "@/public/blogs-images/chapter-4/topic-9.png";
+import ch4Topic10Cover from "@/public/blogs-images/chapter-4/topic-10.png";
+import ch5Topic1Cover from "@/public/blogs-images/chapter-5/topic-1.png";
+import ch5Topic2Cover from "@/public/blogs-images/chapter-5/topic-2.png";
+import ch5Topic3Cover from "@/public/blogs-images/chapter-5/topic-3.png";
+import ch5Topic4Cover from "@/public/blogs-images/chapter-5/topic-4.png";
+import ch5Topic5Cover from "@/public/blogs-images/chapter-5/topic-5.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -266,127 +291,301 @@ export const lessonContent: Record<string, LessonContent> = {
     },
 
   // ── Chapter 02 — Data Fetching Architecture ──────────────────────────
-  // cover: ছবি পরে যোগ হবে, তাই এখন শুধু body আর headings।
   "data-fetching-architecture/next-js-caching-hierarchy-request-flow": {
     Body: CachingHierarchy,
     headings: cachingHierarchyHeadings,
+    cover: {
+      src: ch2Topic1Cover,
+      alt: {
+        bn: "Next.js ক্যাশ হায়ারার্কি ও রিকোয়েস্ট ফ্লো",
+        en: "Next.js Caching Hierarchy & Request Flow",
+      },
+    },
   },
   "data-fetching-architecture/next-js-16-uncached-by-default-shift-explicit-caching-with-use-cache":
     {
       Body: UncachedByDefault,
       headings: uncachedByDefaultHeadings,
+      cover: {
+        src: ch2Topic2Cover,
+        alt: {
+          bn: "Next.js 16-এর Uncached-by-Default শিফট ও 'use cache' দিয়ে এক্সপ্লিসিট ক্যাশিং",
+          en: "Next.js 16 Uncached-by-Default Shift & Explicit Caching with 'use cache'",
+        },
+      },
     },
   "data-fetching-architecture/request-memoization-mechanics-deduplication-scope":
     {
       Body: RequestMemoization,
       headings: requestMemoizationHeadings,
+      cover: {
+        src: ch2Topic3Cover,
+        alt: {
+          bn: "Request Memoization মেকানিক্স ও ডিডুপ্লিকেশন স্কোপ",
+          en: "Request Memoization Mechanics & Deduplication Scope",
+        },
+      },
     },
   "data-fetching-architecture/time-based-vs-on-demand-revalidation-race-conditions":
     {
       Body: RevalidationRaceConditions,
       headings: revalidationRaceHeadings,
+      cover: {
+        src: ch2Topic4Cover,
+        alt: {
+          bn: "Time-based বনাম On-demand রিভ্যালিডেশন ও রেস কন্ডিশন",
+          en: "Time-based vs On-demand Revalidation Race Conditions",
+        },
+      },
     },
   "data-fetching-architecture/tag-based-cache-invalidation-architecture-revalidatetag-cachetag":
     {
       Body: TagBasedInvalidation,
       headings: tagBasedInvalidationHeadings,
+      cover: {
+        src: ch2Topic5Cover,
+        alt: {
+          bn: "Tag-based ক্যাশ ইনভ্যালিডেশন আর্কিটেকচার (revalidateTag ও cacheTag)",
+          en: "Tag-based Cache Invalidation Architecture (revalidateTag & cacheTag)",
+        },
+      },
     },
   "data-fetching-architecture/dynamic-functions-escalation-cache-opt-out-bottlenecks":
     {
       Body: DynamicEscalation,
       headings: dynamicEscalationHeadings,
+      cover: {
+        src: ch2Topic6Cover,
+        alt: {
+          bn: "Dynamic Function এসকেলেশন ও ক্যাশ Opt-out বটলনেক",
+          en: "Dynamic Functions Escalation & Cache Opt-out Bottlenecks",
+        },
+      },
     },
   "data-fetching-architecture/stale-while-revalidate-behavior-at-the-node-edge-server-layer":
     {
       Body: SwrBehavior,
       headings: swrBehaviorHeadings,
+      cover: {
+        src: ch2Topic7Cover,
+        alt: {
+          bn: "Node/Edge সার্ভার লেয়ারে Stale-While-Revalidate বিহেভিয়ার",
+          en: "Stale-While-Revalidate Behavior at the Node/Edge Server Layer",
+        },
+      },
     },
   "data-fetching-architecture/router-cache-invalidation-client-side-navigation-stale-data":
     {
       Body: RouterCacheStaleness,
       headings: routerCacheStalenessHeadings,
+      cover: {
+        src: ch2Topic8Cover,
+        alt: {
+          bn: "Router Cache ইনভ্যালিডেশন ও ক্লায়েন্ট নেভিগেশনে স্টেল ডেটা",
+          en: "Router Cache Invalidation & Client-Side Navigation Stale Data",
+        },
+      },
     },
   "data-fetching-architecture/server-component-parallel-data-fetching-promise-all-bottlenecks":
     {
       Body: ParallelDataFetching,
       headings: parallelDataFetchingHeadings,
+      cover: {
+        src: ch2Topic9Cover,
+        alt: {
+          bn: "Server Component-এ Parallel ডেটা ফেচিং ও Promise.all বটলনেক",
+          en: "Server Component Parallel Data Fetching & Promise.all Bottlenecks",
+        },
+      },
     },
   "data-fetching-architecture/data-security-authorization-leak-in-cached-data-cache-poisoning":
     {
       Body: CachePoisoning,
       headings: cachePoisoningHeadings,
+      cover: {
+        src: ch2Topic10Cover,
+        alt: {
+          bn: "ক্যাশড ডেটায় সিকিউরিটি ও অথরাইজেশন লিক (Cache Poisoning)",
+          en: "Data Security & Authorization Leak in Cached Data (Cache Poisoning)",
+        },
+      },
     },
-
 
   // ── Chapter 04 — Caching & Performance ───────────────────────────────
   "caching-performance/the-4-tier-caching-architecture-revalidation-lifecycles":
     {
       Body: FourTierCaching,
       headings: fourTierCachingHeadings,
+      cover: {
+        src: ch4Topic1Cover,
+        alt: {
+          bn: "৪-স্তরের ক্যাশিং আর্কিটেকচার ও রিভ্যালিডেশন লাইফসাইকেল",
+          en: "The 4-Tier Caching Architecture & Revalidation Lifecycles",
+        },
+      },
     },
   "caching-performance/request-memoization-react-cache-function": {
     Body: RequestMemoizationReactCache,
     headings: requestMemoizationReactCacheHeadings,
+    cover: {
+      src: ch4Topic2Cover,
+      alt: {
+        bn: "Request Memoization ও React cache() ফাংশন",
+        en: "Request Memoization & React cache() Function",
+      },
+    },
   },
   "caching-performance/data-cache-fetch-strategies-force-cache-vs-no-store-unstable-cache":
     {
       Body: DataCacheFetchStrategies,
       headings: dataCacheFetchStrategiesHeadings,
+      cover: {
+        src: ch4Topic3Cover,
+        alt: {
+          bn: "Data Cache ও Fetch Strategy (force-cache বনাম no-store, unstable_cache)",
+          en: "Data Cache & Fetch Strategies (force-cache vs no-store, unstable_cache)",
+        },
+      },
     },
   "caching-performance/full-route-cache-vs-dynamic-rendering-static-vs-dynamic-routes":
     {
       Body: FullRouteCacheVsDynamic,
       headings: fullRouteCacheVsDynamicHeadings,
+      cover: {
+        src: ch4Topic4Cover,
+        alt: {
+          bn: "Full Route Cache বনাম Dynamic Rendering (Static বনাম Dynamic Routes)",
+          en: "Full Route Cache vs Dynamic Rendering (Static vs Dynamic Routes)",
+        },
+      },
     },
   "caching-performance/client-side-router-cache-mechanism-in-memory-prefetching-invalidation":
     {
       Body: ClientRouterCache,
       headings: clientRouterCacheHeadings,
+      cover: {
+        src: ch4Topic5Cover,
+        alt: {
+          bn: "Client-Side Router Cache মেকানিজম (In-Memory Prefetching ও ইনভ্যালিডেশন)",
+          en: "Client-Side Router Cache Mechanism (In-Memory Prefetching & Invalidation)",
+        },
+      },
     },
   "caching-performance/revalidation-strategies-time-based-isr-vs-on-demand-revalidatepath-revalidatetag":
     {
       Body: RevalidationStrategies,
       headings: revalidationStrategiesHeadings,
+      cover: {
+        src: ch4Topic6Cover,
+        alt: {
+          bn: "রিভ্যালিডেশন স্ট্র্যাটেজি (Time-based ISR বনাম On-demand revalidatePath ও revalidateTag)",
+          en: "Revalidation Strategies (Time-based ISR vs On-demand revalidatePath & revalidateTag)",
+        },
+      },
     },
   "caching-performance/core-web-vitals-asset-optimization-next-image-next-font-next-script":
     {
       Body: CoreWebVitalsAssets,
       headings: coreWebVitalsAssetsHeadings,
+      cover: {
+        src: ch4Topic7Cover,
+        alt: {
+          bn: "Core Web Vitals ও Asset অপটিমাইজেশন (next/image, next/font, next/script)",
+          en: "Core Web Vitals & Asset Optimization (next/image, next/font, next/script)",
+        },
+      },
     },
   "caching-performance/dynamic-imports-code-splitting-next-dynamic-vs-react-lazy-suspense":
     {
       Body: DynamicImportsCodeSplitting,
       headings: dynamicImportsCodeSplittingHeadings,
+      cover: {
+        src: ch4Topic8Cover,
+        alt: {
+          bn: "Dynamic Imports ও Code Splitting (next/dynamic বনাম React.lazy / Suspense)",
+          en: "Dynamic Imports & Code Splitting (next/dynamic vs React.lazy / Suspense)",
+        },
+      },
     },
   "caching-performance/bundle-analysis-performance-auditing-next-bundle-analyzer-lighthouse-core-web-vitals":
     {
       Body: BundleAnalysisAuditing,
       headings: bundleAnalysisAuditingHeadings,
+      cover: {
+        src: ch4Topic9Cover,
+        alt: {
+          bn: "Bundle Analysis ও পারফরম্যান্স অডিটিং (bundle-analyzer, Lighthouse ও Core Web Vitals)",
+          en: "Bundle Analysis & Performance Auditing (@next/bundle-analyzer, Lighthouse & Core Web Vitals)",
+        },
+      },
     },
-  "caching-performance/partial-prerendering-ppr-hybrid-rendering-architecture": {
-    Body: PartialPrerendering,
-    headings: partialPrerenderingHeadings,
-  },
+  "caching-performance/partial-prerendering-ppr-hybrid-rendering-architecture":
+    {
+      Body: PartialPrerendering,
+      headings: partialPrerenderingHeadings,
+      cover: {
+        src: ch4Topic10Cover,
+        alt: {
+          bn: "Partial Prerendering (PPR) ও হাইব্রিড রেন্ডারিং আর্কিটেকচার",
+          en: "Partial Prerendering (PPR) & Hybrid Rendering Architecture",
+        },
+      },
+    },
 
   // ── Chapter 05 — Advanced App Router Architecture ───────────────────
   "routing-architecture/route-groups-folder-layout-isolation": {
     Body: RouteGroups,
     headings: routeGroupsHeadings,
+    cover: {
+      src: ch5Topic1Cover,
+      alt: {
+        bn: "Route Groups ও লেআউট আইসোলেশন",
+        en: "Route Groups (folder) & Layout Isolation",
+      },
+    },
   },
   "routing-architecture/dynamic-routes-catch-all-optional-catch-all-segments": {
     Body: DynamicAndCatchAllRoutes,
     headings: dynamicAndCatchAllRoutesHeadings,
+    cover: {
+      src: ch5Topic2Cover,
+      alt: {
+        bn: "Dynamic Routes ও Catch-All / Optional Catch-All সেগমেন্ট",
+        en: "Dynamic Routes & Catch-All / Optional Catch-All Segments",
+      },
+    },
   },
   "routing-architecture/parallel-routes-slot-conditional-rendering": {
     Body: ParallelRoutes,
     headings: parallelRoutesHeadings,
+    cover: {
+      src: ch5Topic3Cover,
+      alt: {
+        bn: "Parallel Routes (@slot) ও কন্ডিশনাল রেন্ডারিং",
+        en: "Parallel Routes (@slot) & Conditional Rendering",
+      },
+    },
   },
   "routing-architecture/intercepting-routes": {
     Body: InterceptingRoutes,
     headings: interceptingRoutesHeadings,
+    cover: {
+      src: ch5Topic4Cover,
+      alt: {
+        bn: "Intercepting Routes — (.), (..) ও (...)",
+        en: "Intercepting Routes",
+      },
+    },
   },
   "routing-architecture/parallel-intercepting-routes-the-photo-modal-pattern": {
     Body: PhotoModalPattern,
     headings: photoModalPatternHeadings,
+    cover: {
+      src: ch5Topic5Cover,
+      alt: {
+        bn: "Parallel ও Intercepting একসাথে — Photo Modal প্যাটার্ন",
+        en: "Parallel + Intercepting Routes: The Photo Modal Pattern",
+      },
+    },
   },
 };
