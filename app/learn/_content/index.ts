@@ -46,6 +46,11 @@ import ch5Topic2Cover from "@/public/blogs-images/chapter-5/topic-2.png";
 import ch5Topic3Cover from "@/public/blogs-images/chapter-5/topic-3.png";
 import ch5Topic4Cover from "@/public/blogs-images/chapter-5/topic-4.png";
 import ch5Topic5Cover from "@/public/blogs-images/chapter-5/topic-5.png";
+import ch5Topic6Cover from "@/public/blogs-images/chapter-5/topic-6.png";
+import ch5Topic7Cover from "@/public/blogs-images/chapter-5/topic-7.png";
+import ch5Topic8Cover from "@/public/blogs-images/chapter-5/topic-8.png";
+import ch5Topic9Cover from "@/public/blogs-images/chapter-5/topic-9.png";
+import ch5Topic10Cover from "@/public/blogs-images/chapter-5/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -92,6 +97,21 @@ import InterceptingRoutes, {
 import PhotoModalPattern, {
   headings as photoModalPatternHeadings,
 } from "./parallel-intercepting-routes-the-photo-modal-pattern";
+import NestedLayoutStatePreservation, {
+  headings as nestedLayoutStatePreservationHeadings,
+} from "./nested-layout-architecture-state-preservation";
+import RouteLevelLoadingUi, {
+  headings as routeLevelLoadingUiHeadings,
+} from "./route-level-loading-ui-architecture";
+import RouteLevelErrorUi, {
+  headings as routeLevelErrorUiHeadings,
+} from "./route-level-error-ui-architecture";
+import RouteSegmentConfiguration, {
+  headings as routeSegmentConfigurationHeadings,
+} from "./route-segment-configuration-rendering-control";
+import ComplexDashboardParallelRoutes, {
+  headings as complexDashboardParallelRoutesHeadings,
+} from "./complex-dashboard-architecture-with-parallel-routes";
 import RscPayloadMechanics, {
   headings as rscPayloadHeadings,
 } from "./rsc-payload-mechanics-network-overhead";
@@ -740,6 +760,61 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Parallel ও Intercepting একসাথে — Photo Modal প্যাটার্ন",
         en: "Parallel + Intercepting Routes: The Photo Modal Pattern",
+      },
+    },
+  },
+  "routing-architecture/nested-layout-architecture-state-preservation": {
+    Body: NestedLayoutStatePreservation,
+    headings: nestedLayoutStatePreservationHeadings,
+    cover: {
+      src: ch5Topic6Cover,
+      alt: {
+        bn: "Nested Layout আর্কিটেকচার ও স্টেট প্রিজার্ভেশন",
+        en: "Nested Layout Architecture & State Preservation",
+      },
+    },
+  },
+  "routing-architecture/route-level-loading-ui-architecture": {
+    Body: RouteLevelLoadingUi,
+    headings: routeLevelLoadingUiHeadings,
+    cover: {
+      src: ch5Topic7Cover,
+      alt: {
+        bn: "Route-লেভেল Loading UI আর্কিটেকচার",
+        en: "Route-level Loading UI Architecture",
+      },
+    },
+  },
+  "routing-architecture/route-level-error-ui-architecture": {
+    Body: RouteLevelErrorUi,
+    headings: routeLevelErrorUiHeadings,
+    cover: {
+      src: ch5Topic8Cover,
+      alt: {
+        bn: "Route-লেভেল Error UI আর্কিটেকচার",
+        en: "Route-level Error UI Architecture",
+      },
+    },
+  },
+  "routing-architecture/route-segment-configuration-rendering-control": {
+    Body: RouteSegmentConfiguration,
+    headings: routeSegmentConfigurationHeadings,
+    cover: {
+      src: ch5Topic9Cover,
+      alt: {
+        bn: "Route Segment কনফিগারেশন ও রেন্ডারিং কন্ট্রোল",
+        en: "Route Segment Configuration & Rendering Control",
+      },
+    },
+  },
+  "routing-architecture/complex-dashboard-architecture-with-parallel-routes": {
+    Body: ComplexDashboardParallelRoutes,
+    headings: complexDashboardParallelRoutesHeadings,
+    cover: {
+      src: ch5Topic10Cover,
+      alt: {
+        bn: "Parallel Routes দিয়ে কমপ্লেক্স ড্যাশবোর্ড আর্কিটেকচার",
+        en: "Complex Dashboard Architecture with Parallel Routes",
       },
     },
   },

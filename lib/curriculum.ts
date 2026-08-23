@@ -89,6 +89,11 @@ const WRITTEN = new Set<string>([
   "routing-architecture/parallel-routes-slot-conditional-rendering",
   "routing-architecture/intercepting-routes",
   "routing-architecture/parallel-intercepting-routes-the-photo-modal-pattern",
+  "routing-architecture/nested-layout-architecture-state-preservation",
+  "routing-architecture/route-level-loading-ui-architecture",
+  "routing-architecture/route-level-error-ui-architecture",
+  "routing-architecture/route-segment-configuration-rendering-control",
+  "routing-architecture/complex-dashboard-architecture-with-parallel-routes",
 ]);
 
 /** Stable url slug derived from the English title. */
