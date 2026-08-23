@@ -21,6 +21,16 @@ import ch2Topic7Cover from "@/public/blogs-images/chapter-2/topic-7.png";
 import ch2Topic8Cover from "@/public/blogs-images/chapter-2/topic-8.png";
 import ch2Topic9Cover from "@/public/blogs-images/chapter-2/topic-9.png";
 import ch2Topic10Cover from "@/public/blogs-images/chapter-2/topic-10.png";
+import ch3Topic1Cover from "@/public/blogs-images/chapter-3/topic-1.png";
+import ch3Topic2Cover from "@/public/blogs-images/chapter-3/topic-2.png";
+import ch3Topic3Cover from "@/public/blogs-images/chapter-3/topic-3.png";
+import ch3Topic4Cover from "@/public/blogs-images/chapter-3/topic-4.png";
+import ch3Topic5Cover from "@/public/blogs-images/chapter-3/topic-5.png";
+import ch3Topic6Cover from "@/public/blogs-images/chapter-3/topic-6.png";
+import ch3Topic7Cover from "@/public/blogs-images/chapter-3/topic-7.png";
+import ch3Topic8Cover from "@/public/blogs-images/chapter-3/topic-8.png";
+import ch3Topic9Cover from "@/public/blogs-images/chapter-3/topic-9.png";
+import ch3Topic10Cover from "@/public/blogs-images/chapter-3/topic-10.png";
 import ch4Topic1Cover from "@/public/blogs-images/chapter-4/topic-1.png";
 import ch4Topic2Cover from "@/public/blogs-images/chapter-4/topic-2.png";
 import ch4Topic3Cover from "@/public/blogs-images/chapter-4/topic-3.png";
@@ -142,6 +152,36 @@ import ParallelDataFetching, {
 import CachePoisoning, {
   headings as cachePoisoningHeadings,
 } from "./data-security-authorization-leak-in-cached-data-cache-poisoning";
+import RscArchitectureMentalModel, {
+  headings as rscArchitectureMentalModelHeadings,
+} from "./rsc-architecture-mental-model";
+import ServerVsClientDecision, {
+  headings as serverVsClientDecisionHeadings,
+} from "./server-component-vs-client-component-decision-making";
+import UseClientBoundary, {
+  headings as useClientBoundaryHeadings,
+} from "./use-client-boundary-bundle-impact";
+import SerializableProps, {
+  headings as serializablePropsHeadings,
+} from "./serializable-props-rsc-data-transfer";
+import ServerCompositionPatterns, {
+  headings as serverCompositionPatternsHeadings,
+} from "./server-component-composition-patterns";
+import ServerInsideClient, {
+  headings as serverInsideClientHeadings,
+} from "./server-components-inside-client-components";
+import ServerToClientDataFlow, {
+  headings as serverToClientDataFlowHeadings,
+} from "./data-flow-from-server-components-to-client-components";
+import PayloadVsHtmlVsJs, {
+  headings as payloadVsHtmlVsJsHeadings,
+} from "./rsc-payload-vs-html-vs-javascript";
+import ThirdPartyRscCompatibility, {
+  headings as thirdPartyRscCompatibilityHeadings,
+} from "./rsc-compatibility-of-third-party-components";
+import ProductionRscAntiPatterns, {
+  headings as productionRscAntiPatternsHeadings,
+} from "./production-rsc-architecture-common-anti-patterns";
 
 export interface ChapterHeading {
   id: string;
@@ -410,6 +450,121 @@ export const lessonContent: Record<string, LessonContent> = {
         },
       },
     },
+
+  // ── Chapter 03 — React Server Components ─────────────────────────────
+  "react-server-components/rsc-architecture-mental-model": {
+    Body: RscArchitectureMentalModel,
+    headings: rscArchitectureMentalModelHeadings,
+    cover: {
+      src: ch3Topic1Cover,
+      alt: {
+        bn: "RSC আর্কিটেকচার ও মেন্টাল মডেল",
+        en: "RSC Architecture & Mental Model",
+      },
+    },
+  },
+  "react-server-components/server-component-vs-client-component-decision-making":
+    {
+      Body: ServerVsClientDecision,
+      headings: serverVsClientDecisionHeadings,
+      cover: {
+        src: ch3Topic2Cover,
+        alt: {
+          bn: "Server Component বনাম Client Component — ডিসিশন মেকিং",
+          en: "Server Component vs Client Component Decision Making",
+        },
+      },
+    },
+  "react-server-components/use-client-boundary-bundle-impact": {
+    Body: UseClientBoundary,
+    headings: useClientBoundaryHeadings,
+    cover: {
+      src: ch3Topic3Cover,
+      alt: {
+        bn: '"use client" বাউন্ডারি ও বান্ডল ইমপ্যাক্ট',
+        en: '"use client" Boundary & Bundle Impact',
+      },
+    },
+  },
+  "react-server-components/serializable-props-rsc-data-transfer": {
+    Body: SerializableProps,
+    headings: serializablePropsHeadings,
+    cover: {
+      src: ch3Topic4Cover,
+      alt: {
+        bn: "Serializable Props ও RSC ডেটা ট্রান্সফার",
+        en: "Serializable Props & RSC Data Transfer",
+      },
+    },
+  },
+  "react-server-components/server-component-composition-patterns": {
+    Body: ServerCompositionPatterns,
+    headings: serverCompositionPatternsHeadings,
+    cover: {
+      src: ch3Topic5Cover,
+      alt: {
+        bn: "Server Component কম্পোজিশন প্যাটার্ন",
+        en: "Server Component Composition Patterns",
+      },
+    },
+  },
+
+  "react-server-components/server-components-inside-client-components": {
+    Body: ServerInsideClient,
+    headings: serverInsideClientHeadings,
+    cover: {
+      src: ch3Topic6Cover,
+      alt: {
+        bn: "Client Component-এর ভিতরে Server Component প্যাটার্ন",
+        en: "Server Components Inside Client Components",
+      },
+    },
+  },
+  "react-server-components/data-flow-from-server-components-to-client-components":
+    {
+      Body: ServerToClientDataFlow,
+      headings: serverToClientDataFlowHeadings,
+      cover: {
+        src: ch3Topic7Cover,
+        alt: {
+          bn: "Server Component থেকে Client Component-এ ডেটা ফ্লো",
+          en: "Data Flow from Server Components to Client Components",
+        },
+      },
+    },
+  "react-server-components/rsc-payload-vs-html-vs-javascript": {
+    Body: PayloadVsHtmlVsJs,
+    headings: payloadVsHtmlVsJsHeadings,
+    cover: {
+      src: ch3Topic8Cover,
+      alt: {
+        bn: "RSC Payload বনাম HTML বনাম JavaScript",
+        en: "RSC Payload vs HTML vs JavaScript",
+      },
+    },
+  },
+  "react-server-components/rsc-compatibility-of-third-party-components": {
+    Body: ThirdPartyRscCompatibility,
+    headings: thirdPartyRscCompatibilityHeadings,
+    cover: {
+      src: ch3Topic9Cover,
+      alt: {
+        bn: "থার্ড-পার্টি কম্পোনেন্টের RSC কম্প্যাটিবিলিটি",
+        en: "RSC Compatibility of Third-party Components",
+      },
+    },
+  },
+  "react-server-components/production-rsc-architecture-common-anti-patterns": {
+    Body: ProductionRscAntiPatterns,
+    headings: productionRscAntiPatternsHeadings,
+    cover: {
+      src: ch3Topic10Cover,
+      alt: {
+        bn: "প্রোডাকশন RSC আর্কিটেকচার ও কমন অ্যান্টি-প্যাটার্ন",
+        en: "Production RSC Architecture & Common Anti-patterns",
+      },
+    },
+  },
 
   // ── Chapter 04 — Caching & Performance ───────────────────────────────
   "caching-performance/the-4-tier-caching-architecture-revalidation-lifecycles":
