@@ -94,6 +94,16 @@ const WRITTEN = new Set<string>([
   "routing-architecture/route-level-error-ui-architecture",
   "routing-architecture/route-segment-configuration-rendering-control",
   "routing-architecture/complex-dashboard-architecture-with-parallel-routes",
+  "navigation-url-architecture/next-js-client-navigation-lifecycle",
+  "navigation-url-architecture/link-prefetching-mechanics",
+  "navigation-url-architecture/navigation-prefetching-strategy",
+  "navigation-url-architecture/userouter-vs-link",
+  "navigation-url-architecture/url-state-architecture",
+  "navigation-url-architecture/search-filter-state-in-the-url",
+  "navigation-url-architecture/pagination-state-url-synchronization",
+  "navigation-url-architecture/scroll-restoration",
+  "navigation-url-architecture/server-side-navigation-control-redirect-vs-permanentredirect",
+  "navigation-url-architecture/client-router-cache-mechanics-router-refresh",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -401,8 +411,14 @@ const raw: RawChapter[] = [
         en: "Pagination State & URL Synchronization",
       },
       { bn: "Scroll Restoration", en: "Scroll Restoration" },
-      { bn: "Back/Forward নেভিগেশন স্টেট", en: "Back/Forward Navigation State" },
-      { bn: "নেভিগেশন পারফরম্যান্স ডিবাগিং", en: "Navigation Performance Debugging" },
+      {
+        bn: "Server-side নেভিগেশন কন্ট্রোল",
+        en: "Server-side Navigation Control (redirect vs permanentRedirect)",
+      },
+      {
+        bn: "Client Router Cache ও router.refresh()",
+        en: "Client Router Cache Mechanics & router.refresh()",
+      },
     ],
   },
   {

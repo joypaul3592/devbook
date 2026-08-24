@@ -51,6 +51,16 @@ import ch5Topic7Cover from "@/public/blogs-images/chapter-5/topic-7.png";
 import ch5Topic8Cover from "@/public/blogs-images/chapter-5/topic-8.png";
 import ch5Topic9Cover from "@/public/blogs-images/chapter-5/topic-9.png";
 import ch5Topic10Cover from "@/public/blogs-images/chapter-5/topic-10.png";
+import ch6Topic1Cover from "@/public/blogs-images/chapter-6/topic-1.png";
+import ch6Topic2Cover from "@/public/blogs-images/chapter-6/topic-2.png";
+import ch6Topic3Cover from "@/public/blogs-images/chapter-6/topic-3.png";
+import ch6Topic4Cover from "@/public/blogs-images/chapter-6/topic-4.png";
+import ch6Topic5Cover from "@/public/blogs-images/chapter-6/topic-5.png";
+import ch6Topic6Cover from "@/public/blogs-images/chapter-6/topic-6.png";
+import ch6Topic7Cover from "@/public/blogs-images/chapter-6/topic-7.png";
+import ch6Topic8Cover from "@/public/blogs-images/chapter-6/topic-8.png";
+import ch6Topic9Cover from "@/public/blogs-images/chapter-6/topic-9.png";
+import ch6Topic10Cover from "@/public/blogs-images/chapter-6/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -202,6 +212,36 @@ import ThirdPartyRscCompatibility, {
 import ProductionRscAntiPatterns, {
   headings as productionRscAntiPatternsHeadings,
 } from "./production-rsc-architecture-common-anti-patterns";
+import ClientNavigationLifecycle, {
+  headings as clientNavigationLifecycleHeadings,
+} from "./next-js-client-navigation-lifecycle";
+import LinkPrefetchingMechanics, {
+  headings as linkPrefetchingMechanicsHeadings,
+} from "./link-prefetching-mechanics";
+import NavigationPrefetchingStrategy, {
+  headings as navigationPrefetchingStrategyHeadings,
+} from "./navigation-prefetching-strategy";
+import UseRouterVsLink, {
+  headings as useRouterVsLinkHeadings,
+} from "./userouter-vs-link";
+import UrlStateArchitecture, {
+  headings as urlStateArchitectureHeadings,
+} from "./url-state-architecture";
+import PaginationStateUrlSync, {
+  headings as paginationStateUrlSyncHeadings,
+} from "./pagination-state-url-synchronization";
+import ScrollRestoration, {
+  headings as scrollRestorationHeadings,
+} from "./scroll-restoration";
+import SearchFilterStateInTheUrl, {
+  headings as searchFilterStateInTheUrlHeadings,
+} from "./search-filter-state-in-the-url";
+import ServerSideNavigationControl, {
+  headings as serverSideNavigationControlHeadings,
+} from "./server-side-navigation-control-redirect-vs-permanentredirect";
+import ClientRouterCacheMechanics, {
+  headings as clientRouterCacheMechanicsHeadings,
+} from "./client-router-cache-mechanics-router-refresh";
 
 export interface ChapterHeading {
   id: string;
@@ -815,6 +855,119 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Parallel Routes দিয়ে কমপ্লেক্স ড্যাশবোর্ড আর্কিটেকচার",
         en: "Complex Dashboard Architecture with Parallel Routes",
+      },
+    },
+  },
+
+  // ── Chapter 06 — Advanced Navigation & URL Architecture ─────────────
+  "navigation-url-architecture/next-js-client-navigation-lifecycle": {
+    Body: ClientNavigationLifecycle,
+    headings: clientNavigationLifecycleHeadings,
+    cover: {
+      src: ch6Topic1Cover,
+      alt: {
+        bn: "Next.js ক্লায়েন্ট নেভিগেশন লাইফসাইকেল",
+        en: "Next.js Client Navigation Lifecycle",
+      },
+    },
+  },
+  "navigation-url-architecture/link-prefetching-mechanics": {
+    Body: LinkPrefetchingMechanics,
+    headings: linkPrefetchingMechanicsHeadings,
+    cover: {
+      src: ch6Topic2Cover,
+      alt: {
+        bn: "<Link> Prefetching মেকানিক্স",
+        en: "<Link> Prefetching Mechanics",
+      },
+    },
+  },
+  "navigation-url-architecture/navigation-prefetching-strategy": {
+    Body: NavigationPrefetchingStrategy,
+    headings: navigationPrefetchingStrategyHeadings,
+    cover: {
+      src: ch6Topic3Cover,
+      alt: {
+        bn: "নেভিগেশন Prefetching স্ট্র্যাটেজি",
+        en: "Navigation Prefetching Strategy",
+      },
+    },
+  },
+  "navigation-url-architecture/userouter-vs-link": {
+    Body: UseRouterVsLink,
+    headings: useRouterVsLinkHeadings,
+    cover: {
+      src: ch6Topic4Cover,
+      alt: {
+        bn: "useRouter() বনাম <Link>",
+        en: "useRouter() vs <Link>",
+      },
+    },
+  },
+  "navigation-url-architecture/url-state-architecture": {
+    Body: UrlStateArchitecture,
+    headings: urlStateArchitectureHeadings,
+    cover: {
+      src: ch6Topic5Cover,
+      alt: {
+        bn: "URL স্টেট আর্কিটেকচার — URL-ই Single Source of Truth",
+        en: "URL State Architecture — URL as Single Source of Truth",
+      },
+    },
+  },
+  "navigation-url-architecture/search-filter-state-in-the-url": {
+    Body: SearchFilterStateInTheUrl,
+    headings: searchFilterStateInTheUrlHeadings,
+    cover: {
+      src: ch6Topic6Cover,
+      alt: {
+        bn: "URL-এ Search ও Filter স্টেট (nuqs, debouncing ও সার্ভার সিঙ্ক)",
+        en: "Search & Filter State in the URL (nuqs, debouncing & server sync)",
+      },
+    },
+  },
+  "navigation-url-architecture/pagination-state-url-synchronization": {
+    Body: PaginationStateUrlSync,
+    headings: paginationStateUrlSyncHeadings,
+    cover: {
+      src: ch6Topic7Cover,
+      alt: {
+        bn: "Pagination স্টেট ও URL সিঙ্ক্রোনাইজেশন",
+        en: "Pagination State & URL Synchronization",
+      },
+    },
+  },
+  "navigation-url-architecture/scroll-restoration": {
+    Body: ScrollRestoration,
+    headings: scrollRestorationHeadings,
+    cover: {
+      src: ch6Topic8Cover,
+      alt: {
+        bn: "Scroll Restoration ও কাস্টম স্ক্রল বিহেভিয়ার",
+        en: "Scroll Restoration & Custom Scroll Behaviour",
+      },
+    },
+  },
+  "navigation-url-architecture/server-side-navigation-control-redirect-vs-permanentredirect":
+    {
+      Body: ServerSideNavigationControl,
+      headings: serverSideNavigationControlHeadings,
+      cover: {
+        src: ch6Topic9Cover,
+        alt: {
+          bn: "Server-side নেভিগেশন কন্ট্রোল — redirect বনাম permanentRedirect",
+          en: "Server-side Navigation Control — redirect vs permanentRedirect",
+        },
+      },
+    },
+  "navigation-url-architecture/client-router-cache-mechanics-router-refresh": {
+    Body: ClientRouterCacheMechanics,
+    headings: clientRouterCacheMechanicsHeadings,
+    cover: {
+      src: ch6Topic10Cover,
+      alt: {
+        bn: "Client Router Cache মেকানিক্স ও router.refresh()",
+        en: "Client Router Cache Mechanics & router.refresh()",
       },
     },
   },
