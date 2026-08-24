@@ -61,6 +61,26 @@ import ch6Topic7Cover from "@/public/blogs-images/chapter-6/topic-7.png";
 import ch6Topic8Cover from "@/public/blogs-images/chapter-6/topic-8.png";
 import ch6Topic9Cover from "@/public/blogs-images/chapter-6/topic-9.png";
 import ch6Topic10Cover from "@/public/blogs-images/chapter-6/topic-10.png";
+import ch7Topic1Cover from "@/public/blogs-images/chapter-7/topic-1.png";
+import ch7Topic2Cover from "@/public/blogs-images/chapter-7/topic-2.png";
+import ch7Topic3Cover from "@/public/blogs-images/chapter-7/topic-3.png";
+import ch7Topic4Cover from "@/public/blogs-images/chapter-7/topic-4.png";
+import ch7Topic5Cover from "@/public/blogs-images/chapter-7/topic-5.png";
+import ch7Topic6Cover from "@/public/blogs-images/chapter-7/topic-6.png";
+import ch7Topic7Cover from "@/public/blogs-images/chapter-7/topic-7.png";
+import ch7Topic8Cover from "@/public/blogs-images/chapter-7/topic-8.png";
+import ch7Topic9Cover from "@/public/blogs-images/chapter-7/topic-9.png";
+import ch7Topic10Cover from "@/public/blogs-images/chapter-7/topic-10.png";
+import ch8Topic1Cover from "@/public/blogs-images/chapter-8/topic-1.png";
+import ch8Topic2Cover from "@/public/blogs-images/chapter-8/topic-2.png";
+import ch8Topic3Cover from "@/public/blogs-images/chapter-8/topic-3.png";
+import ch8Topic4Cover from "@/public/blogs-images/chapter-8/topic-4.png";
+import ch8Topic5Cover from "@/public/blogs-images/chapter-8/topic-5.png";
+import ch8Topic6Cover from "@/public/blogs-images/chapter-8/topic-6.png";
+import ch8Topic7Cover from "@/public/blogs-images/chapter-8/topic-7.png";
+import ch8Topic8Cover from "@/public/blogs-images/chapter-8/topic-8.png";
+import ch8Topic9Cover from "@/public/blogs-images/chapter-8/topic-9.png";
+import ch8Topic10Cover from "@/public/blogs-images/chapter-8/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -242,6 +262,66 @@ import ServerSideNavigationControl, {
 import ClientRouterCacheMechanics, {
   headings as clientRouterCacheMechanicsHeadings,
 } from "./client-router-cache-mechanics-router-refresh";
+import StaticRenderingArchitecture, {
+  headings as staticRenderingArchitectureHeadings,
+} from "./static-rendering-architecture";
+import DynamicRenderingArchitecture, {
+  headings as dynamicRenderingArchitectureHeadings,
+} from "./dynamic-rendering-architecture";
+import StreamingRendering, {
+  headings as streamingRenderingHeadings,
+} from "./streaming-rendering";
+import ServerSideRenderingLifecycle, {
+  headings as serverSideRenderingLifecycleHeadings,
+} from "./server-side-rendering-lifecycle";
+import ClientSideRenderingTradeOffs, {
+  headings as clientSideRenderingTradeOffsHeadings,
+} from "./client-side-rendering-trade-offs";
+import HybridRenderingArchitecture, {
+  headings as hybridRenderingArchitectureHeadings,
+} from "./hybrid-rendering-architecture";
+import RenderingBoundaries, {
+  headings as renderingBoundariesHeadings,
+} from "./rendering-boundaries";
+import HiddenCostsOfDynamicRendering, {
+  headings as hiddenCostsOfDynamicRenderingHeadings,
+} from "./hidden-costs-of-dynamic-rendering";
+import ServerComponentSecurityDataLeaks, {
+  headings as serverComponentSecurityDataLeaksHeadings,
+} from "./server-component-security-data-leaks";
+import PerformanceAuditingCoreWebVitals, {
+  headings as performanceAuditingCoreWebVitalsHeadings,
+} from "./performance-auditing-core-web-vitals";
+import ReactSuspenseMentalModel, {
+  headings as reactSuspenseMentalModelHeadings,
+} from "./react-suspense-mental-model";
+import SuspenseBoundaryArchitecture, {
+  headings as suspenseBoundaryArchitectureHeadings,
+} from "./suspense-boundary-architecture";
+import StreamingHtml, {
+  headings as streamingHtmlHeadings,
+} from "./streaming-html";
+import ProgressiveRendering, {
+  headings as progressiveRenderingHeadings,
+} from "./progressive-rendering";
+import NestedSuspenseBoundaries, {
+  headings as nestedSuspenseBoundariesHeadings,
+} from "./nested-suspense-boundaries";
+import LoadingUiVsSuspense, {
+  headings as loadingUiVsSuspenseHeadings,
+} from "./loading-ui-vs-suspense";
+import SuspenseWaterfallProblems, {
+  headings as suspenseWaterfallProblemsHeadings,
+} from "./suspense-waterfall-problems";
+import ParallelRenderingWithSuspense, {
+  headings as parallelRenderingWithSuspenseHeadings,
+} from "./parallel-rendering-with-suspense";
+import UxDesignForStreaming, {
+  headings as uxDesignForStreamingHeadings,
+} from "./ux-design-for-streaming";
+import DebuggingStreamingPerformance, {
+  headings as debuggingStreamingPerformanceHeadings,
+} from "./debugging-streaming-performance";
 
 export interface ChapterHeading {
   id: string;
@@ -968,6 +1048,230 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Client Router Cache মেকানিক্স ও router.refresh()",
         en: "Client Router Cache Mechanics & router.refresh()",
+      },
+    },
+  },
+
+  // ── Chapter 07 — Rendering Strategies ───────────────────────────────
+  "rendering-strategies/static-rendering-architecture": {
+    Body: StaticRenderingArchitecture,
+    headings: staticRenderingArchitectureHeadings,
+    cover: {
+      src: ch7Topic1Cover,
+      alt: {
+        bn: "Static রেন্ডারিং আর্কিটেকচার",
+        en: "Static Rendering Architecture",
+      },
+    },
+  },
+  "rendering-strategies/dynamic-rendering-architecture": {
+    Body: DynamicRenderingArchitecture,
+    headings: dynamicRenderingArchitectureHeadings,
+    cover: {
+      src: ch7Topic2Cover,
+      alt: {
+        bn: "Dynamic রেন্ডারিং আর্কিটেকচার",
+        en: "Dynamic Rendering Architecture",
+      },
+    },
+  },
+  "rendering-strategies/streaming-rendering": {
+    Body: StreamingRendering,
+    headings: streamingRenderingHeadings,
+    cover: {
+      src: ch7Topic3Cover,
+      alt: {
+        bn: "Streaming রেন্ডারিং",
+        en: "Streaming Rendering",
+      },
+    },
+  },
+  "rendering-strategies/server-side-rendering-lifecycle": {
+    Body: ServerSideRenderingLifecycle,
+    headings: serverSideRenderingLifecycleHeadings,
+    cover: {
+      src: ch7Topic4Cover,
+      alt: {
+        bn: "Server-side রেন্ডারিং লাইফসাইকেল — RSC Payload, Hydration ও Client Takeover",
+        en: "Server-side Rendering Lifecycle — RSC Payload, Hydration & Client Takeover",
+      },
+    },
+  },
+  "rendering-strategies/client-side-rendering-trade-offs": {
+    Body: ClientSideRenderingTradeOffs,
+    headings: clientSideRenderingTradeOffsHeadings,
+    cover: {
+      src: ch7Topic5Cover,
+      alt: {
+        bn: "Client-side রেন্ডারিং ট্রেড-অফ — বান্ডল সাইজ, SEO ও পারফরম্যান্স",
+        en: "Client-side Rendering Trade-offs — Bundle Size, SEO & Performance",
+      },
+    },
+  },
+  "rendering-strategies/hybrid-rendering-architecture": {
+    Body: HybridRenderingArchitecture,
+    headings: hybridRenderingArchitectureHeadings,
+    cover: {
+      src: ch7Topic6Cover,
+      alt: {
+        bn: "হাইব্রিড রেন্ডারিং আর্কিটেকচার — এক রুটে Static, Dynamic ও Streaming",
+        en: "Hybrid Rendering Architecture — Static, Dynamic & Streaming in One Route",
+      },
+    },
+  },
+  "rendering-strategies/rendering-boundaries": {
+    Body: RenderingBoundaries,
+    headings: renderingBoundariesHeadings,
+    cover: {
+      src: ch7Topic7Cover,
+      alt: {
+        bn: "রেন্ডারিং বাউন্ডারি ও children প্রপ প্যাটার্ন",
+        en: "Rendering Boundaries & the children Prop Pattern",
+      },
+    },
+  },
+  "rendering-strategies/hidden-costs-of-dynamic-rendering": {
+    Body: HiddenCostsOfDynamicRendering,
+    headings: hiddenCostsOfDynamicRenderingHeadings,
+    cover: {
+      src: ch7Topic8Cover,
+      alt: {
+        bn: "Dynamic রেন্ডারিং-এর লুকানো খরচ — Compute, Serverless Limit ও DB Pooling",
+        en: "Hidden Costs of Dynamic Rendering — Compute, Serverless Limits & DB Pooling",
+      },
+    },
+  },
+  "rendering-strategies/server-component-security-data-leaks": {
+    Body: ServerComponentSecurityDataLeaks,
+    headings: serverComponentSecurityDataLeaksHeadings,
+    cover: {
+      src: ch7Topic9Cover,
+      alt: {
+        bn: "Server Component সিকিউরিটি ও ডেটা লিক — server-only ও DTO প্যাটার্ন",
+        en: "Server Component Security & Data Leaks — server-only & the DTO Pattern",
+      },
+    },
+  },
+  "rendering-strategies/performance-auditing-core-web-vitals": {
+    Body: PerformanceAuditingCoreWebVitals,
+    headings: performanceAuditingCoreWebVitalsHeadings,
+    cover: {
+      src: ch7Topic10Cover,
+      alt: {
+        bn: "পারফরম্যান্স অডিটিং ও Core Web Vitals — LCP, CLS ও INP",
+        en: "Performance Auditing & Core Web Vitals — LCP, CLS & INP",
+      },
+    },
+  },
+
+  // ── Chapter 08 — Suspense, Streaming & Progressive UI ────────────────
+  "suspense-streaming/react-suspense-mental-model": {
+    Body: ReactSuspenseMentalModel,
+    headings: reactSuspenseMentalModelHeadings,
+    cover: {
+      src: ch8Topic1Cover,
+      alt: {
+        bn: "React Suspense মেন্টাল মডেল — Promise Suspension ও Fallback মেকানিক্স",
+        en: "React Suspense Mental Model — Promise Suspension & Fallback Mechanics",
+      },
+    },
+  },
+  "suspense-streaming/suspense-boundary-architecture": {
+    Body: SuspenseBoundaryArchitecture,
+    headings: suspenseBoundaryArchitectureHeadings,
+    cover: {
+      src: ch8Topic2Cover,
+      alt: {
+        bn: "Suspense বাউন্ডারি আর্কিটেকচার — Granular বনাম Page-level",
+        en: "Suspense Boundary Architecture — Granular vs Page-level",
+      },
+    },
+  },
+  "suspense-streaming/streaming-html": {
+    Body: StreamingHtml,
+    headings: streamingHtmlHeadings,
+    cover: {
+      src: ch8Topic3Cover,
+      alt: {
+        bn: "Streaming HTML — HTTP Chunking ও Out-of-Order Injection",
+        en: "Streaming HTML — HTTP Chunking & Out-of-Order Injection",
+      },
+    },
+  },
+  "suspense-streaming/progressive-rendering": {
+    Body: ProgressiveRendering,
+    headings: progressiveRenderingHeadings,
+    cover: {
+      src: ch8Topic4Cover,
+      alt: {
+        bn: "প্রোগ্রেসিভ রেন্ডারিং ও Selective Hydration",
+        en: "Progressive Rendering & Selective Hydration",
+      },
+    },
+  },
+  "suspense-streaming/nested-suspense-boundaries": {
+    Body: NestedSuspenseBoundaries,
+    headings: nestedSuspenseBoundariesHeadings,
+    cover: {
+      src: ch8Topic5Cover,
+      alt: {
+        bn: "Nested Suspense বাউন্ডারি ও Fallback Resolution",
+        en: "Nested Suspense Boundaries & Fallback Resolution",
+      },
+    },
+  },
+  "suspense-streaming/loading-ui-vs-suspense": {
+    Body: LoadingUiVsSuspense,
+    headings: loadingUiVsSuspenseHeadings,
+    cover: {
+      src: ch8Topic6Cover,
+      alt: {
+        bn: "loading.js কনভেনশন বনাম Inline Suspense বাউন্ডারি",
+        en: "loading.js Convention vs Inline Suspense Boundaries",
+      },
+    },
+  },
+  "suspense-streaming/suspense-waterfall-problems": {
+    Body: SuspenseWaterfallProblems,
+    headings: suspenseWaterfallProblemsHeadings,
+    cover: {
+      src: ch8Topic7Cover,
+      alt: {
+        bn: "Suspense Waterfall সমস্যা ও Cascading Stream Delay",
+        en: "Suspense Waterfall Problems & Cascading Stream Delays",
+      },
+    },
+  },
+  "suspense-streaming/parallel-rendering-with-suspense": {
+    Body: ParallelRenderingWithSuspense,
+    headings: parallelRenderingWithSuspenseHeadings,
+    cover: {
+      src: ch8Topic8Cover,
+      alt: {
+        bn: "Suspense দিয়ে Parallel রেন্ডারিং — Data-level বনাম Component-level",
+        en: "Parallel Rendering with Suspense — Data-level vs Component-level",
+      },
+    },
+  },
+  "suspense-streaming/ux-design-for-streaming": {
+    Body: UxDesignForStreaming,
+    headings: uxDesignForStreamingHeadings,
+    cover: {
+      src: ch8Topic9Cover,
+      alt: {
+        bn: "Streaming-এর UX ডিজাইন — Layout Shift ও Skeleton Matching",
+        en: "UX Design for Streaming — Layout Shift & Skeleton Matching",
+      },
+    },
+  },
+  "suspense-streaming/debugging-streaming-performance": {
+    Body: DebuggingStreamingPerformance,
+    headings: debuggingStreamingPerformanceHeadings,
+    cover: {
+      src: ch8Topic10Cover,
+      alt: {
+        bn: "Streaming পারফরম্যান্স ডিবাগিং ও Hydration ডায়াগনস্টিকস",
+        en: "Debugging Streaming Performance & Hydration Diagnostics",
       },
     },
   },
