@@ -81,6 +81,26 @@ import ch8Topic7Cover from "@/public/blogs-images/chapter-8/topic-7.png";
 import ch8Topic8Cover from "@/public/blogs-images/chapter-8/topic-8.png";
 import ch8Topic9Cover from "@/public/blogs-images/chapter-8/topic-9.png";
 import ch8Topic10Cover from "@/public/blogs-images/chapter-8/topic-10.png";
+import ch9Topic1Cover from "@/public/blogs-images/chapter-9/topic-1.png";
+import ch9Topic2Cover from "@/public/blogs-images/chapter-9/topic-2.png";
+import ch9Topic3Cover from "@/public/blogs-images/chapter-9/topic-3.png";
+import ch9Topic4Cover from "@/public/blogs-images/chapter-9/topic-4.png";
+import ch9Topic5Cover from "@/public/blogs-images/chapter-9/topic-5.png";
+import ch9Topic6Cover from "@/public/blogs-images/chapter-9/topic-6.png";
+import ch9Topic7Cover from "@/public/blogs-images/chapter-9/topic-7.png";
+import ch9Topic8Cover from "@/public/blogs-images/chapter-9/topic-8.png";
+import ch9Topic9Cover from "@/public/blogs-images/chapter-9/topic-9.png";
+import ch9Topic10Cover from "@/public/blogs-images/chapter-9/topic-10.png";
+import ch10Topic1Cover from "@/public/blogs-images/chapter-10/topic-1.png";
+import ch10Topic2Cover from "@/public/blogs-images/chapter-10/topic-2.png";
+import ch10Topic3Cover from "@/public/blogs-images/chapter-10/topic-3.png";
+import ch10Topic4Cover from "@/public/blogs-images/chapter-10/topic-4.png";
+import ch10Topic5Cover from "@/public/blogs-images/chapter-10/topic-5.png";
+import ch10Topic6Cover from "@/public/blogs-images/chapter-10/topic-6.png";
+import ch10Topic7Cover from "@/public/blogs-images/chapter-10/topic-7.png";
+import ch10Topic8Cover from "@/public/blogs-images/chapter-10/topic-8.png";
+import ch10Topic9Cover from "@/public/blogs-images/chapter-10/topic-9.png";
+import ch10Topic10Cover from "@/public/blogs-images/chapter-10/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -322,6 +342,64 @@ import UxDesignForStreaming, {
 import DebuggingStreamingPerformance, {
   headings as debuggingStreamingPerformanceHeadings,
 } from "./debugging-streaming-performance";
+import ReactServerComponents, {
+  headings as reactServerComponentsHeadings,
+} from "./react-server-components";
+import SuspenseAndStreaming, {
+  headings as suspenseAndStreamingHeadings,
+} from "./suspense-streaming";
+import ConcurrentRendering, {
+  headings as concurrentRenderingHeadings,
+} from "./concurrent-rendering";
+import TransitionsAndUseTransition, {
+  headings as transitionsAndUseTransitionHeadings,
+} from "./transitions-usetransition";
+import UseOptimisticHook, {
+  headings as useOptimisticHookHeadings,
+} from "./useoptimistic";
+import UseActionStateHook, {
+  headings as useActionStateHookHeadings,
+} from "./useactionstate";
+import ReactCompiler, {
+  headings as reactCompilerHeadings,
+} from "./react-compiler";
+import Hydration, { headings as hydrationTopicHeadings } from "./hydration";
+import StateArchitecture, {
+  headings as stateArchitectureHeadings,
+} from "./state-architecture";
+import ContextPerformance, {
+  headings as contextPerformanceHeadings,
+} from "./context-performance";
+import ReRenderRootCauseAnalysis, {
+  headings as reRenderRootCauseAnalysisHeadings,
+} from "./re-render-root-cause-analysis";
+import ComponentGranularityRenderCost, {
+  headings as componentGranularityRenderCostHeadings,
+} from "./component-granularity-render-cost";
+import WhenToUseMemo, {
+  headings as whenToUseMemoHeadings,
+} from "./when-to-use-memo";
+import UseMemoCostVsBenefit, {
+  headings as useMemoCostVsBenefitHeadings,
+} from "./usememo-cost-vs-benefit";
+import UseCallbackCostVsBenefit, {
+  headings as useCallbackCostVsBenefitHeadings,
+} from "./usecallback-cost-vs-benefit";
+import StateColocationContextSplitting, {
+  headings as stateColocationContextSplittingHeadings,
+} from "./state-colocation-context-splitting";
+import ComponentGranularityAndStructure, {
+  headings as componentGranularityAndStructureHeadings,
+} from "./component-granularity-and-structure";
+import KeyPropAsComponentIdentity, {
+  headings as keyPropAsComponentIdentityHeadings,
+} from "./key-prop-as-component-identity";
+import ReactCompilerAutoMemoization, {
+  headings as reactCompilerAutoMemoizationHeadings,
+} from "./react-compiler-auto-memoization";
+import PerformanceBudgetMonitoring, {
+  headings as performanceBudgetMonitoringHeadings,
+} from "./performance-budget-monitoring";
 
 export interface ChapterHeading {
   id: string;
@@ -1272,6 +1350,230 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Streaming পারফরম্যান্স ডিবাগিং ও Hydration ডায়াগনস্টিকস",
         en: "Debugging Streaming Performance & Hydration Diagnostics",
+      },
+    },
+  },
+
+  // ── Chapter 09 — Advanced React for Next.js ──────────────────────────
+  "advanced-react/react-server-components": {
+    Body: ReactServerComponents,
+    headings: reactServerComponentsHeadings,
+    cover: {
+      src: ch9Topic1Cover,
+      alt: {
+        bn: "React Server Components — আর্কিটেকচার, Flight Protocol ও মেন্টাল মডেল",
+        en: "React Server Components — Architecture, Flight Protocol & Mental Model",
+      },
+    },
+  },
+  "advanced-react/suspense-streaming": {
+    Body: SuspenseAndStreaming,
+    headings: suspenseAndStreamingHeadings,
+    cover: {
+      src: ch9Topic2Cover,
+      alt: {
+        bn: "Suspense ও Streaming — Granular বাউন্ডারি ও Out-of-Order স্ট্রিমিং",
+        en: "Suspense & Streaming — Granular Boundaries & Out-of-Order Streaming",
+      },
+    },
+  },
+  "advanced-react/concurrent-rendering": {
+    Body: ConcurrentRendering,
+    headings: concurrentRenderingHeadings,
+    cover: {
+      src: ch9Topic3Cover,
+      alt: {
+        bn: "কনকারেন্ট রেন্ডারিং — Interruptible রেন্ডারিং ও Lane Model",
+        en: "Concurrent Rendering — Interruptible Rendering & the Lane Model",
+      },
+    },
+  },
+  "advanced-react/transitions-usetransition": {
+    Body: TransitionsAndUseTransition,
+    headings: transitionsAndUseTransitionHeadings,
+    cover: {
+      src: ch9Topic4Cover,
+      alt: {
+        bn: "ট্রানজিশন ও useTransition — Async Transition ও Pending স্টেট",
+        en: "Transitions & useTransition — Async Transitions & Pending State",
+      },
+    },
+  },
+  "advanced-react/useoptimistic": {
+    Body: UseOptimisticHook,
+    headings: useOptimisticHookHeadings,
+    cover: {
+      src: ch9Topic5Cover,
+      alt: {
+        bn: "useOptimistic — Optimistic UI আপডেট ও Auto-Rollback আর্কিটেকচার",
+        en: "useOptimistic — Optimistic UI Updates & Rollback Architecture",
+      },
+    },
+  },
+  "advanced-react/useactionstate": {
+    Body: UseActionStateHook,
+    headings: useActionStateHookHeadings,
+    cover: {
+      src: ch9Topic6Cover,
+      alt: {
+        bn: "useActionState — Action State, Pending স্ট্যাটাস ও ফর্ম লাইফসাইকেল",
+        en: "useActionState — Action State, Pending Status & Form Lifecycle",
+      },
+    },
+  },
+  "advanced-react/react-compiler": {
+    Body: ReactCompiler,
+    headings: reactCompilerHeadings,
+    cover: {
+      src: ch9Topic7Cover,
+      alt: {
+        bn: "রিঅ্যাক্ট কম্পাইলার — বিল্ড-টাইম Auto-Memoization",
+        en: "React Compiler — Build-time Auto-Memoization",
+      },
+    },
+  },
+  "advanced-react/hydration": {
+    Body: Hydration,
+    headings: hydrationTopicHeadings,
+    cover: {
+      src: ch9Topic8Cover,
+      alt: {
+        bn: "হাইড্রেশন — SSR Mismatch ও Selective Hydration",
+        en: "Hydration — SSR Mismatch & Selective Hydration",
+      },
+    },
+  },
+  "advanced-react/state-architecture": {
+    Body: StateArchitecture,
+    headings: stateArchitectureHeadings,
+    cover: {
+      src: ch9Topic9Cover,
+      alt: {
+        bn: "স্টেট আর্কিটেকচার — Co-location, Derived State ও Server/Client সেপারেশন",
+        en: "State Architecture — Co-location, Derived State & Server/Client Separation",
+      },
+    },
+  },
+  "advanced-react/context-performance": {
+    Body: ContextPerformance,
+    headings: contextPerformanceHeadings,
+    cover: {
+      src: ch9Topic10Cover,
+      alt: {
+        bn: "Context পারফরম্যান্স — Context Splitting, Memoization ও Bail-out",
+        en: "Context Performance — Splitting, Memoization & Bail-out",
+      },
+    },
+  },
+
+  // ── Chapter 10 — React Rendering & State Performance ─────────────────
+  "react-rendering-performance/re-render-root-cause-analysis": {
+    Body: ReRenderRootCauseAnalysis,
+    headings: reRenderRootCauseAnalysisHeadings,
+    cover: {
+      src: ch10Topic1Cover,
+      alt: {
+        bn: "Re-render-এর রুট কজ অ্যানালাইসিস — ট্রিগার ট্রি ও ডায়াগনস্টিকস",
+        en: "Re-render Root Cause Analysis — Trigger Tree & Diagnostics",
+      },
+    },
+  },
+  "react-rendering-performance/component-granularity-render-cost": {
+    Body: ComponentGranularityRenderCost,
+    headings: componentGranularityRenderCostHeadings,
+    cover: {
+      src: ch10Topic2Cover,
+      alt: {
+        bn: "কম্পোনেন্ট গ্র্যানুলারিটি ও রেন্ডার কস্ট — Reconciliation ও আইসোলেশন",
+        en: "Component Granularity & Render Cost — Reconciliation & Isolation",
+      },
+    },
+  },
+  "react-rendering-performance/when-to-use-memo": {
+    Body: WhenToUseMemo,
+    headings: whenToUseMemoHeadings,
+    cover: {
+      src: ch10Topic3Cover,
+      alt: {
+        bn: "memo কখন ব্যবহার করা উচিত — Shallow Comparison ও Bail-out",
+        en: "When to Use memo — Shallow Comparison & Bail-out",
+      },
+    },
+  },
+  "react-rendering-performance/usememo-cost-vs-benefit": {
+    Body: UseMemoCostVsBenefit,
+    headings: useMemoCostVsBenefitHeadings,
+    cover: {
+      src: ch10Topic4Cover,
+      alt: {
+        bn: "useMemo — খরচ বনাম লাভ ও Referential Stability",
+        en: "useMemo Cost vs Benefit & Referential Stability",
+      },
+    },
+  },
+  "react-rendering-performance/usecallback-cost-vs-benefit": {
+    Body: UseCallbackCostVsBenefit,
+    headings: useCallbackCostVsBenefitHeadings,
+    cover: {
+      src: ch10Topic5Cover,
+      alt: {
+        bn: "useCallback — খরচ বনাম লাভ, Stale Closure ও Functional Updates",
+        en: "useCallback Cost vs Benefit — Stale Closures & Functional Updates",
+      },
+    },
+  },
+  "react-rendering-performance/state-colocation-context-splitting": {
+    Body: StateColocationContextSplitting,
+    headings: stateColocationContextSplittingHeadings,
+    cover: {
+      src: ch10Topic6Cover,
+      alt: {
+        bn: "State Colocation ও Context Splitting — Re-render Cascade বন্ধ করা",
+        en: "State Colocation & Context Splitting — Stopping the Re-render Cascade",
+      },
+    },
+  },
+  "react-rendering-performance/component-granularity-and-structure": {
+    Body: ComponentGranularityAndStructure,
+    headings: componentGranularityAndStructureHeadings,
+    cover: {
+      src: ch10Topic7Cover,
+      alt: {
+        bn: "কম্পোনেন্ট গ্র্যানুলারিটি ও স্ট্রাকচার — State Isolation ও children প্যাটার্ন",
+        en: "Component Granularity and Structure — State Isolation & the children Pattern",
+      },
+    },
+  },
+  "react-rendering-performance/key-prop-as-component-identity": {
+    Body: KeyPropAsComponentIdentity,
+    headings: keyPropAsComponentIdentityHeadings,
+    cover: {
+      src: ch10Topic8Cover,
+      alt: {
+        bn: "key প্রপ ও কম্পোনেন্ট আইডেন্টিটি — Remount দিয়ে স্টেট রিসেট",
+        en: "Key Prop as Component Identity — Resetting State via Remount",
+      },
+    },
+  },
+  "react-rendering-performance/react-compiler-auto-memoization": {
+    Body: ReactCompilerAutoMemoization,
+    headings: reactCompilerAutoMemoizationHeadings,
+    cover: {
+      src: ch10Topic9Cover,
+      alt: {
+        bn: "রিঅ্যাক্ট কম্পাইলার ও Auto-memoization — Next.js 15 সেটআপ",
+        en: "React Compiler & Auto-memoization — Next.js 15 Setup",
+      },
+    },
+  },
+  "react-rendering-performance/performance-budget-monitoring": {
+    Body: PerformanceBudgetMonitoring,
+    headings: performanceBudgetMonitoringHeadings,
+    cover: {
+      src: ch10Topic10Cover,
+      alt: {
+        bn: "পারফরম্যান্স বাজেট ও মনিটরিং — Profiler ও Core Web Vitals",
+        en: "Performance Budget & Monitoring — Profiler & Core Web Vitals",
       },
     },
   },
