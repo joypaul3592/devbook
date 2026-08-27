@@ -144,6 +144,16 @@ const WRITTEN = new Set<string>([
   "react-rendering-performance/key-prop-as-component-identity",
   "react-rendering-performance/react-compiler-auto-memoization",
   "react-rendering-performance/performance-budget-monitoring",
+  "bundle-optimization/tree-shaking-dead-code-elimination",
+  "bundle-optimization/esm-vs-cjs",
+  "bundle-optimization/bundle-splitting-chunking",
+  "bundle-optimization/dynamic-imports",
+  "bundle-optimization/package-optimization-optimizepackageimports-modularizeimports",
+  "bundle-optimization/package-json-optimization",
+  "bundle-optimization/dependency-analysis",
+  "bundle-optimization/bundle-analyzer",
+  "bundle-optimization/dynamic-imports-react-lazy-ssr-options",
+  "bundle-optimization/duplicate-dependencies",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -609,11 +619,17 @@ const raw: RawChapter[] = [
       { bn: "ESM বনাম CJS", en: "ESM vs CJS" },
       { bn: "Bundle splitting ও chunking", en: "Bundle Splitting & Chunking" },
       { bn: "Dynamic imports", en: "Dynamic Imports" },
-      { bn: "Package exports ও sideEffects", en: "Package exports & sideEffects" },
+      {
+        bn: "প্যাকেজ অপটিমাইজেশন (optimizePackageImports ও modularizeImports)",
+        en: "Package Optimization (optimizePackageImports & modularizeImports)",
+      },
       { bn: "package.json অপটিমাইজেশন", en: "package.json Optimization" },
       { bn: "Dependency analysis", en: "Dependency Analysis" },
       { bn: "Bundle analyzer", en: "Bundle Analyzer" },
-      { bn: "JavaScript ও CSS bundle size", en: "JavaScript & CSS Bundle Size" },
+      {
+        bn: "Dynamic Imports, React.lazy ও SSR অপশন",
+        en: "Dynamic Imports, React.lazy & SSR Options",
+      },
       { bn: "Duplicate dependencies", en: "Duplicate Dependencies" },
     ],
   },

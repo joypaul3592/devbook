@@ -101,6 +101,16 @@ import ch10Topic7Cover from "@/public/blogs-images/chapter-10/topic-7.png";
 import ch10Topic8Cover from "@/public/blogs-images/chapter-10/topic-8.png";
 import ch10Topic9Cover from "@/public/blogs-images/chapter-10/topic-9.png";
 import ch10Topic10Cover from "@/public/blogs-images/chapter-10/topic-10.png";
+import ch11Topic1Cover from "@/public/blogs-images/chapter-11/topic-1.png";
+import ch11Topic2Cover from "@/public/blogs-images/chapter-11/topic-2.png";
+import ch11Topic3Cover from "@/public/blogs-images/chapter-11/topic-3.png";
+import ch11Topic4Cover from "@/public/blogs-images/chapter-11/topic-4.png";
+import ch11Topic5Cover from "@/public/blogs-images/chapter-11/topic-5.png";
+import ch11Topic6Cover from "@/public/blogs-images/chapter-11/topic-6.png";
+import ch11Topic7Cover from "@/public/blogs-images/chapter-11/topic-7.png";
+import ch11Topic8Cover from "@/public/blogs-images/chapter-11/topic-8.png";
+import ch11Topic9Cover from "@/public/blogs-images/chapter-11/topic-9.png";
+import ch11Topic10Cover from "@/public/blogs-images/chapter-11/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -400,6 +410,34 @@ import ReactCompilerAutoMemoization, {
 import PerformanceBudgetMonitoring, {
   headings as performanceBudgetMonitoringHeadings,
 } from "./performance-budget-monitoring";
+import TreeShakingDeadCodeElimination, {
+  headings as treeShakingDeadCodeEliminationHeadings,
+} from "./tree-shaking-dead-code-elimination";
+import EsmVsCjs, { headings as esmVsCjsHeadings } from "./esm-vs-cjs";
+import BundleSplittingChunking, {
+  headings as bundleSplittingChunkingHeadings,
+} from "./bundle-splitting-chunking";
+import DynamicImports, {
+  headings as dynamicImportsHeadings,
+} from "./dynamic-imports";
+import PackageOptimization, {
+  headings as packageOptimizationHeadings,
+} from "./package-optimization-optimizepackageimports-modularizeimports";
+import PackageJsonOptimization, {
+  headings as packageJsonOptimizationHeadings,
+} from "./package-json-optimization";
+import DependencyAnalysis, {
+  headings as dependencyAnalysisHeadings,
+} from "./dependency-analysis";
+import BundleAnalyzer, {
+  headings as bundleAnalyzerHeadings,
+} from "./bundle-analyzer";
+import DynamicImportsReactLazySsr, {
+  headings as dynamicImportsReactLazySsrHeadings,
+} from "./dynamic-imports-react-lazy-ssr-options";
+import DuplicateDependencies, {
+  headings as duplicateDependenciesHeadings,
+} from "./duplicate-dependencies";
 
 export interface ChapterHeading {
   id: string;
@@ -1574,6 +1612,118 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "পারফরম্যান্স বাজেট ও মনিটরিং — Profiler ও Core Web Vitals",
         en: "Performance Budget & Monitoring — Profiler & Core Web Vitals",
+      },
+    },
+  },
+
+  // ── Chapter 11 — Bundle & JavaScript Performance ─────────────────
+  "bundle-optimization/tree-shaking-dead-code-elimination": {
+    Body: TreeShakingDeadCodeElimination,
+    headings: treeShakingDeadCodeEliminationHeadings,
+    cover: {
+      src: ch11Topic1Cover,
+      alt: {
+        bn: "Tree Shaking ও Dead Code Elimination — Static Analysis পাইপলাইন",
+        en: "Tree Shaking & Dead Code Elimination — the Static Analysis Pipeline",
+      },
+    },
+  },
+  "bundle-optimization/esm-vs-cjs": {
+    Body: EsmVsCjs,
+    headings: esmVsCjsHeadings,
+    cover: {
+      src: ch11Topic2Cover,
+      alt: {
+        bn: "ESM বনাম CJS — Scope Hoisting ও Dual Package Hazard",
+        en: "ESM vs CJS — Scope Hoisting & the Dual Package Hazard",
+      },
+    },
+  },
+  "bundle-optimization/bundle-splitting-chunking": {
+    Body: BundleSplittingChunking,
+    headings: bundleSplittingChunkingHeadings,
+    cover: {
+      src: ch11Topic3Cover,
+      alt: {
+        bn: "Bundle Splitting ও Chunking — Monolithic বনাম Granular চ্যাঙ্ক",
+        en: "Bundle Splitting & Chunking — Monolithic vs Granular Chunks",
+      },
+    },
+  },
+  "bundle-optimization/dynamic-imports": {
+    Body: DynamicImports,
+    headings: dynamicImportsHeadings,
+    cover: {
+      src: ch11Topic4Cover,
+      alt: {
+        bn: "Dynamic Imports — next/dynamic ও Intent-based Preloading",
+        en: "Dynamic Imports — next/dynamic & Intent-based Preloading",
+      },
+    },
+  },
+  "bundle-optimization/package-optimization-optimizepackageimports-modularizeimports": {
+    Body: PackageOptimization,
+    headings: packageOptimizationHeadings,
+    cover: {
+      src: ch11Topic5Cover,
+      alt: {
+        bn: "Package Optimization — Barrel File বনাম SWC ইমপোর্ট রিরাইট",
+        en: "Package Optimization — Barrel Files vs SWC Import Rewriting",
+      },
+    },
+  },
+  "bundle-optimization/package-json-optimization": {
+    Body: PackageJsonOptimization,
+    headings: packageJsonOptimizationHeadings,
+    cover: {
+      src: ch11Topic6Cover,
+      alt: {
+        bn: "package.json অপটিমাইজেশন — dependencies, peerDependencies ও sideEffects",
+        en: "package.json Optimization — dependencies, peerDependencies & sideEffects",
+      },
+    },
+  },
+  "bundle-optimization/dependency-analysis": {
+    Body: DependencyAnalysis,
+    headings: dependencyAnalysisHeadings,
+    cover: {
+      src: ch11Topic7Cover,
+      alt: {
+        bn: "Dependency Analysis — Knip ও depcheck দিয়ে জম্বি প্যাকেজ শনাক্তকরণ",
+        en: "Dependency Analysis — Finding Zombie Packages with Knip & depcheck",
+      },
+    },
+  },
+  "bundle-optimization/bundle-analyzer": {
+    Body: BundleAnalyzer,
+    headings: bundleAnalyzerHeadings,
+    cover: {
+      src: ch11Topic8Cover,
+      alt: {
+        bn: "Bundle Analyzer — @next/bundle-analyzer সেটআপ ও ট্রিম্যাপ পড়া",
+        en: "Bundle Analyzer — @next/bundle-analyzer Setup & Reading Treemaps",
+      },
+    },
+  },
+  "bundle-optimization/dynamic-imports-react-lazy-ssr-options": {
+    Body: DynamicImportsReactLazySsr,
+    headings: dynamicImportsReactLazySsrHeadings,
+    cover: {
+      src: ch11Topic9Cover,
+      alt: {
+        bn: "Dynamic Imports, React.lazy ও SSR অপশন — window এরর এড়ানো",
+        en: "Dynamic Imports, React.lazy & SSR Options — Avoiding window Errors",
+      },
+    },
+  },
+  "bundle-optimization/duplicate-dependencies": {
+    Body: DuplicateDependencies,
+    headings: duplicateDependenciesHeadings,
+    cover: {
+      src: ch11Topic10Cover,
+      alt: {
+        bn: "Duplicate Dependencies — ডিটেকশন ও overrides দিয়ে ডিডুপ্লিকেশন",
+        en: "Duplicate Dependencies — Detection & Deduplication via overrides",
       },
     },
   },
