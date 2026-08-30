@@ -131,6 +131,26 @@ import ch13Topic7Cover from "@/public/blogs-images/chapter-13/topic-7.png";
 import ch13Topic8Cover from "@/public/blogs-images/chapter-13/topic-8.png";
 import ch13Topic9Cover from "@/public/blogs-images/chapter-13/topic-9.png";
 import ch13Topic10Cover from "@/public/blogs-images/chapter-13/topic-10.png";
+import ch14Topic1Cover from "@/public/blogs-images/chapter-14/topic-1.png";
+import ch14Topic2Cover from "@/public/blogs-images/chapter-14/topic-2.png";
+import ch14Topic3Cover from "@/public/blogs-images/chapter-14/topic-3.png";
+import ch14Topic4Cover from "@/public/blogs-images/chapter-14/topic-4.png";
+import ch14Topic5Cover from "@/public/blogs-images/chapter-14/topic-5.png";
+import ch14Topic6Cover from "@/public/blogs-images/chapter-14/topic-6.png";
+import ch14Topic7Cover from "@/public/blogs-images/chapter-14/topic-7.png";
+import ch14Topic8Cover from "@/public/blogs-images/chapter-14/topic-8.png";
+import ch14Topic9Cover from "@/public/blogs-images/chapter-14/topic-9.png";
+import ch14Topic10Cover from "@/public/blogs-images/chapter-14/topic-10.png";
+import ch15Topic1Cover from "@/public/blogs-images/chapter-15/topic-1.png";
+import ch15Topic2Cover from "@/public/blogs-images/chapter-15/topic-2.png";
+import ch15Topic3Cover from "@/public/blogs-images/chapter-15/topic-3.png";
+import ch15Topic4Cover from "@/public/blogs-images/chapter-15/topic-4.png";
+import ch15Topic5Cover from "@/public/blogs-images/chapter-15/topic-5.png";
+import ch15Topic6Cover from "@/public/blogs-images/chapter-15/topic-6.png";
+import ch15Topic7Cover from "@/public/blogs-images/chapter-15/topic-7.png";
+import ch15Topic8Cover from "@/public/blogs-images/chapter-15/topic-8.png";
+import ch15Topic9Cover from "@/public/blogs-images/chapter-15/topic-9.png";
+import ch15Topic10Cover from "@/public/blogs-images/chapter-15/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -516,6 +536,56 @@ import ImageMediaOptimization, {
 import CoreWebVitalsPerformanceDebugging, {
   headings as coreWebVitalsPerformanceDebuggingHeadings,
 } from "./core-web-vitals-performance-debugging";
+import TailwindArchitecture, {
+  headings as tailwindArchitectureHeadings,
+} from "./tailwind-architecture";
+import CssModulesGlobalCss, {
+  headings as cssModulesGlobalCssHeadings,
+} from "./css-modules-global-css";
+import CssLayers, { headings as cssLayersHeadings } from "./css-layers";
+import CssVariablesDesignTokens, {
+  headings as cssVariablesDesignTokensHeadings,
+} from "./css-variables-design-tokens";
+import ThemeArchitectureDarkMode, {
+  headings as themeArchitectureDarkModeHeadings,
+} from "./theme-architecture-dark-mode";
+import CssTreeShaking, {
+  headings as cssTreeShakingHeadings,
+} from "./css-tree-shaking";
+import CriticalCss, { headings as criticalCssHeadings } from "./critical-css";
+import CssOrderingStyleDuplication, {
+  headings as cssOrderingStyleDuplicationHeadings,
+} from "./css-ordering-style-duplication";
+import ComponentLevelCss, {
+  headings as componentLevelCssHeadings,
+} from "./component-level-css";
+import UtilityFirstCssArchitecture, {
+  headings as utilityFirstCssArchitectureHeadings,
+} from "./utility-first-css-architecture";
+import MetadataApi, { headings as metadataApiHeadings } from "./metadata-api";
+import GenerateMetadataDynamicMetadata, {
+  headings as generateMetadataDynamicMetadataHeadings,
+} from "./generatemetadata-dynamic-metadata";
+import OpenGraph, { headings as openGraphHeadings } from "./open-graph";
+import TwitterXCards, {
+  headings as twitterXCardsHeadings,
+} from "./twitter-x-cards";
+import CanonicalUrl, { headings as canonicalUrlHeadings } from "./canonical-url";
+import RobotsSitemap, {
+  headings as robotsSitemapHeadings,
+} from "./robots-sitemap";
+import StructuredDataJsonLd, {
+  headings as structuredDataJsonLdHeadings,
+} from "./structured-data-json-ld";
+import MultiLanguageSeo, {
+  headings as multiLanguageSeoHeadings,
+} from "./multi-language-seo";
+import DynamicSeoArchitectureAtScale, {
+  headings as dynamicSeoArchitectureAtScaleHeadings,
+} from "./dynamic-seo-architecture-at-scale";
+import SeoPerformanceRenderingStrategy, {
+  headings as seoPerformanceRenderingStrategyHeadings,
+} from "./seo-performance-rendering-strategy";
 
 export interface ChapterHeading {
   id: string;
@@ -2024,6 +2094,228 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Core Web Vitals ডিবাগিং — LCP, INP ও CLS-এর real user monitoring",
         en: "Core Web Vitals Debugging — Real User Monitoring for LCP, INP & CLS",
+      },
+    },
+  },
+  // ── Chapter 14 — CSS & Design System Architecture ─────────────────
+  "css-architecture/tailwind-architecture": {
+    Body: TailwindArchitecture,
+    headings: tailwindArchitectureHeadings,
+    cover: {
+      src: ch14Topic1Cover,
+      alt: {
+        bn: "Tailwind Architecture — JIT scanner, design token ও CVA",
+        en: "Tailwind Architecture — JIT Scanner, Design Tokens & CVA",
+      },
+    },
+  },
+  "css-architecture/css-modules-global-css": {
+    Body: CssModulesGlobalCss,
+    headings: cssModulesGlobalCssHeadings,
+    cover: {
+      src: ch14Topic2Cover,
+      alt: {
+        bn: "CSS Modules ও Global CSS — scoped hashing বনাম global collision",
+        en: "CSS Modules & Global CSS — Scoped Hashing vs Global Collisions",
+      },
+    },
+  },
+  "css-architecture/css-layers": {
+    Body: CssLayers,
+    headings: cssLayersHeadings,
+    cover: {
+      src: ch14Topic3Cover,
+      alt: {
+        bn: "CSS Layers — @layer দিয়ে specificity war বন্ধ করা",
+        en: "CSS Layers — Ending Specificity Wars with @layer",
+      },
+    },
+  },
+  "css-architecture/css-variables-design-tokens": {
+    Body: CssVariablesDesignTokens,
+    headings: cssVariablesDesignTokensHeadings,
+    cover: {
+      src: ch14Topic4Cover,
+      alt: {
+        bn: "CSS Variables ও Design Tokens — primitive বনাম semantic টোকেন",
+        en: "CSS Variables & Design Tokens — Primitive vs Semantic Tokens",
+      },
+    },
+  },
+  "css-architecture/theme-architecture-dark-mode": {
+    Body: ThemeArchitectureDarkMode,
+    headings: themeArchitectureDarkModeHeadings,
+    cover: {
+      src: ch14Topic5Cover,
+      alt: {
+        bn: "Theme Architecture ও Dark Mode — zero-FOUC থিম পাইপলাইন",
+        en: "Theme Architecture & Dark Mode — a Zero-FOUC Theme Pipeline",
+      },
+    },
+  },
+  "css-architecture/css-tree-shaking": {
+    Body: CssTreeShaking,
+    headings: cssTreeShakingHeadings,
+    cover: {
+      src: ch14Topic6Cover,
+      alt: {
+        bn: "CSS Tree Shaking — purging দিয়ে unused স্টাইল ছেঁটে ফেলা",
+        en: "CSS Tree Shaking — Purging Unused Styles",
+      },
+    },
+  },
+  "css-architecture/critical-css": {
+    Body: CriticalCss,
+    headings: criticalCssHeadings,
+    cover: {
+      src: ch14Topic7Cover,
+      alt: {
+        bn: "Critical CSS — inline critical ও deferred non-critical স্টাইল",
+        en: "Critical CSS — Inlined Critical & Deferred Non-critical Styles",
+      },
+    },
+  },
+  "css-architecture/css-ordering-style-duplication": {
+    Body: CssOrderingStyleDuplication,
+    headings: cssOrderingStyleDuplicationHeadings,
+    cover: {
+      src: ch14Topic8Cover,
+      alt: {
+        bn: "CSS Ordering ও Style Duplication — deterministic ইমপোর্ট পাইপলাইন",
+        en: "CSS Ordering & Style Duplication — a Deterministic Import Pipeline",
+      },
+    },
+  },
+  "css-architecture/component-level-css": {
+    Body: ComponentLevelCss,
+    headings: componentLevelCssHeadings,
+    cover: {
+      src: ch14Topic9Cover,
+      alt: {
+        bn: "Component-level CSS — scoped hashing ও variant-driven স্টাইলিং",
+        en: "Component-level CSS — Scoped Hashing & Variant-driven Styling",
+      },
+    },
+  },
+  "css-architecture/utility-first-css-architecture": {
+    Body: UtilityFirstCssArchitecture,
+    headings: utilityFirstCssArchitectureHeadings,
+    cover: {
+      src: ch14Topic10Cover,
+      alt: {
+        bn: "Utility-First CSS আর্কিটেকচার — Tailwind, cn() ও CVA প্যাটার্ন",
+        en: "Utility-First CSS Architecture — Tailwind, cn() & CVA Patterns",
+      },
+    },
+  },
+  // ── Chapter 15 — Advanced SEO & Web Discoverability ───────────────
+  "seo/metadata-api": {
+    Body: MetadataApi,
+    headings: metadataApiHeadings,
+    cover: {
+      src: ch15Topic1Cover,
+      alt: {
+        bn: "Metadata API — লেআউট থেকে পেজে মেটাডেটা ইনহেরিটেন্স",
+        en: "Metadata API — Inheritance from Layout to Page",
+      },
+    },
+  },
+  "seo/generatemetadata-dynamic-metadata": {
+    Body: GenerateMetadataDynamicMetadata,
+    headings: generateMetadataDynamicMetadataHeadings,
+    cover: {
+      src: ch15Topic2Cover,
+      alt: {
+        bn: "generateMetadata() ও ডায়নামিক মেটাডেটা — deduplicated ডেটা ফেচিং",
+        en: "generateMetadata() & Dynamic Metadata — Deduplicated Data Fetching",
+      },
+    },
+  },
+  "seo/open-graph": {
+    Body: OpenGraph,
+    headings: openGraphHeadings,
+    cover: {
+      src: ch15Topic3Cover,
+      alt: {
+        bn: "Open Graph — opengraph-image.tsx দিয়ে ডায়নামিক OG ইমেজ",
+        en: "Open Graph — Dynamic OG Images with opengraph-image.tsx",
+      },
+    },
+  },
+  "seo/twitter-x-cards": {
+    Body: TwitterXCards,
+    headings: twitterXCardsHeadings,
+    cover: {
+      src: ch15Topic4Cover,
+      alt: {
+        bn: "Twitter/X Cards — summary_large_image ও অ্যাট্রিবিউশন সেটআপ",
+        en: "Twitter/X Cards — summary_large_image & Attribution Setup",
+      },
+    },
+  },
+  "seo/canonical-url": {
+    Body: CanonicalUrl,
+    headings: canonicalUrlHeadings,
+    cover: {
+      src: ch15Topic5Cover,
+      alt: {
+        bn: "Canonical URL — duplicate content ও link equity consolidation",
+        en: "Canonical URL — Duplicate Content & Link Equity Consolidation",
+      },
+    },
+  },
+  "seo/robots-sitemap": {
+    Body: RobotsSitemap,
+    headings: robotsSitemapHeadings,
+    cover: {
+      src: ch15Topic6Cover,
+      alt: {
+        bn: "Robots ও Sitemap — ক্রলার কন্ট্রোল ও ডায়নামিক সাইটম্যাপ",
+        en: "Robots & Sitemap — Crawler Control and Dynamic Sitemaps",
+      },
+    },
+  },
+  "seo/structured-data-json-ld": {
+    Body: StructuredDataJsonLd,
+    headings: structuredDataJsonLdHeadings,
+    cover: {
+      src: ch15Topic7Cover,
+      alt: {
+        bn: "Structured Data ও JSON-LD — rich snippet-এর জন্য schema ইনজেকশন",
+        en: "Structured Data & JSON-LD — Schema Injection for Rich Snippets",
+      },
+    },
+  },
+  "seo/multi-language-seo": {
+    Body: MultiLanguageSeo,
+    headings: multiLanguageSeoHeadings,
+    cover: {
+      src: ch15Topic8Cover,
+      alt: {
+        bn: "Multi-language SEO — hreflang ও x-default ফলব্যাক",
+        en: "Multi-language SEO — hreflang & the x-default Fallback",
+      },
+    },
+  },
+  "seo/dynamic-seo-architecture-at-scale": {
+    Body: DynamicSeoArchitectureAtScale,
+    headings: dynamicSeoArchitectureAtScaleHeadings,
+    cover: {
+      src: ch15Topic9Cover,
+      alt: {
+        bn: "স্কেলে ডায়নামিক SEO — ISR, sitemap chunking ও tag revalidation",
+        en: "Dynamic SEO at Scale — ISR, Sitemap Chunking & Tag Revalidation",
+      },
+    },
+  },
+  "seo/seo-performance-rendering-strategy": {
+    Body: SeoPerformanceRenderingStrategy,
+    headings: seoPerformanceRenderingStrategyHeadings,
+    cover: {
+      src: ch15Topic10Cover,
+      alt: {
+        bn: "SEO পারফরম্যান্স ও রেন্ডারিং স্ট্র্যাটেজি — Core Web Vitals ও streaming",
+        en: "SEO Performance & Rendering Strategy — Core Web Vitals & Streaming",
       },
     },
   },
