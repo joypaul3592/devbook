@@ -154,6 +154,16 @@ const WRITTEN = new Set<string>([
   "bundle-optimization/bundle-analyzer",
   "bundle-optimization/dynamic-imports-react-lazy-ssr-options",
   "bundle-optimization/duplicate-dependencies",
+  "code-splitting-loading/route-level-code-splitting",
+  "code-splitting-loading/component-level-code-splitting",
+  "code-splitting-loading/next-dynamic",
+  "code-splitting-loading/lazy-loading-strategy",
+  "code-splitting-loading/heavy-third-party-library-isolation",
+  "code-splitting-loading/client-only-package-loading",
+  "code-splitting-loading/above-the-fold-vs-below-the-fold-loading",
+  "code-splitting-loading/route-pre-fetching-optimization",
+  "code-splitting-loading/image-font-optimization",
+  "code-splitting-loading/chunk-duplication-production-bundle-budget",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -658,9 +668,15 @@ const raw: RawChapter[] = [
         bn: "Above-the-fold বনাম Below-the-fold লোডিং",
         en: "Above-the-fold vs Below-the-fold Loading",
       },
-      { bn: "JavaScript এক্সিকিউশন কস্ট", en: "JavaScript Execution Cost" },
-      { bn: "Chunk ডুপ্লিকেশন অ্যানালাইসিস", en: "Chunk Duplication Analysis" },
-      { bn: "প্রোডাকশন বান্ডল বাজেট", en: "Production Bundle Budget" },
+      {
+        bn: "Route Pre-fetching এর সঠিক ব্যবহার",
+        en: "Route Pre-fetching Optimization",
+      },
+      { bn: "Image ও Font অপটিমাইজেশন", en: "Image & Font Optimization" },
+      {
+        bn: "Chunk ডুপ্লিকেশন ও প্রোডাকশন বান্ডল বাজেট",
+        en: "Chunk Duplication & Production Bundle Budget",
+      },
     ],
   },
   {

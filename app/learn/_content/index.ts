@@ -111,6 +111,16 @@ import ch11Topic7Cover from "@/public/blogs-images/chapter-11/topic-7.png";
 import ch11Topic8Cover from "@/public/blogs-images/chapter-11/topic-8.png";
 import ch11Topic9Cover from "@/public/blogs-images/chapter-11/topic-9.png";
 import ch11Topic10Cover from "@/public/blogs-images/chapter-11/topic-10.png";
+import ch12Topic1Cover from "@/public/blogs-images/chapter-12/topic-1.png";
+import ch12Topic2Cover from "@/public/blogs-images/chapter-12/topic-2.png";
+import ch12Topic3Cover from "@/public/blogs-images/chapter-12/topic-3.png";
+import ch12Topic4Cover from "@/public/blogs-images/chapter-12/topic-4.png";
+import ch12Topic5Cover from "@/public/blogs-images/chapter-12/topic-5.png";
+import ch12Topic6Cover from "@/public/blogs-images/chapter-12/topic-6.png";
+import ch12Topic7Cover from "@/public/blogs-images/chapter-12/topic-7.png";
+import ch12Topic8Cover from "@/public/blogs-images/chapter-12/topic-8.png";
+import ch12Topic9Cover from "@/public/blogs-images/chapter-12/topic-9.png";
+import ch12Topic10Cover from "@/public/blogs-images/chapter-12/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -438,6 +448,34 @@ import DynamicImportsReactLazySsr, {
 import DuplicateDependencies, {
   headings as duplicateDependenciesHeadings,
 } from "./duplicate-dependencies";
+import RouteLevelCodeSplitting, {
+  headings as routeLevelCodeSplittingHeadings,
+} from "./route-level-code-splitting";
+import ComponentLevelCodeSplitting, {
+  headings as componentLevelCodeSplittingHeadings,
+} from "./component-level-code-splitting";
+import NextDynamic, { headings as nextDynamicHeadings } from "./next-dynamic";
+import LazyLoadingStrategy, {
+  headings as lazyLoadingStrategyHeadings,
+} from "./lazy-loading-strategy";
+import HeavyThirdPartyLibraryIsolation, {
+  headings as heavyThirdPartyLibraryIsolationHeadings,
+} from "./heavy-third-party-library-isolation";
+import ClientOnlyPackageLoading, {
+  headings as clientOnlyPackageLoadingHeadings,
+} from "./client-only-package-loading";
+import AboveTheFoldVsBelowTheFoldLoading, {
+  headings as aboveTheFoldVsBelowTheFoldLoadingHeadings,
+} from "./above-the-fold-vs-below-the-fold-loading";
+import RoutePreFetchingOptimization, {
+  headings as routePreFetchingOptimizationHeadings,
+} from "./route-pre-fetching-optimization";
+import ImageFontOptimization, {
+  headings as imageFontOptimizationHeadings,
+} from "./image-font-optimization";
+import ChunkDuplicationProductionBundleBudget, {
+  headings as chunkDuplicationProductionBundleBudgetHeadings,
+} from "./chunk-duplication-production-bundle-budget";
 
 export interface ChapterHeading {
   id: string;
@@ -1724,6 +1762,117 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Duplicate Dependencies — ডিটেকশন ও overrides দিয়ে ডিডুপ্লিকেশন",
         en: "Duplicate Dependencies — Detection & Deduplication via overrides",
+      },
+    },
+  },
+  // ── Chapter 12 — Advanced Code Splitting & Loading ────────────────
+  "code-splitting-loading/route-level-code-splitting": {
+    Body: RouteLevelCodeSplitting,
+    headings: routeLevelCodeSplittingHeadings,
+    cover: {
+      src: ch12Topic1Cover,
+      alt: {
+        bn: "Route-লেভেল কোড স্প্লিটিং — মনোলিথিক বান্ডল বনাম রুট চ্যাঙ্ক",
+        en: "Route-level Code Splitting — Monolithic Bundle vs Route Chunks",
+      },
+    },
+  },
+  "code-splitting-loading/component-level-code-splitting": {
+    Body: ComponentLevelCodeSplitting,
+    headings: componentLevelCodeSplittingHeadings,
+    cover: {
+      src: ch12Topic2Cover,
+      alt: {
+        bn: "Component-লেভেল কোড স্প্লিটিং — অফ-স্ক্রিন UI-এর অন-ডিমান্ড লোডিং",
+        en: "Component-level Code Splitting — On-demand Loading for Off-screen UI",
+      },
+    },
+  },
+  "code-splitting-loading/next-dynamic": {
+    Body: NextDynamic,
+    headings: nextDynamicHeadings,
+    cover: {
+      src: ch12Topic3Cover,
+      alt: {
+        bn: "next/dynamic — Named export, ssr অপশন ও intent prefetching",
+        en: "next/dynamic — Named Exports, ssr Options & Intent Prefetching",
+      },
+    },
+  },
+  "code-splitting-loading/lazy-loading-strategy": {
+    Body: LazyLoadingStrategy,
+    headings: lazyLoadingStrategyHeadings,
+    cover: {
+      src: ch12Topic4Cover,
+      alt: {
+        bn: "Lazy Loading স্ট্র্যাটেজি — Intersection Observer ও scroll-based import",
+        en: "Lazy Loading Strategy — Intersection Observer & Scroll-based Imports",
+      },
+    },
+  },
+  "code-splitting-loading/heavy-third-party-library-isolation": {
+    Body: HeavyThirdPartyLibraryIsolation,
+    headings: heavyThirdPartyLibraryIsolationHeadings,
+    cover: {
+      src: ch12Topic5Cover,
+      alt: {
+        bn: "ভারী থার্ড-পার্টি লাইব্রেরি আইসোলেশন — Moment, Chart.js ও PDF ইঞ্জিন",
+        en: "Heavy Third-party Library Isolation — Moment, Chart.js & PDF Engines",
+      },
+    },
+  },
+  "code-splitting-loading/client-only-package-loading": {
+    Body: ClientOnlyPackageLoading,
+    headings: clientOnlyPackageLoadingHeadings,
+    cover: {
+      src: ch12Topic6Cover,
+      alt: {
+        bn: "Client-only প্যাকেজ লোডিং — window/document এরর প্রতিরোধ",
+        en: "Client-only Package Loading — Preventing window/document Errors",
+      },
+    },
+  },
+  "code-splitting-loading/above-the-fold-vs-below-the-fold-loading": {
+    Body: AboveTheFoldVsBelowTheFoldLoading,
+    headings: aboveTheFoldVsBelowTheFoldLoadingHeadings,
+    cover: {
+      src: ch12Topic7Cover,
+      alt: {
+        bn: "Above-the-fold বনাম Below-the-fold লোডিং — priority ও deferred hydration",
+        en: "Above-the-fold vs Below-the-fold Loading — Priority & Deferred Hydration",
+      },
+    },
+  },
+  "code-splitting-loading/route-pre-fetching-optimization": {
+    Body: RoutePreFetchingOptimization,
+    headings: routePreFetchingOptimizationHeadings,
+    cover: {
+      src: ch12Topic8Cover,
+      alt: {
+        bn: "Route Pre-fetching অপটিমাইজেশন — bandwidth bloat এড়ানো",
+        en: "Route Pre-fetching Optimization — Avoiding Bandwidth Bloat",
+      },
+    },
+  },
+  "code-splitting-loading/image-font-optimization": {
+    Body: ImageFontOptimization,
+    headings: imageFontOptimizationHeadings,
+    cover: {
+      src: ch12Topic9Cover,
+      alt: {
+        bn: "Image ও Font অপটিমাইজেশন — next/image, next/font ও CLS প্রতিরোধ",
+        en: "Image & Font Optimization — next/image, next/font & CLS Prevention",
+      },
+    },
+  },
+  "code-splitting-loading/chunk-duplication-production-bundle-budget": {
+    Body: ChunkDuplicationProductionBundleBudget,
+    headings: chunkDuplicationProductionBundleBudgetHeadings,
+    cover: {
+      src: ch12Topic10Cover,
+      alt: {
+        bn: "Chunk ডুপ্লিকেশন অ্যানালাইসিস ও প্রোডাকশন বান্ডল বাজেট",
+        en: "Chunk Duplication Analysis & Production Bundle Budget",
       },
     },
   },
