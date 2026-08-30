@@ -121,6 +121,16 @@ import ch12Topic7Cover from "@/public/blogs-images/chapter-12/topic-7.png";
 import ch12Topic8Cover from "@/public/blogs-images/chapter-12/topic-8.png";
 import ch12Topic9Cover from "@/public/blogs-images/chapter-12/topic-9.png";
 import ch12Topic10Cover from "@/public/blogs-images/chapter-12/topic-10.png";
+import ch13Topic1Cover from "@/public/blogs-images/chapter-13/topic-1.png";
+import ch13Topic2Cover from "@/public/blogs-images/chapter-13/topic-2.png";
+import ch13Topic3Cover from "@/public/blogs-images/chapter-13/topic-3.png";
+import ch13Topic4Cover from "@/public/blogs-images/chapter-13/topic-4.png";
+import ch13Topic5Cover from "@/public/blogs-images/chapter-13/topic-5.png";
+import ch13Topic6Cover from "@/public/blogs-images/chapter-13/topic-6.png";
+import ch13Topic7Cover from "@/public/blogs-images/chapter-13/topic-7.png";
+import ch13Topic8Cover from "@/public/blogs-images/chapter-13/topic-8.png";
+import ch13Topic9Cover from "@/public/blogs-images/chapter-13/topic-9.png";
+import ch13Topic10Cover from "@/public/blogs-images/chapter-13/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -476,6 +486,36 @@ import ImageFontOptimization, {
 import ChunkDuplicationProductionBundleBudget, {
   headings as chunkDuplicationProductionBundleBudgetHeadings,
 } from "./chunk-duplication-production-bundle-budget";
+import NextImageOptimizationMechanics, {
+  headings as nextImageOptimizationMechanicsHeadings,
+} from "./next-image-optimization-mechanics";
+import NextFontOptimization, {
+  headings as nextFontOptimizationHeadings,
+} from "./next-font-optimization";
+import NextScriptLoadingStrategy, {
+  headings as nextScriptLoadingStrategyHeadings,
+} from "./next-script-loading-strategy";
+import ImagePriorityLcp, {
+  headings as imagePriorityLcpHeadings,
+} from "./image-priority-lcp";
+import DynamicImportsLazyLoading, {
+  headings as dynamicImportsLazyLoadingHeadings,
+} from "./dynamic-imports-lazy-loading";
+import FontLoadingLayoutShift, {
+  headings as fontLoadingLayoutShiftHeadings,
+} from "./font-loading-layout-shift";
+import ThirdPartyScriptPerformance, {
+  headings as thirdPartyScriptPerformanceHeadings,
+} from "./third-party-script-performance";
+import PreloadPrefetchPreconnect, {
+  headings as preloadPrefetchPreconnectHeadings,
+} from "./preload-prefetch-preconnect";
+import ImageMediaOptimization, {
+  headings as imageMediaOptimizationHeadings,
+} from "./image-media-optimization";
+import CoreWebVitalsPerformanceDebugging, {
+  headings as coreWebVitalsPerformanceDebuggingHeadings,
+} from "./core-web-vitals-performance-debugging";
 
 export interface ChapterHeading {
   id: string;
@@ -1873,6 +1913,117 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Chunk ডুপ্লিকেশন অ্যানালাইসিস ও প্রোডাকশন বান্ডল বাজেট",
         en: "Chunk Duplication Analysis & Production Bundle Budget",
+      },
+    },
+  },
+  // ── Chapter 13 — Next.js Asset & Browser Performance ──────────────
+  "asset-performance/next-image-optimization-mechanics": {
+    Body: NextImageOptimizationMechanics,
+    headings: nextImageOptimizationMechanicsHeadings,
+    cover: {
+      src: ch13Topic1Cover,
+      alt: {
+        bn: "next/image অপটিমাইজেশন মেকানিক্স — অন-ডিমান্ড ইমেজ পাইপলাইন",
+        en: "next/image Optimization Mechanics — the On-demand Image Pipeline",
+      },
+    },
+  },
+  "asset-performance/next-font-optimization": {
+    Body: NextFontOptimization,
+    headings: nextFontOptimizationHeadings,
+    cover: {
+      src: ch13Topic2Cover,
+      alt: {
+        bn: "next/font অপটিমাইজেশন — সেলফ-হোস্টিং ও metric override",
+        en: "next/font Optimization — Self-hosting & Metric Overrides",
+      },
+    },
+  },
+  "asset-performance/next-script-loading-strategy": {
+    Body: NextScriptLoadingStrategy,
+    headings: nextScriptLoadingStrategyHeadings,
+    cover: {
+      src: ch13Topic3Cover,
+      alt: {
+        bn: "next/script লোডিং স্ট্র্যাটেজি — beforeInteractive থেকে lazyOnload",
+        en: "next/script Loading Strategy — beforeInteractive to lazyOnload",
+      },
+    },
+  },
+  "asset-performance/image-priority-lcp": {
+    Body: ImagePriorityLcp,
+    headings: imagePriorityLcpHeadings,
+    cover: {
+      src: ch13Topic4Cover,
+      alt: {
+        bn: "Image Priority ও LCP — preload ইনজেকশন দিয়ে দ্রুত হিরো রেন্ডার",
+        en: "Image Priority & LCP — Fast Hero Rendering via Preload Injection",
+      },
+    },
+  },
+  "asset-performance/dynamic-imports-lazy-loading": {
+    Body: DynamicImportsLazyLoading,
+    headings: dynamicImportsLazyLoadingHeadings,
+    cover: {
+      src: ch13Topic5Cover,
+      alt: {
+        bn: "Dynamic Imports ও Lazy Loading — next/dynamic দিয়ে বান্ডল হ্রাস",
+        en: "Dynamic Imports & Lazy Loading — Reducing Bundle Size with next/dynamic",
+      },
+    },
+  },
+  "asset-performance/font-loading-layout-shift": {
+    Body: FontLoadingLayoutShift,
+    headings: fontLoadingLayoutShiftHeadings,
+    cover: {
+      src: ch13Topic6Cover,
+      alt: {
+        bn: "Font লোডিং ও Layout Shift — metric matching দিয়ে zero CLS",
+        en: "Font Loading & Layout Shift — Zero CLS via Metric Matching",
+      },
+    },
+  },
+  "asset-performance/third-party-script-performance": {
+    Body: ThirdPartyScriptPerformance,
+    headings: thirdPartyScriptPerformanceHeadings,
+    cover: {
+      src: ch13Topic7Cover,
+      alt: {
+        bn: "থার্ড-পার্টি স্ক্রিপ্ট পারফরম্যান্স — @next/third-parties ও lazyOnload",
+        en: "Third-party Script Performance — @next/third-parties & lazyOnload",
+      },
+    },
+  },
+  "asset-performance/preload-prefetch-preconnect": {
+    Body: PreloadPrefetchPreconnect,
+    headings: preloadPrefetchPreconnectHeadings,
+    cover: {
+      src: ch13Topic8Cover,
+      alt: {
+        bn: "Preload / Prefetch / Preconnect — critical path-এর resource hints",
+        en: "Preload / Prefetch / Preconnect — Resource Hints for the Critical Path",
+      },
+    },
+  },
+  "asset-performance/image-media-optimization": {
+    Body: ImageMediaOptimization,
+    headings: imageMediaOptimizationHeadings,
+    cover: {
+      src: ch13Topic9Cover,
+      alt: {
+        bn: "Image ও Media অপটিমাইজেশন — AVIF/WebP ও responsive sizing",
+        en: "Image & Media Optimization — AVIF/WebP & Responsive Sizing",
+      },
+    },
+  },
+  "asset-performance/core-web-vitals-performance-debugging": {
+    Body: CoreWebVitalsPerformanceDebugging,
+    headings: coreWebVitalsPerformanceDebuggingHeadings,
+    cover: {
+      src: ch13Topic10Cover,
+      alt: {
+        bn: "Core Web Vitals ডিবাগিং — LCP, INP ও CLS-এর real user monitoring",
+        en: "Core Web Vitals Debugging — Real User Monitoring for LCP, INP & CLS",
       },
     },
   },

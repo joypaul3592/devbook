@@ -164,6 +164,16 @@ const WRITTEN = new Set<string>([
   "code-splitting-loading/route-pre-fetching-optimization",
   "code-splitting-loading/image-font-optimization",
   "code-splitting-loading/chunk-duplication-production-bundle-budget",
+  "asset-performance/next-image-optimization-mechanics",
+  "asset-performance/next-font-optimization",
+  "asset-performance/next-script-loading-strategy",
+  "asset-performance/image-priority-lcp",
+  "asset-performance/dynamic-imports-lazy-loading",
+  "asset-performance/font-loading-layout-shift",
+  "asset-performance/third-party-script-performance",
+  "asset-performance/preload-prefetch-preconnect",
+  "asset-performance/image-media-optimization",
+  "asset-performance/core-web-vitals-performance-debugging",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -698,14 +708,20 @@ const raw: RawChapter[] = [
       { bn: "next/font অপটিমাইজেশন", en: "next/font Optimization" },
       { bn: "next/script লোডিং স্ট্র্যাটেজি", en: "next/script Loading Strategy" },
       { bn: "Image Priority ও LCP", en: "Image Priority & LCP" },
-      { bn: "রেসপন্সিভ ইমেজ আর্কিটেকচার", en: "Responsive Image Architecture" },
+      {
+        bn: "Dynamic Imports ও Lazy Loading",
+        en: "Dynamic Imports & Lazy Loading",
+      },
       { bn: "Font লোডিং ও Layout Shift", en: "Font Loading & Layout Shift" },
       {
         bn: "থার্ড-পার্টি স্ক্রিপ্ট পারফরম্যান্স",
         en: "Third-party Script Performance",
       },
       { bn: "Preload / Prefetch / Preconnect", en: "Preload / Prefetch / Preconnect" },
-      { bn: "Resource Hints", en: "Resource Hints" },
+      {
+        bn: "Image ও Media অপটিমাইজেশন",
+        en: "Image & Media Optimization",
+      },
       {
         bn: "Core Web Vitals পারফরম্যান্স ডিবাগিং",
         en: "Core Web Vitals Performance Debugging",
