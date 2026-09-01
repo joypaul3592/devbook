@@ -151,6 +151,56 @@ import ch15Topic7Cover from "@/public/blogs-images/chapter-15/topic-7.png";
 import ch15Topic8Cover from "@/public/blogs-images/chapter-15/topic-8.png";
 import ch15Topic9Cover from "@/public/blogs-images/chapter-15/topic-9.png";
 import ch15Topic10Cover from "@/public/blogs-images/chapter-15/topic-10.png";
+import ch16Topic1Cover from "@/public/blogs-images/chapter-16/topic-1.png";
+import ch16Topic2Cover from "@/public/blogs-images/chapter-16/topic-2.png";
+import ch16Topic3Cover from "@/public/blogs-images/chapter-16/topic-3.png";
+import ch16Topic4Cover from "@/public/blogs-images/chapter-16/topic-4.png";
+import ch16Topic5Cover from "@/public/blogs-images/chapter-16/topic-5.png";
+import ch16Topic6Cover from "@/public/blogs-images/chapter-16/topic-6.png";
+import ch16Topic7Cover from "@/public/blogs-images/chapter-16/topic-7.png";
+import ch16Topic8Cover from "@/public/blogs-images/chapter-16/topic-8.png";
+import ch16Topic9Cover from "@/public/blogs-images/chapter-16/topic-9.png";
+import ch16Topic10Cover from "@/public/blogs-images/chapter-16/topic-10.png";
+import ch17Topic1Cover from "@/public/blogs-images/chapter-17/topic-1.png";
+import ch17Topic2Cover from "@/public/blogs-images/chapter-17/topic-2.png";
+import ch17Topic3Cover from "@/public/blogs-images/chapter-17/topic-3.png";
+import ch17Topic4Cover from "@/public/blogs-images/chapter-17/topic-4.png";
+import ch17Topic5Cover from "@/public/blogs-images/chapter-17/topic-5.png";
+import ch17Topic6Cover from "@/public/blogs-images/chapter-17/topic-6.png";
+import ch17Topic7Cover from "@/public/blogs-images/chapter-17/topic-7.png";
+import ch17Topic8Cover from "@/public/blogs-images/chapter-17/topic-8.png";
+import ch17Topic9Cover from "@/public/blogs-images/chapter-17/topic-9.png";
+import ch17Topic10Cover from "@/public/blogs-images/chapter-17/topic-10.png";
+import ch18Topic1Cover from "@/public/blogs-images/chapter-18/topic-1.png";
+import ch18Topic2Cover from "@/public/blogs-images/chapter-18/topic-2.png";
+import ch18Topic3Cover from "@/public/blogs-images/chapter-18/topic-3.png";
+import ch18Topic4Cover from "@/public/blogs-images/chapter-18/topic-4.png";
+import ch18Topic5Cover from "@/public/blogs-images/chapter-18/topic-5.png";
+import ch18Topic6Cover from "@/public/blogs-images/chapter-18/topic-6.png";
+import ch18Topic7Cover from "@/public/blogs-images/chapter-18/topic-7.png";
+import ch18Topic8Cover from "@/public/blogs-images/chapter-18/topic-8.png";
+import ch18Topic9Cover from "@/public/blogs-images/chapter-18/topic-9.png";
+import ch18Topic10Cover from "@/public/blogs-images/chapter-18/topic-10.png";
+import ch19Topic1Cover from "@/public/blogs-images/chapter-19/topic-1.png";
+import ch19Topic2Cover from "@/public/blogs-images/chapter-19/topic-2.png";
+import ch19Topic3Cover from "@/public/blogs-images/chapter-19/topic-3.png";
+import ch19Topic4Cover from "@/public/blogs-images/chapter-19/topic-4.png";
+import ch19Topic5Cover from "@/public/blogs-images/chapter-19/topic-5.png";
+import ch19Topic6Cover from "@/public/blogs-images/chapter-19/topic-6.png";
+import ch19Topic7Cover from "@/public/blogs-images/chapter-19/topic-7.png";
+import ch19Topic8Cover from "@/public/blogs-images/chapter-19/topic-8.png";
+import ch19Topic9Cover from "@/public/blogs-images/chapter-19/topic-9.png";
+import ch19Topic10Cover from "@/public/blogs-images/chapter-19/topic-10.png";
+import ch20Topic1Cover from "@/public/blogs-images/chapter-20/topic-1.png";
+import ch20Topic2Cover from "@/public/blogs-images/chapter-20/topic-2.png";
+import ch20Topic3Cover from "@/public/blogs-images/chapter-20/topic-3.png";
+import ch20Topic4Cover from "@/public/blogs-images/chapter-20/topic-4.png";
+import ch20Topic5Cover from "@/public/blogs-images/chapter-20/topic-5.png";
+import ch20Topic6Cover from "@/public/blogs-images/chapter-20/topic-6.png";
+import ch20Topic7Cover from "@/public/blogs-images/chapter-20/topic-7.png";
+import ch20Topic8Cover from "@/public/blogs-images/chapter-20/topic-8.png";
+import ch20Topic9Cover from "@/public/blogs-images/chapter-20/topic-9.png";
+import ch20Topic10Cover from "@/public/blogs-images/chapter-20/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -586,6 +636,152 @@ import DynamicSeoArchitectureAtScale, {
 import SeoPerformanceRenderingStrategy, {
   headings as seoPerformanceRenderingStrategyHeadings,
 } from "./seo-performance-rendering-strategy";
+import I18nArchitecture, {
+  headings as i18nArchitectureHeadings,
+} from "./i18n-architecture";
+import LocaleRouting, {
+  headings as localeRoutingHeadings,
+} from "./locale-routing";
+import LanguageDetection, {
+  headings as languageDetectionHeadings,
+} from "./language-detection";
+import TranslationArchitecture, {
+  headings as translationArchitectureHeadings,
+} from "./translation-architecture";
+import RtlArchitecture, {
+  headings as rtlArchitectureHeadings,
+} from "./rtl-architecture";
+import LocalizedMetadataUrls, {
+  headings as localizedMetadataUrlsHeadings,
+} from "./localized-metadata-urls";
+import CurrencyDateFormatting, {
+  headings as currencyDateFormattingHeadings,
+} from "./currency-date-formatting";
+import LocaleAwareStaticGeneration, {
+  headings as localeAwareStaticGenerationHeadings,
+} from "./locale-aware-static-generation";
+import TranslationLoadingPerformance, {
+  headings as translationLoadingPerformanceHeadings,
+} from "./translation-loading-performance";
+import MultiRegionLocalizationArchitecture, {
+  headings as multiRegionLocalizationArchitectureHeadings,
+} from "./multi-region-localization-architecture";
+import XssProtection, {
+  headings as xssProtectionHeadings,
+} from "./xss-protection";
+import CsrfProtection, {
+  headings as csrfProtectionHeadings,
+} from "./csrf-protection";
+import AuthenticationAuthorizationSecurity, {
+  headings as authenticationAuthorizationSecurityHeadings,
+} from "./authentication-authorization-security";
+import CookieSecurity, {
+  headings as cookieSecurityHeadings,
+} from "./cookie-security";
+import EnvironmentVariablesSecretManagement, {
+  headings as environmentVariablesSecretManagementHeadings,
+} from "./environment-variables-secret-management";
+import ServerOnlySecrets, {
+  headings as serverOnlySecretsHeadings,
+} from "./server-only-secrets";
+import DependencyVulnerabilities, {
+  headings as dependencyVulnerabilitiesHeadings,
+} from "./dependency-vulnerabilities";
+import SecurityHeadersCsp, {
+  headings as securityHeadersCspHeadings,
+} from "./security-headers-csp";
+import CsrfProtectionSameSiteCookies, {
+  headings as csrfProtectionSameSiteCookiesHeadings,
+} from "./csrf-protection-samesite-cookies";
+import RateLimitingUpstashRedis, {
+  headings as rateLimitingUpstashRedisHeadings,
+} from "./rate-limiting-upstash-redis";
+import ErrorBoundaries, {
+  headings as errorBoundariesHeadings,
+} from "./error-boundaries";
+import ErrorTsxGlobalError, {
+  headings as errorTsxGlobalErrorHeadings,
+} from "./error-tsx-global-error";
+import NotFoundTsx, { headings as notFoundTsxHeadings } from "./not-found-tsx";
+import ApiErrors, { headings as apiErrorsHeadings } from "./api-errors";
+import ValidationErrors, {
+  headings as validationErrorsHeadings,
+} from "./validation-errors";
+import ExpectedVsUnexpectedErrors, {
+  headings as expectedVsUnexpectedErrorsHeadings,
+} from "./expected-vs-unexpected-errors";
+import LoggingErrorMonitoring, {
+  headings as loggingErrorMonitoringHeadings,
+} from "./logging-error-monitoring";
+import GracefulDegradation, {
+  headings as gracefulDegradationHeadings,
+} from "./graceful-degradation";
+import ErrorRecoveryRetryUx, {
+  headings as errorRecoveryRetryUxHeadings,
+} from "./error-recovery-retry-ux";
+import ProductionFailureIsolation, {
+  headings as productionFailureIsolationHeadings,
+} from "./production-failure-isolation";
+import EnvEnvLocalEnvProduction, {
+  headings as envEnvLocalEnvProductionHeadings,
+} from "./env-env-local-env-production";
+import BuildTimeVsRuntimeVariables, {
+  headings as buildTimeVsRuntimeVariablesHeadings,
+} from "./build-time-vs-runtime-variables";
+import ProductionBuild, {
+  headings as productionBuildHeadings,
+} from "./production-build";
+import StaticExport, {
+  headings as staticExportHeadings,
+} from "./static-export";
+import ServerDeployment, {
+  headings as serverDeploymentHeadings,
+} from "./server-deployment";
+import EdgeRuntimeVsNodeJsRuntime, {
+  headings as edgeRuntimeVsNodeJsRuntimeHeadings,
+} from "./edge-runtime-vs-node-js-runtime";
+import ServerlessFunctions, {
+  headings as serverlessFunctionsHeadings,
+} from "./serverless-functions";
+import CiCdIntegration, {
+  headings as ciCdIntegrationHeadings,
+} from "./ci-cd-integration";
+import DeploymentPreviews, {
+  headings as deploymentPreviewsHeadings,
+} from "./deployment-previews";
+import BuildFailuresRuntimeErrors, {
+  headings as buildFailuresRuntimeErrorsHeadings,
+} from "./build-failures-runtime-errors";
+import StructuredLogging, {
+  headings as structuredLoggingHeadings,
+} from "./structured-logging";
+import ErrorTracking, {
+  headings as errorTrackingHeadings,
+} from "./error-tracking";
+import PerformanceMonitoring, {
+  headings as performanceMonitoringHeadings,
+} from "./performance-monitoring";
+import WebVitalsLcpClsInp, {
+  headings as webVitalsLcpClsInpHeadings,
+} from "./web-vitals-lcp-cls-inp";
+import ServerTiming, {
+  headings as serverTimingHeadings,
+} from "./server-timing";
+import RequestTracing, {
+  headings as requestTracingHeadings,
+} from "./request-tracing";
+import ProductionDebugging, {
+  headings as productionDebuggingHeadings,
+} from "./production-debugging";
+import RealUserMonitoring, {
+  headings as realUserMonitoringHeadings,
+} from "./real-user-monitoring";
+import PerformanceRegressionDetection, {
+  headings as performanceRegressionDetectionHeadings,
+} from "./performance-regression-detection";
+import ProductionIncidentDebuggingWorkflow, {
+  headings as productionIncidentDebuggingWorkflowHeadings,
+} from "./production-incident-debugging-workflow";
 
 export interface ChapterHeading {
   id: string;
@@ -2316,6 +2512,556 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "SEO পারফরম্যান্স ও রেন্ডারিং স্ট্র্যাটেজি — Core Web Vitals ও streaming",
         en: "SEO Performance & Rendering Strategy — Core Web Vitals & Streaming",
+      },
+    },
+  },
+  "internationalization/i18n-architecture": {
+    Body: I18nArchitecture,
+    headings: i18nArchitectureHeadings,
+    cover: {
+      src: ch16Topic1Cover,
+      alt: {
+        bn: "i18n আর্কিটেকচার — server-first dictionary ও zero-JS ট্রান্সলেশন",
+        en: "i18n Architecture — Server-First Dictionaries & Zero-JS Translation",
+      },
+    },
+  },
+  "internationalization/locale-routing": {
+    Body: LocaleRouting,
+    headings: localeRoutingHeadings,
+    cover: {
+      src: ch16Topic2Cover,
+      alt: {
+        bn: "Locale routing — [locale] সেগমেন্ট ও middleware রিডাইরেক্ট",
+        en: "Locale Routing — The [locale] Segment & Middleware Redirects",
+      },
+    },
+  },
+  "internationalization/language-detection": {
+    Body: LanguageDetection,
+    headings: languageDetectionHeadings,
+    cover: {
+      src: ch16Topic3Cover,
+      alt: {
+        bn: "Language detection — cookie ও Accept-Language নেগোশিয়েশন",
+        en: "Language Detection — Cookie & Accept-Language Negotiation",
+      },
+    },
+  },
+  "internationalization/translation-architecture": {
+    Body: TranslationArchitecture,
+    headings: translationArchitectureHeadings,
+    cover: {
+      src: ch16Topic4Cover,
+      alt: {
+        bn: "Translation আর্কিটেকচার — interpolation, plural ও namespace",
+        en: "Translation Architecture — Interpolation, Plurals & Namespaces",
+      },
+    },
+  },
+  "internationalization/rtl-architecture": {
+    Body: RtlArchitecture,
+    headings: rtlArchitectureHeadings,
+    cover: {
+      src: ch16Topic5Cover,
+      alt: {
+        bn: "RTL আর্কিটেকচার — dynamic dir ও CSS logical properties",
+        en: "RTL Architecture — Dynamic dir & CSS Logical Properties",
+      },
+    },
+  },
+  "internationalization/localized-metadata-urls": {
+    Body: LocalizedMetadataUrls,
+    headings: localizedMetadataUrlsHeadings,
+    cover: {
+      src: ch16Topic6Cover,
+      alt: {
+        bn: "Localized metadata ও URLs — og:locale ও অনুবাদিত slug",
+        en: "Localized Metadata & URLs — og:locale and Translated Slugs",
+      },
+    },
+  },
+  "internationalization/currency-date-formatting": {
+    Body: CurrencyDateFormatting,
+    headings: currencyDateFormattingHeadings,
+    cover: {
+      src: ch16Topic7Cover,
+      alt: {
+        bn: "Currency ও date formatting — Intl API ও hydration safety",
+        en: "Currency & Date Formatting — The Intl API and Hydration Safety",
+      },
+    },
+  },
+  "internationalization/locale-aware-static-generation": {
+    Body: LocaleAwareStaticGeneration,
+    headings: localeAwareStaticGenerationHeadings,
+    cover: {
+      src: ch16Topic8Cover,
+      alt: {
+        bn: "Locale-aware static generation — generateStaticParams ও ISR",
+        en: "Locale-aware Static Generation — generateStaticParams & ISR",
+      },
+    },
+  },
+  "internationalization/translation-loading-performance": {
+    Body: TranslationLoadingPerformance,
+    headings: translationLoadingPerformanceHeadings,
+    cover: {
+      src: ch16Topic9Cover,
+      alt: {
+        bn: "ট্রান্সলেশন লোডিং পারফরম্যান্স — namespace splitting ও React.cache()",
+        en: "Translation Loading Performance — Namespace Splitting & React.cache()",
+      },
+    },
+  },
+  "internationalization/multi-region-localization-architecture": {
+    Body: MultiRegionLocalizationArchitecture,
+    headings: multiRegionLocalizationArchitectureHeadings,
+    cover: {
+      src: ch16Topic10Cover,
+      alt: {
+        bn: "মাল্টি-রিজিয়ন লোকালাইজেশন — BCP 47 ও edge geo-routing",
+        en: "Multi-region Localization — BCP 47 Tuples & Edge Geo-Routing",
+      },
+    },
+  },
+  "security/xss-protection": {
+    Body: XssProtection,
+    headings: xssProtectionHeadings,
+    cover: {
+      src: ch17Topic1Cover,
+      alt: {
+        bn: "XSS প্রোটেকশন — HTML sanitization ও URL protocol গার্ড",
+        en: "XSS Protection — HTML Sanitization & URL Protocol Guards",
+      },
+    },
+  },
+  "security/csrf-protection": {
+    Body: CsrfProtection,
+    headings: csrfProtectionHeadings,
+    cover: {
+      src: ch17Topic2Cover,
+      alt: {
+        bn: "CSRF প্রোটেকশন — SameSite কুকি, origin check ও টোকেন",
+        en: "CSRF Protection — SameSite Cookies, Origin Checks & Tokens",
+      },
+    },
+  },
+  "security/authentication-authorization-security": {
+    Body: AuthenticationAuthorizationSecurity,
+    headings: authenticationAuthorizationSecurityHeadings,
+    cover: {
+      src: ch17Topic3Cover,
+      alt: {
+        bn: "Authentication ও authorization — dual-layer গার্ড ও RBAC",
+        en: "Authentication & Authorization — Dual-Layer Guards and RBAC",
+      },
+    },
+  },
+  "security/cookie-security": {
+    Body: CookieSecurity,
+    headings: cookieSecurityHeadings,
+    cover: {
+      src: ch17Topic4Cover,
+      alt: {
+        bn: "Cookie security — HttpOnly, Secure, SameSite ও __Host- প্রিফিক্স",
+        en: "Cookie Security — HttpOnly, Secure, SameSite & the __Host- Prefix",
+      },
+    },
+  },
+  "security/environment-variables-secret-management": {
+    Body: EnvironmentVariablesSecretManagement,
+    headings: environmentVariablesSecretManagementHeadings,
+    cover: {
+      src: ch17Topic5Cover,
+      alt: {
+        bn: "Environment variables ও secret management — Zod গার্ড ও leak shield",
+        en: "Environment Variables & Secret Management — Zod Guards and Leak Shields",
+      },
+    },
+  },
+  "security/server-only-secrets": {
+    Body: ServerOnlySecrets,
+    headings: serverOnlySecretsHeadings,
+    cover: {
+      src: ch17Topic6Cover,
+      alt: {
+        bn: "Server-only secrets — build-time গার্ড ও Server Action ব্রিজ",
+        en: "Server-only Secrets — Build-time Guards and Action Bridges",
+      },
+    },
+  },
+  "security/dependency-vulnerabilities": {
+    Body: DependencyVulnerabilities,
+    headings: dependencyVulnerabilitiesHeadings,
+    cover: {
+      src: ch17Topic9Cover,
+      alt: {
+        bn: "Dependency vulnerabilities — supply chain, overrides ও CI audit",
+        en: "Dependency Vulnerabilities — Supply Chain, Overrides & CI Audits",
+      },
+    },
+  },
+  "security/security-headers-csp": {
+    Body: SecurityHeadersCsp,
+    headings: securityHeadersCspHeadings,
+    cover: {
+      src: ch17Topic10Cover,
+      alt: {
+        bn: "Security headers ও CSP — nonce-ভিত্তিক পলিসি ও clickjacking গার্ড",
+        en: "Security Headers & CSP — Nonce-based Policy and Clickjacking Guards",
+      },
+    },
+  },
+  "security/csrf-protection-samesite-cookies": {
+    Body: CsrfProtectionSameSiteCookies,
+    headings: csrfProtectionSameSiteCookiesHeadings,
+    cover: {
+      src: ch17Topic7Cover,
+      alt: {
+        bn: "CSRF প্রোটেকশন ও SameSite কুকি — origin গার্ড ও Server Action ডিফেন্স",
+        en: "CSRF Protection & SameSite Cookies — Origin Guards and Action Defenses",
+      },
+    },
+  },
+  "security/rate-limiting-upstash-redis": {
+    Body: RateLimitingUpstashRedis,
+    headings: rateLimitingUpstashRedisHeadings,
+    cover: {
+      src: ch17Topic8Cover,
+      alt: {
+        bn: "Rate limiting — Upstash Redis ও sliding window অ্যালগরিদম",
+        en: "Rate Limiting — Upstash Redis and the Sliding Window Algorithm",
+      },
+    },
+  },
+  "error-handling/error-boundaries": {
+    Body: ErrorBoundaries,
+    headings: errorBoundariesHeadings,
+    cover: {
+      src: ch18Topic1Cover,
+      alt: {
+        bn: "Error boundaries — granular failure isolation ও fallback UI",
+        en: "Error Boundaries — Granular Failure Isolation and Fallback UI",
+      },
+    },
+  },
+  "error-handling/error-tsx-global-error": {
+    Body: ErrorTsxGlobalError,
+    headings: errorTsxGlobalErrorHeadings,
+    cover: {
+      src: ch18Topic2Cover,
+      alt: {
+        bn: "error.tsx ও global error — App Router-এর এরর হায়ারার্কি",
+        en: "error.tsx & Global Error — The App Router Error Hierarchy",
+      },
+    },
+  },
+  "error-handling/not-found-tsx": {
+    Body: NotFoundTsx,
+    headings: notFoundTsxHeadings,
+    cover: {
+      src: ch18Topic3Cover,
+      alt: {
+        bn: "not-found.tsx — notFound() ও soft 404 প্রতিরোধ",
+        en: "not-found.tsx — notFound() and Preventing Soft 404s",
+      },
+    },
+  },
+  "error-handling/api-errors": {
+    Body: ApiErrors,
+    headings: apiErrorsHeadings,
+    cover: {
+      src: ch18Topic4Cover,
+      alt: {
+        bn: "API errors — standardized envelope ও টাইপ-সেফ fetcher",
+        en: "API Errors — Standardized Envelopes and a Typed Fetcher",
+      },
+    },
+  },
+  "error-handling/validation-errors": {
+    Body: ValidationErrors,
+    headings: validationErrorsHeadings,
+    cover: {
+      src: ch18Topic5Cover,
+      alt: {
+        bn: "Validation errors — safeParse ও অ্যাক্সেসিবল inline field এরর",
+        en: "Validation Errors — safeParse and Accessible Inline Field Errors",
+      },
+    },
+  },
+  "error-handling/expected-vs-unexpected-errors": {
+    Body: ExpectedVsUnexpectedErrors,
+    headings: expectedVsUnexpectedErrorsHeadings,
+    cover: {
+      src: ch18Topic6Cover,
+      alt: {
+        bn: "Expected বনাম unexpected errors — discriminated union কনট্র্যাক্ট",
+        en: "Expected vs Unexpected Errors — The Discriminated Union Contract",
+      },
+    },
+  },
+  "error-handling/logging-error-monitoring": {
+    Body: LoggingErrorMonitoring,
+    headings: loggingErrorMonitoringHeadings,
+    cover: {
+      src: ch18Topic7Cover,
+      alt: {
+        bn: "Logging ও error monitoring — structured log, source map ও অ্যালার্ট",
+        en: "Logging & Error Monitoring — Structured Logs, Source Maps, Alerts",
+      },
+    },
+  },
+  "error-handling/graceful-degradation": {
+    Body: GracefulDegradation,
+    headings: gracefulDegradationHeadings,
+    cover: {
+      src: ch18Topic8Cover,
+      alt: {
+        bn: "Graceful degradation — fallback ডাটা ও isolated ফেচিং",
+        en: "Graceful Degradation — Fallback Data and Isolated Fetching",
+      },
+    },
+  },
+  "error-handling/error-recovery-retry-ux": {
+    Body: ErrorRecoveryRetryUx,
+    headings: errorRecoveryRetryUxHeadings,
+    cover: {
+      src: ch18Topic9Cover,
+      alt: {
+        bn: "Error recovery ও retry UX — exponential backoff ও soft retry",
+        en: "Error Recovery & Retry UX — Exponential Backoff and Soft Retries",
+      },
+    },
+  },
+  "error-handling/production-failure-isolation": {
+    Body: ProductionFailureIsolation,
+    headings: productionFailureIsolationHeadings,
+    cover: {
+      src: ch18Topic10Cover,
+      alt: {
+        bn: "প্রোডাকশন failure isolation — bulkhead ও circuit breaker",
+        en: "Production Failure Isolation — Bulkheads and Circuit Breakers",
+      },
+    },
+  },
+  "environment-deployment/env-env-local-env-production": {
+    Body: EnvEnvLocalEnvProduction,
+    headings: envEnvLocalEnvProductionHeadings,
+    cover: {
+      src: ch19Topic1Cover,
+      alt: {
+        bn: ".env ফাইলসমূহ — precedence অর্ডার ও NEXT_PUBLIC_ বাউন্ডারি",
+        en: ".env Files — Precedence Order and the NEXT_PUBLIC_ Boundary",
+      },
+    },
+  },
+  "environment-deployment/build-time-vs-runtime-variables": {
+    Body: BuildTimeVsRuntimeVariables,
+    headings: buildTimeVsRuntimeVariablesHeadings,
+    cover: {
+      src: ch19Topic2Cover,
+      alt: {
+        bn: "Build-time বনাম runtime variables — inlining ও Docker ARG",
+        en: "Build-time vs Runtime Variables — Inlining and Docker ARG",
+      },
+    },
+  },
+  "environment-deployment/production-build": {
+    Body: ProductionBuild,
+    headings: productionBuildHeadings,
+    cover: {
+      src: ch19Topic3Cover,
+      alt: {
+        bn: "Production build — standalone output ও রুট ইন্ডিকেটর",
+        en: "Production Build — Standalone Output and Route Indicators",
+      },
+    },
+  },
+  "environment-deployment/static-export": {
+    Body: StaticExport,
+    headings: staticExportHeadings,
+    cover: {
+      src: ch19Topic4Cover,
+      alt: {
+        bn: "Static export — out/ বান্ডেল ও generateStaticParams",
+        en: "Static Export — The out/ Bundle and generateStaticParams",
+      },
+    },
+  },
+  "environment-deployment/server-deployment": {
+    Body: ServerDeployment,
+    headings: serverDeploymentHeadings,
+    cover: {
+      src: ch19Topic5Cover,
+      alt: {
+        bn: "Server deployment — PM2, Nginx reverse proxy ও SSL",
+        en: "Server Deployment — PM2, an Nginx Reverse Proxy and SSL",
+      },
+    },
+  },
+  "environment-deployment/edge-runtime-vs-node-js-runtime": {
+    Body: EdgeRuntimeVsNodeJsRuntime,
+    headings: edgeRuntimeVsNodeJsRuntimeHeadings,
+    cover: {
+      src: ch19Topic6Cover,
+      alt: {
+        bn: "Edge runtime বনাম Node.js runtime — কোন কাজে কোনটি",
+        en: "Edge Runtime vs Node.js Runtime — Picking the Right One",
+      },
+    },
+  },
+  "environment-deployment/serverless-functions": {
+    Body: ServerlessFunctions,
+    headings: serverlessFunctionsHeadings,
+    cover: {
+      src: ch19Topic7Cover,
+      alt: {
+        bn: "Serverless functions — cold start, pooling ও execution limit",
+        en: "Serverless Functions — Cold Starts, Pooling and Execution Limits",
+      },
+    },
+  },
+  "environment-deployment/ci-cd-integration": {
+    Body: CiCdIntegration,
+    headings: ciCdIntegrationHeadings,
+    cover: {
+      src: ch19Topic8Cover,
+      alt: {
+        bn: "CI/CD ইন্টিগ্রেশন — GitHub Actions, Vercel ও Docker পাইপলাইন",
+        en: "CI/CD Integration — GitHub Actions, Vercel and Docker Pipelines",
+      },
+    },
+  },
+  "environment-deployment/deployment-previews": {
+    Body: DeploymentPreviews,
+    headings: deploymentPreviewsHeadings,
+    cover: {
+      src: ch19Topic9Cover,
+      alt: {
+        bn: "Deployment previews — ephemeral এনভায়রনমেন্ট ও ডাইনামিক URL",
+        en: "Deployment Previews — Ephemeral Environments and Dynamic URLs",
+      },
+    },
+  },
+  "environment-deployment/build-failures-runtime-errors": {
+    Body: BuildFailuresRuntimeErrors,
+    headings: buildFailuresRuntimeErrorsHeadings,
+    cover: {
+      src: ch19Topic10Cover,
+      alt: {
+        bn: "Build failures ও runtime errors — hydration mismatch ও Suspense",
+        en: "Build Failures & Runtime Errors — Hydration Mismatches and Suspense",
+      },
+    },
+  },
+  "observability/structured-logging": {
+    Body: StructuredLogging,
+    headings: structuredLoggingHeadings,
+    cover: {
+      src: ch20Topic1Cover,
+      alt: {
+        bn: "Structured logging — JSON স্কিমা, traceId ও redaction",
+        en: "Structured Logging — JSON Schemas, Trace IDs and Redaction",
+      },
+    },
+  },
+  "observability/error-tracking": {
+    Body: ErrorTracking,
+    headings: errorTrackingHeadings,
+    cover: {
+      src: ch20Topic2Cover,
+      alt: {
+        bn: "Error tracking — source map, breadcrumbs ও issue grouping",
+        en: "Error Tracking — Source Maps, Breadcrumbs and Issue Grouping",
+      },
+    },
+  },
+  "observability/performance-monitoring": {
+    Body: PerformanceMonitoring,
+    headings: performanceMonitoringHeadings,
+    cover: {
+      src: ch20Topic3Cover,
+      alt: {
+        bn: "Performance monitoring — OpenTelemetry trace ও span",
+        en: "Performance Monitoring — OpenTelemetry Traces and Spans",
+      },
+    },
+  },
+  "observability/web-vitals-lcp-cls-inp": {
+    Body: WebVitalsLcpClsInp,
+    headings: webVitalsLcpClsInpHeadings,
+    cover: {
+      src: ch20Topic4Cover,
+      alt: {
+        bn: "Web Vitals — LCP, CLS ও INP অপটিমাইজেশন",
+        en: "Web Vitals — Optimizing LCP, CLS and INP",
+      },
+    },
+  },
+  "observability/server-timing": {
+    Body: ServerTiming,
+    headings: serverTimingHeadings,
+    cover: {
+      src: ch20Topic5Cover,
+      alt: {
+        bn: "Server timing — ব্রাউজার DevTools-এ ব্যাকএন্ড ব্রেকডাউন",
+        en: "Server Timing — A Backend Breakdown Inside DevTools",
+      },
+    },
+  },
+  "observability/request-tracing": {
+    Body: RequestTracing,
+    headings: requestTracingHeadings,
+    cover: {
+      src: ch20Topic6Cover,
+      alt: {
+        bn: "Request tracing — trace ID propagation ও correlated লগ",
+        en: "Request Tracing — Trace ID Propagation and Correlated Logs",
+      },
+    },
+  },
+  "observability/production-debugging": {
+    Body: ProductionDebugging,
+    headings: productionDebuggingHeadings,
+    cover: {
+      src: ch20Topic7Cover,
+      alt: {
+        bn: "Production debugging — hidden source map ও dynamic debug হেডার",
+        en: "Production Debugging — Hidden Source Maps and Debug Headers",
+      },
+    },
+  },
+  "observability/real-user-monitoring": {
+    Body: RealUserMonitoring,
+    headings: realUserMonitoringHeadings,
+    cover: {
+      src: ch20Topic8Cover,
+      alt: {
+        bn: "Real User Monitoring ও synthetic monitoring — deep health check",
+        en: "Real User & Synthetic Monitoring — Deep Health Checks",
+      },
+    },
+  },
+  "observability/performance-regression-detection": {
+    Body: PerformanceRegressionDetection,
+    headings: performanceRegressionDetectionHeadings,
+    cover: {
+      src: ch20Topic9Cover,
+      alt: {
+        bn: "পারফরম্যান্স রিগ্রেশন ডিটেকশন — budget ও CI গার্ড",
+        en: "Performance Regression Detection — Budgets and CI Guards",
+      },
+    },
+  },
+  "observability/production-incident-debugging-workflow": {
+    Body: ProductionIncidentDebuggingWorkflow,
+    headings: productionIncidentDebuggingWorkflowHeadings,
+    cover: {
+      src: ch20Topic10Cover,
+      alt: {
+        bn: "ইনসিডেন্ট ডিবাগিং ওয়ার্কফ্লো — kill-switch, breaker ও runbook",
+        en: "Incident Debugging Workflow — Kill-Switches, Breakers, Runbooks",
       },
     },
   },
