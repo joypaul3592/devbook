@@ -181,6 +181,16 @@ import ch18Topic7Cover from "@/public/blogs-images/chapter-18/topic-7.png";
 import ch18Topic8Cover from "@/public/blogs-images/chapter-18/topic-8.png";
 import ch18Topic9Cover from "@/public/blogs-images/chapter-18/topic-9.png";
 import ch18Topic10Cover from "@/public/blogs-images/chapter-18/topic-10.png";
+import ch19Topic1Cover from "@/public/blogs-images/chapter-19/topic-1.png";
+import ch19Topic2Cover from "@/public/blogs-images/chapter-19/topic-2.png";
+import ch19Topic3Cover from "@/public/blogs-images/chapter-19/topic-3.png";
+import ch19Topic4Cover from "@/public/blogs-images/chapter-19/topic-4.png";
+import ch19Topic5Cover from "@/public/blogs-images/chapter-19/topic-5.png";
+import ch19Topic6Cover from "@/public/blogs-images/chapter-19/topic-6.png";
+import ch19Topic7Cover from "@/public/blogs-images/chapter-19/topic-7.png";
+import ch19Topic8Cover from "@/public/blogs-images/chapter-19/topic-8.png";
+import ch19Topic9Cover from "@/public/blogs-images/chapter-19/topic-9.png";
+import ch19Topic10Cover from "@/public/blogs-images/chapter-19/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -702,6 +712,36 @@ import ErrorRecoveryRetryUx, {
 import ProductionFailureIsolation, {
   headings as productionFailureIsolationHeadings,
 } from "./production-failure-isolation";
+import EnvEnvLocalEnvProduction, {
+  headings as envEnvLocalEnvProductionHeadings,
+} from "./env-env-local-env-production";
+import BuildTimeVsRuntimeVariables, {
+  headings as buildTimeVsRuntimeVariablesHeadings,
+} from "./build-time-vs-runtime-variables";
+import ProductionBuild, {
+  headings as productionBuildHeadings,
+} from "./production-build";
+import StaticExport, {
+  headings as staticExportHeadings,
+} from "./static-export";
+import ServerDeployment, {
+  headings as serverDeploymentHeadings,
+} from "./server-deployment";
+import EdgeRuntimeVsNodeJsRuntime, {
+  headings as edgeRuntimeVsNodeJsRuntimeHeadings,
+} from "./edge-runtime-vs-node-js-runtime";
+import ServerlessFunctions, {
+  headings as serverlessFunctionsHeadings,
+} from "./serverless-functions";
+import CiCdIntegration, {
+  headings as ciCdIntegrationHeadings,
+} from "./ci-cd-integration";
+import DeploymentPreviews, {
+  headings as deploymentPreviewsHeadings,
+} from "./deployment-previews";
+import BuildFailuresRuntimeErrors, {
+  headings as buildFailuresRuntimeErrorsHeadings,
+} from "./build-failures-runtime-errors";
 
 export interface ChapterHeading {
   id: string;
@@ -2762,6 +2802,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "প্রোডাকশন failure isolation — bulkhead ও circuit breaker",
         en: "Production Failure Isolation — Bulkheads and Circuit Breakers",
+      },
+    },
+  },
+  "environment-deployment/env-env-local-env-production": {
+    Body: EnvEnvLocalEnvProduction,
+    headings: envEnvLocalEnvProductionHeadings,
+    cover: {
+      src: ch19Topic1Cover,
+      alt: {
+        bn: ".env ফাইলসমূহ — precedence অর্ডার ও NEXT_PUBLIC_ বাউন্ডারি",
+        en: ".env Files — Precedence Order and the NEXT_PUBLIC_ Boundary",
+      },
+    },
+  },
+  "environment-deployment/build-time-vs-runtime-variables": {
+    Body: BuildTimeVsRuntimeVariables,
+    headings: buildTimeVsRuntimeVariablesHeadings,
+    cover: {
+      src: ch19Topic2Cover,
+      alt: {
+        bn: "Build-time বনাম runtime variables — inlining ও Docker ARG",
+        en: "Build-time vs Runtime Variables — Inlining and Docker ARG",
+      },
+    },
+  },
+  "environment-deployment/production-build": {
+    Body: ProductionBuild,
+    headings: productionBuildHeadings,
+    cover: {
+      src: ch19Topic3Cover,
+      alt: {
+        bn: "Production build — standalone output ও রুট ইন্ডিকেটর",
+        en: "Production Build — Standalone Output and Route Indicators",
+      },
+    },
+  },
+  "environment-deployment/static-export": {
+    Body: StaticExport,
+    headings: staticExportHeadings,
+    cover: {
+      src: ch19Topic4Cover,
+      alt: {
+        bn: "Static export — out/ বান্ডেল ও generateStaticParams",
+        en: "Static Export — The out/ Bundle and generateStaticParams",
+      },
+    },
+  },
+  "environment-deployment/server-deployment": {
+    Body: ServerDeployment,
+    headings: serverDeploymentHeadings,
+    cover: {
+      src: ch19Topic5Cover,
+      alt: {
+        bn: "Server deployment — PM2, Nginx reverse proxy ও SSL",
+        en: "Server Deployment — PM2, an Nginx Reverse Proxy and SSL",
+      },
+    },
+  },
+  "environment-deployment/edge-runtime-vs-node-js-runtime": {
+    Body: EdgeRuntimeVsNodeJsRuntime,
+    headings: edgeRuntimeVsNodeJsRuntimeHeadings,
+    cover: {
+      src: ch19Topic6Cover,
+      alt: {
+        bn: "Edge runtime বনাম Node.js runtime — কোন কাজে কোনটি",
+        en: "Edge Runtime vs Node.js Runtime — Picking the Right One",
+      },
+    },
+  },
+  "environment-deployment/serverless-functions": {
+    Body: ServerlessFunctions,
+    headings: serverlessFunctionsHeadings,
+    cover: {
+      src: ch19Topic7Cover,
+      alt: {
+        bn: "Serverless functions — cold start, pooling ও execution limit",
+        en: "Serverless Functions — Cold Starts, Pooling and Execution Limits",
+      },
+    },
+  },
+  "environment-deployment/ci-cd-integration": {
+    Body: CiCdIntegration,
+    headings: ciCdIntegrationHeadings,
+    cover: {
+      src: ch19Topic8Cover,
+      alt: {
+        bn: "CI/CD ইন্টিগ্রেশন — GitHub Actions, Vercel ও Docker পাইপলাইন",
+        en: "CI/CD Integration — GitHub Actions, Vercel and Docker Pipelines",
+      },
+    },
+  },
+  "environment-deployment/deployment-previews": {
+    Body: DeploymentPreviews,
+    headings: deploymentPreviewsHeadings,
+    cover: {
+      src: ch19Topic9Cover,
+      alt: {
+        bn: "Deployment previews — ephemeral এনভায়রনমেন্ট ও ডাইনামিক URL",
+        en: "Deployment Previews — Ephemeral Environments and Dynamic URLs",
+      },
+    },
+  },
+  "environment-deployment/build-failures-runtime-errors": {
+    Body: BuildFailuresRuntimeErrors,
+    headings: buildFailuresRuntimeErrorsHeadings,
+    cover: {
+      src: ch19Topic10Cover,
+      alt: {
+        bn: "Build failures ও runtime errors — hydration mismatch ও Suspense",
+        en: "Build Failures & Runtime Errors — Hydration Mismatches and Suspense",
       },
     },
   },

@@ -224,6 +224,16 @@ const WRITTEN = new Set<string>([
   "error-handling/graceful-degradation",
   "error-handling/error-recovery-retry-ux",
   "error-handling/production-failure-isolation",
+  "environment-deployment/env-env-local-env-production",
+  "environment-deployment/build-time-vs-runtime-variables",
+  "environment-deployment/production-build",
+  "environment-deployment/static-export",
+  "environment-deployment/server-deployment",
+  "environment-deployment/edge-runtime-vs-node-js-runtime",
+  "environment-deployment/serverless-functions",
+  "environment-deployment/ci-cd-integration",
+  "environment-deployment/deployment-previews",
+  "environment-deployment/build-failures-runtime-errors",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -956,7 +966,10 @@ const raw: RawChapter[] = [
         en: "Edge Runtime vs Node.js Runtime",
       },
       { bn: "Serverless functions", en: "Serverless Functions" },
-      { bn: "CDN ও caching", en: "CDN & Caching" },
+      {
+        bn: "CI/CD ইন্টিগ্রেশন",
+        en: "CI/CD Integration",
+      },
       { bn: "Deployment previews", en: "Deployment Previews" },
       {
         bn: "Build failures ও runtime errors",
