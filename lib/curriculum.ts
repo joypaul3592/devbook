@@ -264,6 +264,16 @@ const WRITTEN = new Set<string>([
   "scalable-architecture/shared-packages",
   "scalable-architecture/feature-boundary-design",
   "scalable-architecture/large-application-architecture-decision-making",
+  "large-scale-nextjs/monorepo-turborepo",
+  "large-scale-nextjs/micro-frontends",
+  "large-scale-nextjs/multi-tenant-architecture",
+  "large-scale-nextjs/feature-flags-a-b-testing",
+  "large-scale-nextjs/real-time-applications",
+  "large-scale-nextjs/websockets-server-sent-events",
+  "large-scale-nextjs/distributed-caching",
+  "large-scale-nextjs/monitoring-tracing-logging",
+  "large-scale-nextjs/large-scale-route-architecture",
+  "large-scale-nextjs/performance-budgeting-core-web-vitals",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -1123,13 +1133,13 @@ const raw: RawChapter[] = [
       },
       { bn: "Distributed caching", en: "Distributed Caching" },
       {
-        bn: "মাল্টি-রিজিয়ন ফ্রন্টএন্ড আর্কিটেকচার",
-        en: "Multi-region Frontend Architecture",
+        bn: "মনিটরিং, ট্রেসিং ও লগিং",
+        en: "Monitoring, Tracing & Logging",
       },
       { bn: "লার্জ-স্কেল রাউট আর্কিটেকচার", en: "Large-scale Route Architecture" },
       {
-        bn: "Next.js ফ্রন্টএন্ড টিম ও কোডবেস স্কেলিং",
-        en: "Scaling Next.js Frontend Teams & Codebases",
+        bn: "পারফরম্যান্স বাজেটিং ও Core Web Vitals",
+        en: "Performance Budgeting & Core Web Vitals",
       },
     ],
   },

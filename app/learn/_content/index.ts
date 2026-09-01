@@ -221,6 +221,16 @@ import ch22Topic7Cover from "@/public/blogs-images/chapter-22/topic-7.png";
 import ch22Topic8Cover from "@/public/blogs-images/chapter-22/topic-8.png";
 import ch22Topic9Cover from "@/public/blogs-images/chapter-22/topic-9.png";
 import ch22Topic10Cover from "@/public/blogs-images/chapter-22/topic-10.png";
+import ch23Topic1Cover from "@/public/blogs-images/chapter-23/topic-1.png";
+import ch23Topic2Cover from "@/public/blogs-images/chapter-23/topic-2.png";
+import ch23Topic3Cover from "@/public/blogs-images/chapter-23/topic-3.png";
+import ch23Topic4Cover from "@/public/blogs-images/chapter-23/topic-4.png";
+import ch23Topic5Cover from "@/public/blogs-images/chapter-23/topic-5.png";
+import ch23Topic6Cover from "@/public/blogs-images/chapter-23/topic-6.png";
+import ch23Topic7Cover from "@/public/blogs-images/chapter-23/topic-7.png";
+import ch23Topic8Cover from "@/public/blogs-images/chapter-23/topic-8.png";
+import ch23Topic9Cover from "@/public/blogs-images/chapter-23/topic-9.png";
+import ch23Topic10Cover from "@/public/blogs-images/chapter-23/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -862,6 +872,36 @@ import FeatureBoundaryDesign, {
 import LargeApplicationArchitectureDecisionMaking, {
   headings as largeApplicationArchitectureDecisionMakingHeadings,
 } from "./large-application-architecture-decision-making";
+import MonorepoTurborepo, {
+  headings as monorepoTurborepoHeadings,
+} from "./monorepo-turborepo";
+import MicroFrontends, {
+  headings as microFrontendsHeadings,
+} from "./micro-frontends";
+import MultiTenantArchitecture, {
+  headings as multiTenantArchitectureHeadings,
+} from "./multi-tenant-architecture";
+import FeatureFlagsAbTesting, {
+  headings as featureFlagsAbTestingHeadings,
+} from "./feature-flags-a-b-testing";
+import RealTimeApplications, {
+  headings as realTimeApplicationsHeadings,
+} from "./real-time-applications";
+import WebsocketsServerSentEvents, {
+  headings as websocketsServerSentEventsHeadings,
+} from "./websockets-server-sent-events";
+import DistributedCaching, {
+  headings as distributedCachingHeadings,
+} from "./distributed-caching";
+import MonitoringTracingLogging, {
+  headings as monitoringTracingLoggingHeadings,
+} from "./monitoring-tracing-logging";
+import LargeScaleRouteArchitecture, {
+  headings as largeScaleRouteArchitectureHeadings,
+} from "./large-scale-route-architecture";
+import PerformanceBudgetingCoreWebVitals, {
+  headings as performanceBudgetingCoreWebVitalsHeadings,
+} from "./performance-budgeting-core-web-vitals";
 
 export interface ChapterHeading {
   id: string;
@@ -3362,6 +3402,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "আর্কিটেকচার ডিসিশন মেকিং — ADR ও trade-off বিশ্লেষণ",
         en: "Architecture Decision Making — ADRs and Trade-off Analysis",
+      },
+    },
+  },
+  "large-scale-nextjs/monorepo-turborepo": {
+    Body: MonorepoTurborepo,
+    headings: monorepoTurborepoHeadings,
+    cover: {
+      src: ch23Topic1Cover,
+      alt: {
+        bn: "Monorepo ও Turborepo — workspace, task graph ও caching",
+        en: "Monorepo and Turborepo — Workspaces, Task Graphs, Caching",
+      },
+    },
+  },
+  "large-scale-nextjs/micro-frontends": {
+    Body: MicroFrontends,
+    headings: microFrontendsHeadings,
+    cover: {
+      src: ch23Topic2Cover,
+      alt: {
+        bn: "Micro-frontends — multi-zone rewrite ও স্বাধীন ডেপ্লয়",
+        en: "Micro-Frontends — Multi-Zone Rewrites and Independent Deploys",
+      },
+    },
+  },
+  "large-scale-nextjs/multi-tenant-architecture": {
+    Body: MultiTenantArchitecture,
+    headings: multiTenantArchitectureHeadings,
+    cover: {
+      src: ch23Topic3Cover,
+      alt: {
+        bn: "Multi-tenant আর্কিটেকচার — host rewrite ও ডাটা আইসোলেশন",
+        en: "Multi-Tenant Architecture — Host Rewrites and Data Isolation",
+      },
+    },
+  },
+  "large-scale-nextjs/feature-flags-a-b-testing": {
+    Body: FeatureFlagsAbTesting,
+    headings: featureFlagsAbTestingHeadings,
+    cover: {
+      src: ch23Topic4Cover,
+      alt: {
+        bn: "Feature flag ও A/B testing — edge bucketing, শূন্য ফ্লিকার",
+        en: "Feature Flags and A/B Testing — Edge Bucketing, Zero Flicker",
+      },
+    },
+  },
+  "large-scale-nextjs/real-time-applications": {
+    Body: RealTimeApplications,
+    headings: realTimeApplicationsHeadings,
+    cover: {
+      src: ch23Topic5Cover,
+      alt: {
+        bn: "রিয়েল-টাইম অ্যাপ্লিকেশন — SSE স্ট্রিম ও pub/sub broker",
+        en: "Real-Time Applications — SSE Streams and Pub/Sub Brokers",
+      },
+    },
+  },
+  "large-scale-nextjs/websockets-server-sent-events": {
+    Body: WebsocketsServerSentEvents,
+    headings: websocketsServerSentEventsHeadings,
+    cover: {
+      src: ch23Topic6Cover,
+      alt: {
+        bn: "WebSockets ও SSE — প্রোটোকল বাছাই আর backoff",
+        en: "WebSockets and SSE — Choosing a Protocol, and Backoff",
+      },
+    },
+  },
+  "large-scale-nextjs/distributed-caching": {
+    Body: DistributedCaching,
+    headings: distributedCachingHeadings,
+    cover: {
+      src: ch23Topic7Cover,
+      alt: {
+        bn: "Distributed caching — cache-aside, lock ও invalidation",
+        en: "Distributed Caching — Cache-Aside, Locks, Invalidation",
+      },
+    },
+  },
+  "large-scale-nextjs/monitoring-tracing-logging": {
+    Body: MonitoringTracingLogging,
+    headings: monitoringTracingLoggingHeadings,
+    cover: {
+      src: ch23Topic8Cover,
+      alt: {
+        bn: "মনিটরিং, ট্রেসিং ও লগিং — OpenTelemetry ও trace context",
+        en: "Monitoring, Tracing, Logging — OpenTelemetry and Trace Context",
+      },
+    },
+  },
+  "large-scale-nextjs/large-scale-route-architecture": {
+    Body: LargeScaleRouteArchitecture,
+    headings: largeScaleRouteArchitectureHeadings,
+    cover: {
+      src: ch23Topic9Cover,
+      alt: {
+        bn: "লার্জ-স্কেল রাউট আর্কিটেকচার — group, slot ও intercepting route",
+        en: "Large-Scale Route Architecture — Groups, Slots, Interception",
+      },
+    },
+  },
+  "large-scale-nextjs/performance-budgeting-core-web-vitals": {
+    Body: PerformanceBudgetingCoreWebVitals,
+    headings: performanceBudgetingCoreWebVitalsHeadings,
+    cover: {
+      src: ch23Topic10Cover,
+      alt: {
+        bn: "পারফরম্যান্স বাজেটিং — CI গার্ড ও Core Web Vitals",
+        en: "Performance Budgeting — CI Guards and Core Web Vitals",
       },
     },
   },
