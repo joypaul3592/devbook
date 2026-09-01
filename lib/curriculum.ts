@@ -254,6 +254,16 @@ const WRITTEN = new Set<string>([
   "testing/ci-cd-pipeline-integration",
   "testing/mocking-external-apis",
   "testing/test-coverage-best-practices",
+  "scalable-architecture/feature-based-architecture",
+  "scalable-architecture/domain-driven-structure",
+  "scalable-architecture/component-architecture",
+  "scalable-architecture/server-client-separation",
+  "scalable-architecture/data-fetching-strategy",
+  "scalable-architecture/state-management-architecture",
+  "scalable-architecture/performance-optimization-caching",
+  "scalable-architecture/shared-packages",
+  "scalable-architecture/feature-boundary-design",
+  "scalable-architecture/large-application-architecture-decision-making",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -1073,9 +1083,15 @@ const raw: RawChapter[] = [
       { bn: "Domain-driven structure", en: "Domain-driven Structure" },
       { bn: "Component architecture", en: "Component Architecture" },
       { bn: "Server / client separation", en: "Server / Client Separation" },
-      { bn: "Shared utilities", en: "Shared Utilities" },
-      { bn: "Dependency boundaries", en: "Dependency Boundaries" },
-      { bn: "Monorepo ও Turborepo", en: "Monorepo & Turborepo" },
+      { bn: "ডাটা ফেচিং স্ট্র্যাটেজি", en: "Data Fetching Strategy" },
+      {
+        bn: "স্টেট ম্যানেজমেন্ট আর্কিটেকচার",
+        en: "State Management Architecture",
+      },
+      {
+        bn: "পারফরম্যান্স অপটিমাইজেশন ও ক্যাশিং",
+        en: "Performance Optimization & Caching",
+      },
       { bn: "Shared packages", en: "Shared Packages" },
       { bn: "ফিচার বাউন্ডারি ডিজাইন", en: "Feature Boundary Design" },
       {

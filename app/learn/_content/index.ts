@@ -211,6 +211,16 @@ import ch21Topic7Cover from "@/public/blogs-images/chapter-21/topic-7.png";
 import ch21Topic8Cover from "@/public/blogs-images/chapter-21/topic-8.png";
 import ch21Topic9Cover from "@/public/blogs-images/chapter-21/topic-9.png";
 import ch21Topic10Cover from "@/public/blogs-images/chapter-21/topic-10.png";
+import ch22Topic1Cover from "@/public/blogs-images/chapter-22/topic-1.png";
+import ch22Topic2Cover from "@/public/blogs-images/chapter-22/topic-2.png";
+import ch22Topic3Cover from "@/public/blogs-images/chapter-22/topic-3.png";
+import ch22Topic4Cover from "@/public/blogs-images/chapter-22/topic-4.png";
+import ch22Topic5Cover from "@/public/blogs-images/chapter-22/topic-5.png";
+import ch22Topic6Cover from "@/public/blogs-images/chapter-22/topic-6.png";
+import ch22Topic7Cover from "@/public/blogs-images/chapter-22/topic-7.png";
+import ch22Topic8Cover from "@/public/blogs-images/chapter-22/topic-8.png";
+import ch22Topic9Cover from "@/public/blogs-images/chapter-22/topic-9.png";
+import ch22Topic10Cover from "@/public/blogs-images/chapter-22/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -822,6 +832,36 @@ import MockingExternalApis, {
 import TestCoverageBestPractices, {
   headings as testCoverageBestPracticesHeadings,
 } from "./test-coverage-best-practices";
+import FeatureBasedArchitecture, {
+  headings as featureBasedArchitectureHeadings,
+} from "./feature-based-architecture";
+import DomainDrivenStructure, {
+  headings as domainDrivenStructureHeadings,
+} from "./domain-driven-structure";
+import ComponentArchitecture, {
+  headings as componentArchitectureHeadings,
+} from "./component-architecture";
+import ServerClientSeparation, {
+  headings as serverClientSeparationHeadings,
+} from "./server-client-separation";
+import DataFetchingStrategy, {
+  headings as dataFetchingStrategyHeadings,
+} from "./data-fetching-strategy";
+import StateManagementArchitecture, {
+  headings as stateManagementArchitectureHeadings,
+} from "./state-management-architecture";
+import PerformanceOptimizationCaching, {
+  headings as performanceOptimizationCachingHeadings,
+} from "./performance-optimization-caching";
+import SharedPackages, {
+  headings as sharedPackagesHeadings,
+} from "./shared-packages";
+import FeatureBoundaryDesign, {
+  headings as featureBoundaryDesignHeadings,
+} from "./feature-boundary-design";
+import LargeApplicationArchitectureDecisionMaking, {
+  headings as largeApplicationArchitectureDecisionMakingHeadings,
+} from "./large-application-architecture-decision-making";
 
 export interface ChapterHeading {
   id: string;
@@ -3212,6 +3252,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Test coverage ও best practices — testing trophy",
         en: "Test Coverage and Best Practices — The Testing Trophy",
+      },
+    },
+  },
+  "scalable-architecture/feature-based-architecture": {
+    Body: FeatureBasedArchitecture,
+    headings: featureBasedArchitectureHeadings,
+    cover: {
+      src: ch22Topic1Cover,
+      alt: {
+        bn: "Feature-based আর্কিটেকচার — co-location ও public API barrier",
+        en: "Feature-Based Architecture — Co-location and Public API Barriers",
+      },
+    },
+  },
+  "scalable-architecture/domain-driven-structure": {
+    Body: DomainDrivenStructure,
+    headings: domainDrivenStructureHeadings,
+    cover: {
+      src: ch22Topic2Cover,
+      alt: {
+        bn: "Domain-driven স্ট্রাকচার — pure domain, use case ও adapter",
+        en: "Domain-Driven Structure — Pure Domains, Use Cases, Adapters",
+      },
+    },
+  },
+  "scalable-architecture/component-architecture": {
+    Body: ComponentArchitecture,
+    headings: componentArchitectureHeadings,
+    cover: {
+      src: ch22Topic3Cover,
+      alt: {
+        bn: "Component আর্কিটেকচার — CVA ও compound component",
+        en: "Component Architecture — CVA and Compound Components",
+      },
+    },
+  },
+  "scalable-architecture/server-client-separation": {
+    Body: ServerClientSeparation,
+    headings: serverClientSeparationHeadings,
+    cover: {
+      src: ch22Topic4Cover,
+      alt: {
+        bn: "Server / client সেপারেশন — leaf boundary ও children প্যাটার্ন",
+        en: "Server / Client Separation — Leaf Boundaries and children",
+      },
+    },
+  },
+  "scalable-architecture/data-fetching-strategy": {
+    Body: DataFetchingStrategy,
+    headings: dataFetchingStrategyHeadings,
+    cover: {
+      src: ch22Topic5Cover,
+      alt: {
+        bn: "ডাটা ফেচিং স্ট্র্যাটেজি — parallel fetch ও tag revalidation",
+        en: "Data Fetching Strategy — Parallel Fetches and Tag Revalidation",
+      },
+    },
+  },
+  "scalable-architecture/state-management-architecture": {
+    Body: StateManagementArchitecture,
+    headings: stateManagementArchitectureHeadings,
+    cover: {
+      src: ch22Topic6Cover,
+      alt: {
+        bn: "স্টেট ম্যানেজমেন্ট আর্কিটেকচার — URL state ও hydration guard",
+        en: "State Management Architecture — URL State and Hydration Guards",
+      },
+    },
+  },
+  "scalable-architecture/performance-optimization-caching": {
+    Body: PerformanceOptimizationCaching,
+    headings: performanceOptimizationCachingHeadings,
+    cover: {
+      src: ch22Topic7Cover,
+      alt: {
+        bn: "পারফরম্যান্স ও ক্যাশিং — code splitting, dedup ও streaming",
+        en: "Performance and Caching — Splitting, Dedup, and Streaming",
+      },
+    },
+  },
+  "scalable-architecture/shared-packages": {
+    Body: SharedPackages,
+    headings: sharedPackagesHeadings,
+    cover: {
+      src: ch22Topic8Cover,
+      alt: {
+        bn: "Shared packages — pure util, typed env ও server-only গার্ড",
+        en: "Shared Packages — Pure Utils, Typed Env, server-only Guards",
+      },
+    },
+  },
+  "scalable-architecture/feature-boundary-design": {
+    Body: FeatureBoundaryDesign,
+    headings: featureBoundaryDesignHeadings,
+    cover: {
+      src: ch22Topic9Cover,
+      alt: {
+        bn: "ফিচার বাউন্ডারি ডিজাইন — public barrier ও ESLint গার্ড",
+        en: "Feature Boundary Design — Public Barriers and ESLint Guards",
+      },
+    },
+  },
+  "scalable-architecture/large-application-architecture-decision-making": {
+    Body: LargeApplicationArchitectureDecisionMaking,
+    headings: largeApplicationArchitectureDecisionMakingHeadings,
+    cover: {
+      src: ch22Topic10Cover,
+      alt: {
+        bn: "আর্কিটেকচার ডিসিশন মেকিং — ADR ও trade-off বিশ্লেষণ",
+        en: "Architecture Decision Making — ADRs and Trade-off Analysis",
       },
     },
   },
