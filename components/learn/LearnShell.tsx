@@ -18,7 +18,7 @@ export function LearnShell({ children }: { children: ReactNode }) {
   }, [open]);
 
   return (
-    <div className="relative mx-auto max-w-400 w-full flex-1 flex">
+    <div className="relative mx-auto max-w-400 w-full flex-1 flex lg:border-x lg:border-border">
       {/* ── Desktop sidebar ────────────────────────────────────────────── */}
       <aside
         className={cn(
