@@ -214,6 +214,16 @@ const WRITTEN = new Set<string>([
   "security/rate-limiting-upstash-redis",
   "security/dependency-vulnerabilities",
   "security/security-headers-csp",
+  "error-handling/error-boundaries",
+  "error-handling/error-tsx-global-error",
+  "error-handling/not-found-tsx",
+  "error-handling/api-errors",
+  "error-handling/validation-errors",
+  "error-handling/expected-vs-unexpected-errors",
+  "error-handling/logging-error-monitoring",
+  "error-handling/graceful-degradation",
+  "error-handling/error-recovery-retry-ux",
+  "error-handling/production-failure-isolation",
 ]);
 
 /** Stable url slug derived from the English title. */

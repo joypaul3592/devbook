@@ -171,6 +171,16 @@ import ch17Topic7Cover from "@/public/blogs-images/chapter-17/topic-7.png";
 import ch17Topic8Cover from "@/public/blogs-images/chapter-17/topic-8.png";
 import ch17Topic9Cover from "@/public/blogs-images/chapter-17/topic-9.png";
 import ch17Topic10Cover from "@/public/blogs-images/chapter-17/topic-10.png";
+import ch18Topic1Cover from "@/public/blogs-images/chapter-18/topic-1.png";
+import ch18Topic2Cover from "@/public/blogs-images/chapter-18/topic-2.png";
+import ch18Topic3Cover from "@/public/blogs-images/chapter-18/topic-3.png";
+import ch18Topic4Cover from "@/public/blogs-images/chapter-18/topic-4.png";
+import ch18Topic5Cover from "@/public/blogs-images/chapter-18/topic-5.png";
+import ch18Topic6Cover from "@/public/blogs-images/chapter-18/topic-6.png";
+import ch18Topic7Cover from "@/public/blogs-images/chapter-18/topic-7.png";
+import ch18Topic8Cover from "@/public/blogs-images/chapter-18/topic-8.png";
+import ch18Topic9Cover from "@/public/blogs-images/chapter-18/topic-9.png";
+import ch18Topic10Cover from "@/public/blogs-images/chapter-18/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -666,6 +676,32 @@ import CsrfProtectionSameSiteCookies, {
 import RateLimitingUpstashRedis, {
   headings as rateLimitingUpstashRedisHeadings,
 } from "./rate-limiting-upstash-redis";
+import ErrorBoundaries, {
+  headings as errorBoundariesHeadings,
+} from "./error-boundaries";
+import ErrorTsxGlobalError, {
+  headings as errorTsxGlobalErrorHeadings,
+} from "./error-tsx-global-error";
+import NotFoundTsx, { headings as notFoundTsxHeadings } from "./not-found-tsx";
+import ApiErrors, { headings as apiErrorsHeadings } from "./api-errors";
+import ValidationErrors, {
+  headings as validationErrorsHeadings,
+} from "./validation-errors";
+import ExpectedVsUnexpectedErrors, {
+  headings as expectedVsUnexpectedErrorsHeadings,
+} from "./expected-vs-unexpected-errors";
+import LoggingErrorMonitoring, {
+  headings as loggingErrorMonitoringHeadings,
+} from "./logging-error-monitoring";
+import GracefulDegradation, {
+  headings as gracefulDegradationHeadings,
+} from "./graceful-degradation";
+import ErrorRecoveryRetryUx, {
+  headings as errorRecoveryRetryUxHeadings,
+} from "./error-recovery-retry-ux";
+import ProductionFailureIsolation, {
+  headings as productionFailureIsolationHeadings,
+} from "./production-failure-isolation";
 
 export interface ChapterHeading {
   id: string;
@@ -2616,6 +2652,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Rate limiting — Upstash Redis ও sliding window অ্যালগরিদম",
         en: "Rate Limiting — Upstash Redis and the Sliding Window Algorithm",
+      },
+    },
+  },
+  "error-handling/error-boundaries": {
+    Body: ErrorBoundaries,
+    headings: errorBoundariesHeadings,
+    cover: {
+      src: ch18Topic1Cover,
+      alt: {
+        bn: "Error boundaries — granular failure isolation ও fallback UI",
+        en: "Error Boundaries — Granular Failure Isolation and Fallback UI",
+      },
+    },
+  },
+  "error-handling/error-tsx-global-error": {
+    Body: ErrorTsxGlobalError,
+    headings: errorTsxGlobalErrorHeadings,
+    cover: {
+      src: ch18Topic2Cover,
+      alt: {
+        bn: "error.tsx ও global error — App Router-এর এরর হায়ারার্কি",
+        en: "error.tsx & Global Error — The App Router Error Hierarchy",
+      },
+    },
+  },
+  "error-handling/not-found-tsx": {
+    Body: NotFoundTsx,
+    headings: notFoundTsxHeadings,
+    cover: {
+      src: ch18Topic3Cover,
+      alt: {
+        bn: "not-found.tsx — notFound() ও soft 404 প্রতিরোধ",
+        en: "not-found.tsx — notFound() and Preventing Soft 404s",
+      },
+    },
+  },
+  "error-handling/api-errors": {
+    Body: ApiErrors,
+    headings: apiErrorsHeadings,
+    cover: {
+      src: ch18Topic4Cover,
+      alt: {
+        bn: "API errors — standardized envelope ও টাইপ-সেফ fetcher",
+        en: "API Errors — Standardized Envelopes and a Typed Fetcher",
+      },
+    },
+  },
+  "error-handling/validation-errors": {
+    Body: ValidationErrors,
+    headings: validationErrorsHeadings,
+    cover: {
+      src: ch18Topic5Cover,
+      alt: {
+        bn: "Validation errors — safeParse ও অ্যাক্সেসিবল inline field এরর",
+        en: "Validation Errors — safeParse and Accessible Inline Field Errors",
+      },
+    },
+  },
+  "error-handling/expected-vs-unexpected-errors": {
+    Body: ExpectedVsUnexpectedErrors,
+    headings: expectedVsUnexpectedErrorsHeadings,
+    cover: {
+      src: ch18Topic6Cover,
+      alt: {
+        bn: "Expected বনাম unexpected errors — discriminated union কনট্র্যাক্ট",
+        en: "Expected vs Unexpected Errors — The Discriminated Union Contract",
+      },
+    },
+  },
+  "error-handling/logging-error-monitoring": {
+    Body: LoggingErrorMonitoring,
+    headings: loggingErrorMonitoringHeadings,
+    cover: {
+      src: ch18Topic7Cover,
+      alt: {
+        bn: "Logging ও error monitoring — structured log, source map ও অ্যালার্ট",
+        en: "Logging & Error Monitoring — Structured Logs, Source Maps, Alerts",
+      },
+    },
+  },
+  "error-handling/graceful-degradation": {
+    Body: GracefulDegradation,
+    headings: gracefulDegradationHeadings,
+    cover: {
+      src: ch18Topic8Cover,
+      alt: {
+        bn: "Graceful degradation — fallback ডাটা ও isolated ফেচিং",
+        en: "Graceful Degradation — Fallback Data and Isolated Fetching",
+      },
+    },
+  },
+  "error-handling/error-recovery-retry-ux": {
+    Body: ErrorRecoveryRetryUx,
+    headings: errorRecoveryRetryUxHeadings,
+    cover: {
+      src: ch18Topic9Cover,
+      alt: {
+        bn: "Error recovery ও retry UX — exponential backoff ও soft retry",
+        en: "Error Recovery & Retry UX — Exponential Backoff and Soft Retries",
+      },
+    },
+  },
+  "error-handling/production-failure-isolation": {
+    Body: ProductionFailureIsolation,
+    headings: productionFailureIsolationHeadings,
+    cover: {
+      src: ch18Topic10Cover,
+      alt: {
+        bn: "প্রোডাকশন failure isolation — bulkhead ও circuit breaker",
+        en: "Production Failure Isolation — Bulkheads and Circuit Breakers",
       },
     },
   },
