@@ -194,6 +194,16 @@ const WRITTEN = new Set<string>([
   "seo/multi-language-seo",
   "seo/dynamic-seo-architecture-at-scale",
   "seo/seo-performance-rendering-strategy",
+  "internationalization/i18n-architecture",
+  "internationalization/locale-routing",
+  "internationalization/language-detection",
+  "internationalization/translation-architecture",
+  "internationalization/rtl-architecture",
+  "internationalization/localized-metadata-urls",
+  "internationalization/currency-date-formatting",
+  "internationalization/locale-aware-static-generation",
+  "internationalization/translation-loading-performance",
+  "internationalization/multi-region-localization-architecture",
 ]);
 
 /** Stable url slug derived from the English title. */

@@ -151,6 +151,16 @@ import ch15Topic7Cover from "@/public/blogs-images/chapter-15/topic-7.png";
 import ch15Topic8Cover from "@/public/blogs-images/chapter-15/topic-8.png";
 import ch15Topic9Cover from "@/public/blogs-images/chapter-15/topic-9.png";
 import ch15Topic10Cover from "@/public/blogs-images/chapter-15/topic-10.png";
+import ch16Topic1Cover from "@/public/blogs-images/chapter-16/topic-1.png";
+import ch16Topic2Cover from "@/public/blogs-images/chapter-16/topic-2.png";
+import ch16Topic3Cover from "@/public/blogs-images/chapter-16/topic-3.png";
+import ch16Topic4Cover from "@/public/blogs-images/chapter-16/topic-4.png";
+import ch16Topic5Cover from "@/public/blogs-images/chapter-16/topic-5.png";
+import ch16Topic6Cover from "@/public/blogs-images/chapter-16/topic-6.png";
+import ch16Topic7Cover from "@/public/blogs-images/chapter-16/topic-7.png";
+import ch16Topic8Cover from "@/public/blogs-images/chapter-16/topic-8.png";
+import ch16Topic9Cover from "@/public/blogs-images/chapter-16/topic-9.png";
+import ch16Topic10Cover from "@/public/blogs-images/chapter-16/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -586,6 +596,36 @@ import DynamicSeoArchitectureAtScale, {
 import SeoPerformanceRenderingStrategy, {
   headings as seoPerformanceRenderingStrategyHeadings,
 } from "./seo-performance-rendering-strategy";
+import I18nArchitecture, {
+  headings as i18nArchitectureHeadings,
+} from "./i18n-architecture";
+import LocaleRouting, {
+  headings as localeRoutingHeadings,
+} from "./locale-routing";
+import LanguageDetection, {
+  headings as languageDetectionHeadings,
+} from "./language-detection";
+import TranslationArchitecture, {
+  headings as translationArchitectureHeadings,
+} from "./translation-architecture";
+import RtlArchitecture, {
+  headings as rtlArchitectureHeadings,
+} from "./rtl-architecture";
+import LocalizedMetadataUrls, {
+  headings as localizedMetadataUrlsHeadings,
+} from "./localized-metadata-urls";
+import CurrencyDateFormatting, {
+  headings as currencyDateFormattingHeadings,
+} from "./currency-date-formatting";
+import LocaleAwareStaticGeneration, {
+  headings as localeAwareStaticGenerationHeadings,
+} from "./locale-aware-static-generation";
+import TranslationLoadingPerformance, {
+  headings as translationLoadingPerformanceHeadings,
+} from "./translation-loading-performance";
+import MultiRegionLocalizationArchitecture, {
+  headings as multiRegionLocalizationArchitectureHeadings,
+} from "./multi-region-localization-architecture";
 
 export interface ChapterHeading {
   id: string;
@@ -2316,6 +2356,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "SEO পারফরম্যান্স ও রেন্ডারিং স্ট্র্যাটেজি — Core Web Vitals ও streaming",
         en: "SEO Performance & Rendering Strategy — Core Web Vitals & Streaming",
+      },
+    },
+  },
+  "internationalization/i18n-architecture": {
+    Body: I18nArchitecture,
+    headings: i18nArchitectureHeadings,
+    cover: {
+      src: ch16Topic1Cover,
+      alt: {
+        bn: "i18n আর্কিটেকচার — server-first dictionary ও zero-JS ট্রান্সলেশন",
+        en: "i18n Architecture — Server-First Dictionaries & Zero-JS Translation",
+      },
+    },
+  },
+  "internationalization/locale-routing": {
+    Body: LocaleRouting,
+    headings: localeRoutingHeadings,
+    cover: {
+      src: ch16Topic2Cover,
+      alt: {
+        bn: "Locale routing — [locale] সেগমেন্ট ও middleware রিডাইরেক্ট",
+        en: "Locale Routing — The [locale] Segment & Middleware Redirects",
+      },
+    },
+  },
+  "internationalization/language-detection": {
+    Body: LanguageDetection,
+    headings: languageDetectionHeadings,
+    cover: {
+      src: ch16Topic3Cover,
+      alt: {
+        bn: "Language detection — cookie ও Accept-Language নেগোশিয়েশন",
+        en: "Language Detection — Cookie & Accept-Language Negotiation",
+      },
+    },
+  },
+  "internationalization/translation-architecture": {
+    Body: TranslationArchitecture,
+    headings: translationArchitectureHeadings,
+    cover: {
+      src: ch16Topic4Cover,
+      alt: {
+        bn: "Translation আর্কিটেকচার — interpolation, plural ও namespace",
+        en: "Translation Architecture — Interpolation, Plurals & Namespaces",
+      },
+    },
+  },
+  "internationalization/rtl-architecture": {
+    Body: RtlArchitecture,
+    headings: rtlArchitectureHeadings,
+    cover: {
+      src: ch16Topic5Cover,
+      alt: {
+        bn: "RTL আর্কিটেকচার — dynamic dir ও CSS logical properties",
+        en: "RTL Architecture — Dynamic dir & CSS Logical Properties",
+      },
+    },
+  },
+  "internationalization/localized-metadata-urls": {
+    Body: LocalizedMetadataUrls,
+    headings: localizedMetadataUrlsHeadings,
+    cover: {
+      src: ch16Topic6Cover,
+      alt: {
+        bn: "Localized metadata ও URLs — og:locale ও অনুবাদিত slug",
+        en: "Localized Metadata & URLs — og:locale and Translated Slugs",
+      },
+    },
+  },
+  "internationalization/currency-date-formatting": {
+    Body: CurrencyDateFormatting,
+    headings: currencyDateFormattingHeadings,
+    cover: {
+      src: ch16Topic7Cover,
+      alt: {
+        bn: "Currency ও date formatting — Intl API ও hydration safety",
+        en: "Currency & Date Formatting — The Intl API and Hydration Safety",
+      },
+    },
+  },
+  "internationalization/locale-aware-static-generation": {
+    Body: LocaleAwareStaticGeneration,
+    headings: localeAwareStaticGenerationHeadings,
+    cover: {
+      src: ch16Topic8Cover,
+      alt: {
+        bn: "Locale-aware static generation — generateStaticParams ও ISR",
+        en: "Locale-aware Static Generation — generateStaticParams & ISR",
+      },
+    },
+  },
+  "internationalization/translation-loading-performance": {
+    Body: TranslationLoadingPerformance,
+    headings: translationLoadingPerformanceHeadings,
+    cover: {
+      src: ch16Topic9Cover,
+      alt: {
+        bn: "ট্রান্সলেশন লোডিং পারফরম্যান্স — namespace splitting ও React.cache()",
+        en: "Translation Loading Performance — Namespace Splitting & React.cache()",
+      },
+    },
+  },
+  "internationalization/multi-region-localization-architecture": {
+    Body: MultiRegionLocalizationArchitecture,
+    headings: multiRegionLocalizationArchitectureHeadings,
+    cover: {
+      src: ch16Topic10Cover,
+      alt: {
+        bn: "মাল্টি-রিজিয়ন লোকালাইজেশন — BCP 47 ও edge geo-routing",
+        en: "Multi-region Localization — BCP 47 Tuples & Edge Geo-Routing",
       },
     },
   },
