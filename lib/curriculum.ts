@@ -204,6 +204,16 @@ const WRITTEN = new Set<string>([
   "internationalization/locale-aware-static-generation",
   "internationalization/translation-loading-performance",
   "internationalization/multi-region-localization-architecture",
+  "security/xss-protection",
+  "security/csrf-protection",
+  "security/authentication-authorization-security",
+  "security/cookie-security",
+  "security/environment-variables-secret-management",
+  "security/server-only-secrets",
+  "security/csrf-protection-samesite-cookies",
+  "security/rate-limiting-upstash-redis",
+  "security/dependency-vulnerabilities",
+  "security/security-headers-csp",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -872,8 +882,14 @@ const raw: RawChapter[] = [
         en: "Environment Variables & Secret Management",
       },
       { bn: "Server-only secrets", en: "Server-only Secrets" },
-      { bn: "CORS", en: "CORS" },
-      { bn: "Input validation", en: "Input Validation" },
+      {
+        bn: "CSRF প্রোটেকশন ও SameSite কুকি",
+        en: "CSRF Protection & SameSite Cookies",
+      },
+      {
+        bn: "Rate limiting (Upstash Redis)",
+        en: "Rate Limiting (Upstash Redis)",
+      },
       { bn: "Dependency vulnerabilities", en: "Dependency Vulnerabilities" },
       { bn: "Security headers ও CSP", en: "Security Headers & CSP" },
     ],

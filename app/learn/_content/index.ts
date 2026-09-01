@@ -161,6 +161,16 @@ import ch16Topic7Cover from "@/public/blogs-images/chapter-16/topic-7.png";
 import ch16Topic8Cover from "@/public/blogs-images/chapter-16/topic-8.png";
 import ch16Topic9Cover from "@/public/blogs-images/chapter-16/topic-9.png";
 import ch16Topic10Cover from "@/public/blogs-images/chapter-16/topic-10.png";
+import ch17Topic1Cover from "@/public/blogs-images/chapter-17/topic-1.png";
+import ch17Topic2Cover from "@/public/blogs-images/chapter-17/topic-2.png";
+import ch17Topic3Cover from "@/public/blogs-images/chapter-17/topic-3.png";
+import ch17Topic4Cover from "@/public/blogs-images/chapter-17/topic-4.png";
+import ch17Topic5Cover from "@/public/blogs-images/chapter-17/topic-5.png";
+import ch17Topic6Cover from "@/public/blogs-images/chapter-17/topic-6.png";
+import ch17Topic7Cover from "@/public/blogs-images/chapter-17/topic-7.png";
+import ch17Topic8Cover from "@/public/blogs-images/chapter-17/topic-8.png";
+import ch17Topic9Cover from "@/public/blogs-images/chapter-17/topic-9.png";
+import ch17Topic10Cover from "@/public/blogs-images/chapter-17/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -626,6 +636,36 @@ import TranslationLoadingPerformance, {
 import MultiRegionLocalizationArchitecture, {
   headings as multiRegionLocalizationArchitectureHeadings,
 } from "./multi-region-localization-architecture";
+import XssProtection, {
+  headings as xssProtectionHeadings,
+} from "./xss-protection";
+import CsrfProtection, {
+  headings as csrfProtectionHeadings,
+} from "./csrf-protection";
+import AuthenticationAuthorizationSecurity, {
+  headings as authenticationAuthorizationSecurityHeadings,
+} from "./authentication-authorization-security";
+import CookieSecurity, {
+  headings as cookieSecurityHeadings,
+} from "./cookie-security";
+import EnvironmentVariablesSecretManagement, {
+  headings as environmentVariablesSecretManagementHeadings,
+} from "./environment-variables-secret-management";
+import ServerOnlySecrets, {
+  headings as serverOnlySecretsHeadings,
+} from "./server-only-secrets";
+import DependencyVulnerabilities, {
+  headings as dependencyVulnerabilitiesHeadings,
+} from "./dependency-vulnerabilities";
+import SecurityHeadersCsp, {
+  headings as securityHeadersCspHeadings,
+} from "./security-headers-csp";
+import CsrfProtectionSameSiteCookies, {
+  headings as csrfProtectionSameSiteCookiesHeadings,
+} from "./csrf-protection-samesite-cookies";
+import RateLimitingUpstashRedis, {
+  headings as rateLimitingUpstashRedisHeadings,
+} from "./rate-limiting-upstash-redis";
 
 export interface ChapterHeading {
   id: string;
@@ -2466,6 +2506,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "মাল্টি-রিজিয়ন লোকালাইজেশন — BCP 47 ও edge geo-routing",
         en: "Multi-region Localization — BCP 47 Tuples & Edge Geo-Routing",
+      },
+    },
+  },
+  "security/xss-protection": {
+    Body: XssProtection,
+    headings: xssProtectionHeadings,
+    cover: {
+      src: ch17Topic1Cover,
+      alt: {
+        bn: "XSS প্রোটেকশন — HTML sanitization ও URL protocol গার্ড",
+        en: "XSS Protection — HTML Sanitization & URL Protocol Guards",
+      },
+    },
+  },
+  "security/csrf-protection": {
+    Body: CsrfProtection,
+    headings: csrfProtectionHeadings,
+    cover: {
+      src: ch17Topic2Cover,
+      alt: {
+        bn: "CSRF প্রোটেকশন — SameSite কুকি, origin check ও টোকেন",
+        en: "CSRF Protection — SameSite Cookies, Origin Checks & Tokens",
+      },
+    },
+  },
+  "security/authentication-authorization-security": {
+    Body: AuthenticationAuthorizationSecurity,
+    headings: authenticationAuthorizationSecurityHeadings,
+    cover: {
+      src: ch17Topic3Cover,
+      alt: {
+        bn: "Authentication ও authorization — dual-layer গার্ড ও RBAC",
+        en: "Authentication & Authorization — Dual-Layer Guards and RBAC",
+      },
+    },
+  },
+  "security/cookie-security": {
+    Body: CookieSecurity,
+    headings: cookieSecurityHeadings,
+    cover: {
+      src: ch17Topic4Cover,
+      alt: {
+        bn: "Cookie security — HttpOnly, Secure, SameSite ও __Host- প্রিফিক্স",
+        en: "Cookie Security — HttpOnly, Secure, SameSite & the __Host- Prefix",
+      },
+    },
+  },
+  "security/environment-variables-secret-management": {
+    Body: EnvironmentVariablesSecretManagement,
+    headings: environmentVariablesSecretManagementHeadings,
+    cover: {
+      src: ch17Topic5Cover,
+      alt: {
+        bn: "Environment variables ও secret management — Zod গার্ড ও leak shield",
+        en: "Environment Variables & Secret Management — Zod Guards and Leak Shields",
+      },
+    },
+  },
+  "security/server-only-secrets": {
+    Body: ServerOnlySecrets,
+    headings: serverOnlySecretsHeadings,
+    cover: {
+      src: ch17Topic6Cover,
+      alt: {
+        bn: "Server-only secrets — build-time গার্ড ও Server Action ব্রিজ",
+        en: "Server-only Secrets — Build-time Guards and Action Bridges",
+      },
+    },
+  },
+  "security/dependency-vulnerabilities": {
+    Body: DependencyVulnerabilities,
+    headings: dependencyVulnerabilitiesHeadings,
+    cover: {
+      src: ch17Topic9Cover,
+      alt: {
+        bn: "Dependency vulnerabilities — supply chain, overrides ও CI audit",
+        en: "Dependency Vulnerabilities — Supply Chain, Overrides & CI Audits",
+      },
+    },
+  },
+  "security/security-headers-csp": {
+    Body: SecurityHeadersCsp,
+    headings: securityHeadersCspHeadings,
+    cover: {
+      src: ch17Topic10Cover,
+      alt: {
+        bn: "Security headers ও CSP — nonce-ভিত্তিক পলিসি ও clickjacking গার্ড",
+        en: "Security Headers & CSP — Nonce-based Policy and Clickjacking Guards",
+      },
+    },
+  },
+  "security/csrf-protection-samesite-cookies": {
+    Body: CsrfProtectionSameSiteCookies,
+    headings: csrfProtectionSameSiteCookiesHeadings,
+    cover: {
+      src: ch17Topic7Cover,
+      alt: {
+        bn: "CSRF প্রোটেকশন ও SameSite কুকি — origin গার্ড ও Server Action ডিফেন্স",
+        en: "CSRF Protection & SameSite Cookies — Origin Guards and Action Defenses",
+      },
+    },
+  },
+  "security/rate-limiting-upstash-redis": {
+    Body: RateLimitingUpstashRedis,
+    headings: rateLimitingUpstashRedisHeadings,
+    cover: {
+      src: ch17Topic8Cover,
+      alt: {
+        bn: "Rate limiting — Upstash Redis ও sliding window অ্যালগরিদম",
+        en: "Rate Limiting — Upstash Redis and the Sliding Window Algorithm",
       },
     },
   },
