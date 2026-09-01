@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/button/Button";
 import { useLanguage } from "@/components/providers";
+import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -9,30 +10,45 @@ export function HeroSection() {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center py-12 md:py-24 max-w-6xl mx-auto text-center relative">
-      {/* Eyebrow */}
+      {/* Logo */}
       <div
         data-hero-eyebrow
         className="flex items-center justify-center gap-3 mb-7 z-10 relative"
       >
-        <span className="font-ui text-xs text-muted-foreground tracking-tight uppercase">
-          {t.home.eyebrow}
-        </span>
+        <Image
+          src="/logo/logo-dark.png"
+          alt="Logo"
+          width={770}
+          height={665}
+          priority
+          className="h-16 w-auto dark:hidden"
+        />
+        <Image
+          src="/logo/logo-white.png"
+          alt="Logo"
+          width={1151}
+          height={1086}
+          priority
+          className="h-16 w-auto hidden dark:block"
+        />
       </div>
 
       {/* headline row */}
       <h1
         data-hero-title
-        className="font-serif text-3xl md:text-5xl text-foreground leading-tight mb-2 font-medium z-10 relative "
+        className="font-serif text-3xl md:text-5xl bg-linear-to-r from-black via-neutral-700 to-neutral-400 dark:from-white dark:via-neutral-200 dark:to-neutral-500 bg-clip-text text-transparent leading-tight mb-2 font-medium z-10 relative "
       >
         {t.home.headline1}
         <br />
-        <em className="text-primary not-italic">{t.home.headline2}</em>
+        <em className="not-italic inline-block bg-linear-to-b from-black via-neutral-700 to-neutral-400 dark:from-white dark:via-neutral-200 dark:to-neutral-500 bg-clip-text text-transparent">
+          {t.home.headline2}
+        </em>
       </h1>
 
       {/* Bio */}
       <p
         data-hero-bio
-        className="font-bengali text-[17px] text-muted-foreground mb-7 max-w-xl mx-auto z-10 relative "
+        className="font-bengali text-[17px] text-muted-foreground mb-7 max-w-2xl mx-auto z-10 relative "
       >
         {t.home.bio}
       </p>
@@ -54,10 +70,10 @@ export function HeroSection() {
 
       {/* CTAs */}
       <Link href="/learn" data-hero-cta className="center z-10 relative  ">
-        <Button className="rounded-full">{t.home.readArticles}</Button>
+        <Button className="rounded-full bg-foreground border-foreground dark:text-black dark:hover:text-white">{t.home.readArticles}</Button>
       </Link>
 
-      <div
+      {/* <div
         className="
           absolute inset-0
           bg-[repeating-linear-gradient(0deg,var(--foreground)_0,var(--foreground)_1px,transparent_0,transparent_50%)]
@@ -70,7 +86,7 @@ export function HeroSection() {
           mask-l-from-70%
           mask-r-from-70%
         "
-      />
+      /> */}
     </section>
   );
 }

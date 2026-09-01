@@ -34,7 +34,7 @@ export function LearnShell({ children }: { children: ReactNode }) {
       {/* ── Content ────────────────────────────────────────────────────── */}
       <div className="min-w-0 flex-1">{children}</div>
 
-      <div className="absolute top-4 right-4 xl:right-6 z-40">
+      <div className="fixed top-4 right-4 xl:right-6 z-40">
         <ThemeToggle />
       </div>
 

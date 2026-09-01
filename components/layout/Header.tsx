@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { LanguageToggle } from "@/components/ui/LanguageToggle";
+// Language switching is off for now — see LANGUAGE_SWITCHING_ENABLED in LanguageProvider.
+// import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { useLanguage } from "@/components/providers";
 import Container from "./Container";
 import { Button } from "../button/Button";
@@ -100,7 +101,7 @@ export function Header() {
 
             {/* Actions */}
             <div data-header-actions className="flex items-center gap-1.5">
-              <LanguageToggle />
+              {/* <LanguageToggle /> */}
 
               <ThemeToggle />
 

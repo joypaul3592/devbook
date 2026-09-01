@@ -40,9 +40,9 @@ export const translations = {
     // Homepage
     home: {
       eyebrow:         "ব্যক্তিগত নোটবুক",
-      headline1:       "আমি শিখি, তৈরি করি,",
-      headline2:       "এবং ভাগ করি।",
-      bio:             "এটা আমার ডিজিটাল নোটবুক। Web Development, React, Next.js, TypeScript — যা শিখি, যা ভাঙি, যা আবিষ্কার করি, সব এখানে লিখে রাখি। বাংলায়, কারণ ভাষা জ্ঞানকে আরও কাছে নিয়ে আসে।",
+      headline1:       "আমার নোট,",
+      headline2:       "আপনার কাজেও লাগবে।",
+      bio:             "প্রতিটা লেখা আসলে আমার নিজের বোঝার চেষ্টা — React, Next.js, TypeScript নিয়ে। যদি আপনিও একই জায়গায় আটকে থাকেন, হয়তো কাজে লাগবে। বাংলায় লিখি, কারণ ইংরেজি বুঝতে গিয়ে অনেক সময় আসল জিনিসটাই হারিয়ে যায়।",
       currentlyOn:     "এখন কাজ করছি:",
       readArticles:    "লেখাগুলো পড়ুন",
       aboutMe:         "পরিচয়",
@@ -108,7 +108,7 @@ export const translations = {
     learn: {
       navLabel:     "শেখা",
       eyebrow:      "প্রোডাকশন লেভেল",
-      title:        "Next.js-এর মানচিত্র",
+      title:        "Next.js হ্যান্ডবুক",
       desc:         "তেইশটি অধ্যায়ে production-level Next.js — architecture থেকে scale পর্যন্ত।",
       chapters:     "অধ্যায়",
       chapter:      "অধ্যায়",
@@ -189,9 +189,9 @@ export const translations = {
     },
     home: {
       eyebrow:         "Personal Notebook",
-      headline1:       "I learn, I build,",
-      headline2:       "and I share.",
-      bio:             "This is my digital notebook. Web Development, React, Next.js, TypeScript — everything I learn, break, and discover, I write here. In Bangla, because language brings knowledge closer.",
+      headline1:       "My notes,",
+      headline2:       "written for you too.",
+      bio:             "Every post here is really me trying to understand something — React, Next.js, TypeScript. If you're stuck at the same place, it might help. I write in Bangla, because the point often gets lost in translation.",
       currentlyOn:     "Currently working on:",
       readArticles:    "Read Articles",
       aboutMe:         "About Me",
@@ -252,7 +252,7 @@ export const translations = {
     learn: {
       navLabel:     "Learn",
       eyebrow:      "PRODUCTION LEVEL",
-      title:        "The Next.js Atlas",
+      title:        "The Next.js Handbook",
       desc:         "Production-level Next.js in twenty-three chapters — from architecture to scale.",
       chapters:     "Chapters",
       chapter:      "Chapter",

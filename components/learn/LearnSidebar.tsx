@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers";
 import { bi, curriculum } from "@/lib/curriculum";
-import { SearchIcon } from "@/components/icons/Icons";
+import { ArrowLeftIcon, SearchIcon } from "@/components/icons/Icons";
 import { lessonId, useLearnProgress } from "@/lib/learn-progress";
 
 function CheckIcon({ className }: { className?: string }) {
@@ -77,12 +77,26 @@ export function LearnSidebar({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <div className="flex flex-col h-full">
       {/* ── Sidebar head ───────────────────────────────────────────────── */}
-      <div className="px-4 pt-4 pb-3.5 border-b border-border">
-        <Link href="/learn" onClick={onNavigate} className="block group">
-          <span className="font-ui text-[10.5px] tracking-[0.2em] uppercase text-muted-foreground">
-            {t.learn.eyebrow}
-          </span>
-          <h2 className="font-serif text-[19px] leading-tight text-foreground mt-0.5 group-hover:text-primary ani2">
+      {/* One row: the way home on the left, the atlas title beside it. The
+          eyebrow lives on the index page itself — repeating it here only cost
+          the head a third line. */}
+      <div className="px-3 py-3 border-b border-border flex items-center gap-1.5">
+        <Link
+          href="/"
+          onClick={onNavigate}
+          aria-label={t.nav.home}
+          title={t.nav.home}
+          className="group/home size-8 shrink-0 center rounded-lg text-muted-foreground hover:text-primary hover:bg-muted ani2"
+        >
+          <ArrowLeftIcon className="size-4 group-hover/home:-translate-x-0.5 ani2" />
+        </Link>
+
+        <Link
+          href="/learn"
+          onClick={onNavigate}
+          className="min-w-0 group"
+        >
+          <h2 className="font-serif text-[19px] leading-tight truncate text-foreground group-hover:text-primary ani2">
             {t.learn.title}
           </h2>
         </Link>

@@ -117,8 +117,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Theme switch — the home page carries no header, so the control
-          sits on its own in the top-right corner, matching /learn. */}
+
       <div className="fixed top-4 right-4 sm:right-6 z-40">
         <ThemeToggle />
       </div>
