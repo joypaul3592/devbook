@@ -234,6 +234,16 @@ const WRITTEN = new Set<string>([
   "environment-deployment/ci-cd-integration",
   "environment-deployment/deployment-previews",
   "environment-deployment/build-failures-runtime-errors",
+  "observability/structured-logging",
+  "observability/error-tracking",
+  "observability/performance-monitoring",
+  "observability/web-vitals-lcp-cls-inp",
+  "observability/server-timing",
+  "observability/request-tracing",
+  "observability/production-debugging",
+  "observability/real-user-monitoring",
+  "observability/performance-regression-detection",
+  "observability/production-incident-debugging-workflow",
 ]);
 
 /** Stable url slug derived from the English title. */

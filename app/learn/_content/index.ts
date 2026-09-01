@@ -191,6 +191,16 @@ import ch19Topic7Cover from "@/public/blogs-images/chapter-19/topic-7.png";
 import ch19Topic8Cover from "@/public/blogs-images/chapter-19/topic-8.png";
 import ch19Topic9Cover from "@/public/blogs-images/chapter-19/topic-9.png";
 import ch19Topic10Cover from "@/public/blogs-images/chapter-19/topic-10.png";
+import ch20Topic1Cover from "@/public/blogs-images/chapter-20/topic-1.png";
+import ch20Topic2Cover from "@/public/blogs-images/chapter-20/topic-2.png";
+import ch20Topic3Cover from "@/public/blogs-images/chapter-20/topic-3.png";
+import ch20Topic4Cover from "@/public/blogs-images/chapter-20/topic-4.png";
+import ch20Topic5Cover from "@/public/blogs-images/chapter-20/topic-5.png";
+import ch20Topic6Cover from "@/public/blogs-images/chapter-20/topic-6.png";
+import ch20Topic7Cover from "@/public/blogs-images/chapter-20/topic-7.png";
+import ch20Topic8Cover from "@/public/blogs-images/chapter-20/topic-8.png";
+import ch20Topic9Cover from "@/public/blogs-images/chapter-20/topic-9.png";
+import ch20Topic10Cover from "@/public/blogs-images/chapter-20/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -742,6 +752,36 @@ import DeploymentPreviews, {
 import BuildFailuresRuntimeErrors, {
   headings as buildFailuresRuntimeErrorsHeadings,
 } from "./build-failures-runtime-errors";
+import StructuredLogging, {
+  headings as structuredLoggingHeadings,
+} from "./structured-logging";
+import ErrorTracking, {
+  headings as errorTrackingHeadings,
+} from "./error-tracking";
+import PerformanceMonitoring, {
+  headings as performanceMonitoringHeadings,
+} from "./performance-monitoring";
+import WebVitalsLcpClsInp, {
+  headings as webVitalsLcpClsInpHeadings,
+} from "./web-vitals-lcp-cls-inp";
+import ServerTiming, {
+  headings as serverTimingHeadings,
+} from "./server-timing";
+import RequestTracing, {
+  headings as requestTracingHeadings,
+} from "./request-tracing";
+import ProductionDebugging, {
+  headings as productionDebuggingHeadings,
+} from "./production-debugging";
+import RealUserMonitoring, {
+  headings as realUserMonitoringHeadings,
+} from "./real-user-monitoring";
+import PerformanceRegressionDetection, {
+  headings as performanceRegressionDetectionHeadings,
+} from "./performance-regression-detection";
+import ProductionIncidentDebuggingWorkflow, {
+  headings as productionIncidentDebuggingWorkflowHeadings,
+} from "./production-incident-debugging-workflow";
 
 export interface ChapterHeading {
   id: string;
@@ -2912,6 +2952,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "Build failures ও runtime errors — hydration mismatch ও Suspense",
         en: "Build Failures & Runtime Errors — Hydration Mismatches and Suspense",
+      },
+    },
+  },
+  "observability/structured-logging": {
+    Body: StructuredLogging,
+    headings: structuredLoggingHeadings,
+    cover: {
+      src: ch20Topic1Cover,
+      alt: {
+        bn: "Structured logging — JSON স্কিমা, traceId ও redaction",
+        en: "Structured Logging — JSON Schemas, Trace IDs and Redaction",
+      },
+    },
+  },
+  "observability/error-tracking": {
+    Body: ErrorTracking,
+    headings: errorTrackingHeadings,
+    cover: {
+      src: ch20Topic2Cover,
+      alt: {
+        bn: "Error tracking — source map, breadcrumbs ও issue grouping",
+        en: "Error Tracking — Source Maps, Breadcrumbs and Issue Grouping",
+      },
+    },
+  },
+  "observability/performance-monitoring": {
+    Body: PerformanceMonitoring,
+    headings: performanceMonitoringHeadings,
+    cover: {
+      src: ch20Topic3Cover,
+      alt: {
+        bn: "Performance monitoring — OpenTelemetry trace ও span",
+        en: "Performance Monitoring — OpenTelemetry Traces and Spans",
+      },
+    },
+  },
+  "observability/web-vitals-lcp-cls-inp": {
+    Body: WebVitalsLcpClsInp,
+    headings: webVitalsLcpClsInpHeadings,
+    cover: {
+      src: ch20Topic4Cover,
+      alt: {
+        bn: "Web Vitals — LCP, CLS ও INP অপটিমাইজেশন",
+        en: "Web Vitals — Optimizing LCP, CLS and INP",
+      },
+    },
+  },
+  "observability/server-timing": {
+    Body: ServerTiming,
+    headings: serverTimingHeadings,
+    cover: {
+      src: ch20Topic5Cover,
+      alt: {
+        bn: "Server timing — ব্রাউজার DevTools-এ ব্যাকএন্ড ব্রেকডাউন",
+        en: "Server Timing — A Backend Breakdown Inside DevTools",
+      },
+    },
+  },
+  "observability/request-tracing": {
+    Body: RequestTracing,
+    headings: requestTracingHeadings,
+    cover: {
+      src: ch20Topic6Cover,
+      alt: {
+        bn: "Request tracing — trace ID propagation ও correlated লগ",
+        en: "Request Tracing — Trace ID Propagation and Correlated Logs",
+      },
+    },
+  },
+  "observability/production-debugging": {
+    Body: ProductionDebugging,
+    headings: productionDebuggingHeadings,
+    cover: {
+      src: ch20Topic7Cover,
+      alt: {
+        bn: "Production debugging — hidden source map ও dynamic debug হেডার",
+        en: "Production Debugging — Hidden Source Maps and Debug Headers",
+      },
+    },
+  },
+  "observability/real-user-monitoring": {
+    Body: RealUserMonitoring,
+    headings: realUserMonitoringHeadings,
+    cover: {
+      src: ch20Topic8Cover,
+      alt: {
+        bn: "Real User Monitoring ও synthetic monitoring — deep health check",
+        en: "Real User & Synthetic Monitoring — Deep Health Checks",
+      },
+    },
+  },
+  "observability/performance-regression-detection": {
+    Body: PerformanceRegressionDetection,
+    headings: performanceRegressionDetectionHeadings,
+    cover: {
+      src: ch20Topic9Cover,
+      alt: {
+        bn: "পারফরম্যান্স রিগ্রেশন ডিটেকশন — budget ও CI গার্ড",
+        en: "Performance Regression Detection — Budgets and CI Guards",
+      },
+    },
+  },
+  "observability/production-incident-debugging-workflow": {
+    Body: ProductionIncidentDebuggingWorkflow,
+    headings: productionIncidentDebuggingWorkflowHeadings,
+    cover: {
+      src: ch20Topic10Cover,
+      alt: {
+        bn: "ইনসিডেন্ট ডিবাগিং ওয়ার্কফ্লো — kill-switch, breaker ও runbook",
+        en: "Incident Debugging Workflow — Kill-Switches, Breakers, Runbooks",
       },
     },
   },
