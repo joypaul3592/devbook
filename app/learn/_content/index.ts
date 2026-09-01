@@ -201,6 +201,16 @@ import ch20Topic7Cover from "@/public/blogs-images/chapter-20/topic-7.png";
 import ch20Topic8Cover from "@/public/blogs-images/chapter-20/topic-8.png";
 import ch20Topic9Cover from "@/public/blogs-images/chapter-20/topic-9.png";
 import ch20Topic10Cover from "@/public/blogs-images/chapter-20/topic-10.png";
+import ch21Topic1Cover from "@/public/blogs-images/chapter-21/topic-1.png";
+import ch21Topic2Cover from "@/public/blogs-images/chapter-21/topic-2.png";
+import ch21Topic3Cover from "@/public/blogs-images/chapter-21/topic-3.png";
+import ch21Topic4Cover from "@/public/blogs-images/chapter-21/topic-4.png";
+import ch21Topic5Cover from "@/public/blogs-images/chapter-21/topic-5.png";
+import ch21Topic6Cover from "@/public/blogs-images/chapter-21/topic-6.png";
+import ch21Topic7Cover from "@/public/blogs-images/chapter-21/topic-7.png";
+import ch21Topic8Cover from "@/public/blogs-images/chapter-21/topic-8.png";
+import ch21Topic9Cover from "@/public/blogs-images/chapter-21/topic-9.png";
+import ch21Topic10Cover from "@/public/blogs-images/chapter-21/topic-10.png";
 import type { Bi } from "@/lib/curriculum";
 import FourTierCaching, {
   headings as fourTierCachingHeadings,
@@ -782,6 +792,36 @@ import PerformanceRegressionDetection, {
 import ProductionIncidentDebuggingWorkflow, {
   headings as productionIncidentDebuggingWorkflowHeadings,
 } from "./production-incident-debugging-workflow";
+import UnitTestingVitestJest, {
+  headings as unitTestingVitestJestHeadings,
+} from "./unit-testing-vitest-jest";
+import ComponentTestingReactTestingLibrary, {
+  headings as componentTestingReactTestingLibraryHeadings,
+} from "./component-testing-react-testing-library";
+import E2eTestingPlaywright, {
+  headings as e2eTestingPlaywrightHeadings,
+} from "./e2e-testing-playwright";
+import ServerComponentTesting, {
+  headings as serverComponentTestingHeadings,
+} from "./server-component-testing";
+import MockingMsw, {
+  headings as mockingMswHeadings,
+} from "./mocking-msw";
+import AuthenticationFlowTesting, {
+  headings as authenticationFlowTestingHeadings,
+} from "./authentication-flow-testing";
+import VisualRegressionTesting, {
+  headings as visualRegressionTestingHeadings,
+} from "./visual-regression-testing";
+import CiCdPipelineIntegration, {
+  headings as ciCdPipelineIntegrationHeadings,
+} from "./ci-cd-pipeline-integration";
+import MockingExternalApis, {
+  headings as mockingExternalApisHeadings,
+} from "./mocking-external-apis";
+import TestCoverageBestPractices, {
+  headings as testCoverageBestPracticesHeadings,
+} from "./test-coverage-best-practices";
 
 export interface ChapterHeading {
   id: string;
@@ -3062,6 +3102,116 @@ export const lessonContent: Record<string, LessonContent> = {
       alt: {
         bn: "ইনসিডেন্ট ডিবাগিং ওয়ার্কফ্লো — kill-switch, breaker ও runbook",
         en: "Incident Debugging Workflow — Kill-Switches, Breakers, Runbooks",
+      },
+    },
+  },
+  "testing/unit-testing-vitest-jest": {
+    Body: UnitTestingVitestJest,
+    headings: unitTestingVitestJestHeadings,
+    cover: {
+      src: ch21Topic1Cover,
+      alt: {
+        bn: "Unit testing — Vitest দিয়ে আইসোলেটেড বিজনেস লজিক টেস্ট",
+        en: "Unit Testing — Isolated Business Logic with Vitest",
+      },
+    },
+  },
+  "testing/component-testing-react-testing-library": {
+    Body: ComponentTestingReactTestingLibrary,
+    headings: componentTestingReactTestingLibraryHeadings,
+    cover: {
+      src: ch21Topic2Cover,
+      alt: {
+        bn: "Component testing — React Testing Library ও userEvent",
+        en: "Component Testing — React Testing Library and userEvent",
+      },
+    },
+  },
+  "testing/e2e-testing-playwright": {
+    Body: E2eTestingPlaywright,
+    headings: e2eTestingPlaywrightHeadings,
+    cover: {
+      src: ch21Topic3Cover,
+      alt: {
+        bn: "E2E testing — Playwright, Page Object Model ও auto-waiting",
+        en: "E2E Testing — Playwright, Page Objects, and Auto-Waiting",
+      },
+    },
+  },
+  "testing/server-component-testing": {
+    Body: ServerComponentTesting,
+    headings: serverComponentTestingHeadings,
+    cover: {
+      src: ch21Topic4Cover,
+      alt: {
+        bn: "Server Component testing — async RSC রিভলভ করে টেস্ট",
+        en: "Server Component Testing — Resolving an Async RSC",
+      },
+    },
+  },
+  "testing/mocking-msw": {
+    Body: MockingMsw,
+    headings: mockingMswHeadings,
+    cover: {
+      src: ch21Topic5Cover,
+      alt: {
+        bn: "MSW — নেটওয়ার্ক লেয়ারে API মকিং",
+        en: "MSW — Mocking APIs at the Network Layer",
+      },
+    },
+  },
+  "testing/authentication-flow-testing": {
+    Body: AuthenticationFlowTesting,
+    headings: authenticationFlowTestingHeadings,
+    cover: {
+      src: ch21Topic6Cover,
+      alt: {
+        bn: "Authentication flow testing — storageState ও session মক",
+        en: "Authentication Flow Testing — storageState and Session Mocks",
+      },
+    },
+  },
+  "testing/visual-regression-testing": {
+    Body: VisualRegressionTesting,
+    headings: visualRegressionTestingHeadings,
+    cover: {
+      src: ch21Topic7Cover,
+      alt: {
+        bn: "Visual regression testing — pixel diff, mask ও baseline",
+        en: "Visual Regression Testing — Pixel Diffs, Masks, Baselines",
+      },
+    },
+  },
+  "testing/ci-cd-pipeline-integration": {
+    Body: CiCdPipelineIntegration,
+    headings: ciCdPipelineIntegrationHeadings,
+    cover: {
+      src: ch21Topic8Cover,
+      alt: {
+        bn: "CI/CD পাইপলাইন — ক্যাশ, প্যারালাল জব ও Playwright sharding",
+        en: "CI/CD Pipelines — Caching, Parallel Jobs, and Sharding",
+      },
+    },
+  },
+  "testing/mocking-external-apis": {
+    Body: MockingExternalApis,
+    headings: mockingExternalApisHeadings,
+    cover: {
+      src: ch21Topic9Cover,
+      alt: {
+        bn: "এক্সটার্নাল API মকিং — latency, 429 ও 500 সিমুলেশন",
+        en: "Mocking External APIs — Simulating Latency, 429s, 500s",
+      },
+    },
+  },
+  "testing/test-coverage-best-practices": {
+    Body: TestCoverageBestPractices,
+    headings: testCoverageBestPracticesHeadings,
+    cover: {
+      src: ch21Topic10Cover,
+      alt: {
+        bn: "Test coverage ও best practices — testing trophy",
+        en: "Test Coverage and Best Practices — The Testing Trophy",
       },
     },
   },

@@ -244,6 +244,16 @@ const WRITTEN = new Set<string>([
   "observability/real-user-monitoring",
   "observability/performance-regression-detection",
   "observability/production-incident-debugging-workflow",
+  "testing/unit-testing-vitest-jest",
+  "testing/component-testing-react-testing-library",
+  "testing/e2e-testing-playwright",
+  "testing/server-component-testing",
+  "testing/mocking-msw",
+  "testing/authentication-flow-testing",
+  "testing/visual-regression-testing",
+  "testing/ci-cd-pipeline-integration",
+  "testing/mocking-external-apis",
+  "testing/test-coverage-best-practices",
 ]);
 
 /** Stable url slug derived from the English title. */
@@ -1036,12 +1046,15 @@ const raw: RawChapter[] = [
       },
       { bn: "E2E — Playwright", en: "E2E Testing — Playwright" },
       { bn: "Server Component testing", en: "Server Component Testing" },
-      { bn: "API testing", en: "API Testing" },
+      { bn: "API মকিং — MSW", en: "Mocking — MSW" },
       { bn: "Authentication flow testing", en: "Authentication Flow Testing" },
       { bn: "Visual regression testing", en: "Visual Regression Testing" },
-      { bn: "Loading ও Error State টেস্টিং", en: "Loading & Error State Testing" },
-      { bn: "নেভিগেশন ও URL State টেস্টিং", en: "Navigation & URL State Testing" },
-      { bn: "পারফরম্যান্স টেস্টিং", en: "Performance Testing" },
+      { bn: "CI/CD পাইপলাইন ইন্টিগ্রেশন", en: "CI/CD Pipeline Integration" },
+      { bn: "এক্সটার্নাল API মকিং", en: "Mocking External APIs" },
+      {
+        bn: "Test coverage ও best practices",
+        en: "Test Coverage & Best Practices",
+      },
     ],
   },
   {
