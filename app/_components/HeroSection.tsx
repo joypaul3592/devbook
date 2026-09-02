@@ -48,7 +48,7 @@ export function HeroSection() {
       {/* Bio */}
       <p
         data-hero-bio
-        className="font-bengali text-[17px] text-muted-foreground mb-7 max-w-2xl mx-auto z-10 relative "
+        className="font-bengali  text-muted-foreground mb-7 max-w-xl mx-auto z-10 relative "
       >
         {t.home.bio}
       </p>
@@ -70,23 +70,10 @@ export function HeroSection() {
 
       {/* CTAs */}
       <Link href="/learn" data-hero-cta className="center z-10 relative  ">
-        <Button className="rounded-full bg-foreground border-foreground dark:text-black dark:hover:text-white">{t.home.readArticles}</Button>
+        <Button className="rounded-full bg-foreground border-foreground dark:text-black dark:hover:text-white">
+          {t.home.readArticles}
+        </Button>
       </Link>
-
-      {/* <div
-        className="
-          absolute inset-0
-          bg-[repeating-linear-gradient(0deg,var(--foreground)_0,var(--foreground)_1px,transparent_0,transparent_50%)]
-          bg-size-[50px_50px]
-          bg-fixed
-          opacity-10
-          z-0
-          mask-b-from-80%
-          mask-t-from-50%
-          mask-l-from-70%
-          mask-r-from-70%
-        "
-      /> */}
     </section>
   );
 }
